@@ -129,40 +129,50 @@ export default function UniversalDrawer({
         style={{ width: "75vw", maxWidth: "290px" }}
         className="relative h-screen min-h-screen z-10 flex flex-col shadow-2xl overflow-hidden border-r border-[#262D3B] animate-in slide-in-from-left duration-250 shrink-0"
       >
-        
+
         {/* ========================================================================= */}
-        {/* LIGNE 1 : LES 2 BOUTONS DE SWITCH ("ERP & Logistique" et "DARK-INK") + FERMETURE */}
+        {/* LIGNE 1 : LES BOUTONS DE SWITCH ("ERP & Logistique" en badge blanc ovale en mode boutique) + FERMETURE */}
         {/* ========================================================================= */}
         <div className="bg-[#141822] border-b border-[#222938] p-3.5 shrink-0 select-none">
           <div className="flex items-center justify-between gap-2">
-            {/* Les 2 boutons de switch univers */}
-            <div className="grid grid-cols-2 gap-1.5 flex-1 p-1 rounded-xl bg-[#0B0D12] border border-[#202531]">
-              <button
-                type="button"
-                onClick={() => setAppMode("erp")}
-                className={`py-2 px-2.5 rounded-lg text-xs font-semibold font-mono transition-all flex items-center justify-center space-x-1.5 ${
-                  appMode === "erp"
-                    ? "bg-[#252D3D] text-white shadow-xs border border-[#3E4A61]"
-                    : "text-[#8E95A5] hover:text-white"
-                }`}
-              >
-                <span>⚙</span>
-                <span className="truncate">ERP &amp; Logistique</span>
-              </button>
+            {/* Mode Boutique : Supprimer badge orange DARKINK et afficher "ERP & Logistique" en badge blanc ovale */}
+            {appMode === "boutique" ? (
+              <div className="flex items-center flex-1">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setAppMode("erp");
+                    onClose();
+                  }}
+                  className="rounded-full bg-white hover:bg-gray-100 text-black font-extrabold px-4 py-2 text-xs font-mono flex items-center space-x-2 shadow-sm border border-gray-200 transition-all cursor-pointer select-none"
+                  title="Basculer vers l'espace ERP & Logistique"
+                >
+                  <span className="text-sm leading-none">⚙</span>
+                  <span className="tracking-tight">ERP &amp; Logistique</span>
+                </button>
+              </div>
+            ) : (
+              /* En mode ERP : conservation du switch complet */
+              <div className="grid grid-cols-2 gap-1.5 flex-1 p-1 rounded-xl bg-[#0B0D12] border border-[#202531]">
+                <button
+                  type="button"
+                  onClick={() => setAppMode("erp")}
+                  className="py-2 px-2.5 rounded-lg text-xs font-semibold font-mono bg-[#252D3D] text-white shadow-xs border border-[#3E4A61] flex items-center justify-center space-x-1.5"
+                >
+                  <span>⚙</span>
+                  <span className="truncate">ERP &amp; Logistique</span>
+                </button>
 
-              <button
-                type="button"
-                onClick={() => setAppMode("boutique")}
-                className={`py-2 px-2.5 rounded-lg text-xs font-semibold font-mono transition-all flex items-center justify-center space-x-1.5 ${
-                  appMode === "boutique"
-                    ? "bg-[#D9A68B] text-white shadow-xs font-bold"
-                    : "text-[#8E95A5] hover:text-white"
-                }`}
-              >
-                <span>✦</span>
-                <span className="truncate">DARK-INK</span>
-              </button>
-            </div>
+                <button
+                  type="button"
+                  onClick={() => setAppMode("boutique")}
+                  className="py-2 px-2.5 rounded-lg text-xs font-semibold font-mono text-[#8E95A5] hover:text-white flex items-center justify-center space-x-1.5"
+                >
+                  <span>✦</span>
+                  <span className="truncate">DARK-INK</span>
+                </button>
+              </div>
+            )}
 
             {/* Bouton fermeture ✕ discret */}
             <button
@@ -193,15 +203,14 @@ export default function UniversalDrawer({
                       key={item.id}
                       type="button"
                       onClick={() => handleSelectErpTab(item.id)}
-                      className={`w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-mono font-medium flex items-center justify-between transition-colors ${
-                        isActive
-                          ? "bg-[#1E232E] text-white border border-[#3E4A61] font-bold"
-                          : "text-[#8E95A5] hover:text-white hover:bg-[#121620]"
-                      }`}
+                      className={`w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-mono font-bold flex items-center justify-between transition-colors ${isActive
+                        ? "bg-[#1E2536] text-white border border-[#D4915E]/60 shadow-sm"
+                        : "text-white hover:bg-[#121620]"
+                        }`}
                     >
                       <div className="flex items-center space-x-2.5">
-                        <span className="text-[#5B7A9D] text-sm">{item.icon}</span>
-                        <span>{item.label}</span>
+                        <span className="text-[#D4915E] text-sm font-mono">{item.icon}</span>
+                        <span className="text-white font-bold">{item.label}</span>
                       </div>
                       {item.badge && (
                         <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-[#E5BAA3] border border-amber-500/30">
@@ -244,7 +253,7 @@ export default function UniversalDrawer({
         {appMode === "boutique" && (
           <div className="bg-[#0A0C10] flex-1 flex flex-col justify-between overflow-y-auto p-4 space-y-5">
             <div className="space-y-5">
-              
+
               {/* LIGNE 2 : Photo + Prénom uniquement + mon compte + le panier */}
               <div className="bg-[#121620] border border-[#222938] rounded-2xl p-3 flex items-center justify-between gap-2 shadow-xs">
                 {/* Photo / Avatar Puppy + Prénom uniquement */}
@@ -252,7 +261,7 @@ export default function UniversalDrawer({
                   <div className="w-9 h-9 rounded-full bg-[#1C2333] border border-[#D9A68B]/50 flex items-center justify-center text-[#D9A68B] shrink-0">
                     {/* Silhouette masque puppy */}
                     <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
-                      <path d="M12 2C8.5 2 6 4.5 6 8c0 2 .8 3.8 2 5.1V18c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-4.9c1.2-1.3 2-3.1 2-5.1 0-3.5-2.5-6-6-6zm-3.5 1L5 6l2.5 1L9 4.5 8.5 3zm7 0l-.5 1.5 1.5 2.5 2.5-1-3.5-3zM12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+                      <path d="M12 2C8.5 2 6 4.5 6 8c0 2 .8 3.8 2 5.1V18c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-4.9c1.2-1.3 2-3.1 2-5.1 0-3.5-2.5-6-6-6zm-3.5 1L5 6l2.5 1L9 4.5 8.5 3zm7 0l-.5 1.5 1.5 2.5 2.5-1-3.5-3zM12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
                     </svg>
                   </div>
                   <div className="truncate">
@@ -265,8 +274,8 @@ export default function UniversalDrawer({
                   </div>
                 </div>
 
-                {/* Bouton Mon Compte + Bouton Panier */}
-                <div className="flex items-center space-x-1.5 shrink-0">
+                {/* Bouton Mon Compte (Panier supprimé) */}
+                <div className="flex items-center shrink-0">
                   <button
                     type="button"
                     onClick={() => {
@@ -276,33 +285,24 @@ export default function UniversalDrawer({
                         setShowAuthModal(true);
                       }
                     }}
-                    className="px-2.5 py-1.5 rounded-lg border border-[#344057] bg-[#1A2230] hover:bg-[#252E40] text-white text-[10px] font-mono font-bold transition-colors cursor-pointer"
+                    className="px-3.5 py-2 rounded-xl border border-[#344057] bg-[#1A2230] hover:bg-[#252E40] text-white text-xs font-mono font-bold transition-colors cursor-pointer shadow-xs"
                   >
                     Mon compte
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => handleSelectBoutiqueSec("cart")}
-                    className="px-2.5 py-1.5 rounded-lg bg-[#D9A68B] hover:bg-[#BA8E63] text-white text-[10px] font-mono font-bold flex items-center space-x-1 transition-colors cursor-pointer"
-                  >
-                    <span>🛒</span>
-                    <span>{totalCartCount}</span>
                   </button>
                 </div>
               </div>
 
-              {/* SECTION 1 : NAVIGATION PRINCIPALE (COHÉRENTE AVEC LA NAVBAR DESKTOP) */}
+              {/* SECTION 1 : NAVIGATION PRINCIPALE (SANS ICÔNES, TEXTE AGRANDI & LISIBLE) */}
               <div className="space-y-1.5">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-[#E5BAA3] font-bold block px-2">
                   NAVIGATION MAISON
                 </span>
-                <nav className="space-y-1">
+                <nav className="space-y-1.5">
                   {[
-                    { id: "home" as const, label: "Commander", sub: "Accueil & Vestiaire en ligne", icon: "🛍️" },
-                    { id: "stores" as const, label: "New Millénium", sub: "Boutique Marais (Paris 11e)", icon: "🏛️" },
-                    { id: "cruising" as const, label: "Boxxman", sub: "Boutique Bastille & Cruising (Paris 1er)", icon: "◈" },
-                    { id: "contact" as const, label: "Nous Contacter", sub: "Service Client & Conseil", icon: "✉️" },
+                    { id: "home" as const, label: "Commander", sub: "Accueil & Vestiaire en ligne" },
+                    { id: "stores" as const, label: "New Millénium", sub: "Boutique Marais (Paris 11e)" },
+                    { id: "cruising" as const, label: "Boxxman", sub: "Boutique Bastille & Cruising (Paris 1er)" },
+                    { id: "contact" as const, label: "Nous Contacter", sub: "Service Client & Conseil" },
                   ].map((item) => {
                     const isActive = boutiqueActiveSection === item.id;
                     return (
@@ -310,33 +310,29 @@ export default function UniversalDrawer({
                         key={item.id}
                         type="button"
                         onClick={() => handleSelectBoutiqueSec(item.id)}
-                        className={`w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-mono font-medium flex items-center justify-between transition-colors cursor-pointer ${
-                          isActive
-                            ? "bg-[#1E232E] text-white border border-[#E5BAA3]/60 font-bold"
-                            : "text-[#D1D5DB] hover:text-white hover:bg-[#121620]"
-                        }`}
+                        className={`w-full text-left px-4 py-3 rounded-xl flex items-center justify-between transition-colors cursor-pointer ${isActive
+                          ? "bg-[#1E232E] text-white border border-[#E5BAA3]/60 font-bold"
+                          : "text-[#E5E7EB] hover:text-white hover:bg-[#121620]"
+                          }`}
                       >
-                        <div className="flex items-center space-x-2.5">
-                          <span className="text-sm text-[#E5BAA3]">{item.icon}</span>
-                          <div>
-                            <span className="block font-bold">{item.label}</span>
-                            <span className="block text-[10px] text-[#8E95A5] font-sans">{item.sub}</span>
-                          </div>
+                        <div>
+                          <span className="block font-black text-sm text-white tracking-wide">{item.label}</span>
+                          <span className="block text-xs text-[#9CA3AF] font-sans mt-0.5">{item.sub}</span>
                         </div>
-                        <span className="text-xs text-[#8E95A5]">→</span>
+                        <span className="text-sm font-bold text-[#E5BAA3]">→</span>
                       </button>
                     );
                   })}
                 </nav>
               </div>
 
-              {/* SECTION 2 : CATÉGORIES DU VESTIAIRE (TOUTES LES CATÉGORIES DESKTOP) */}
+              {/* SECTION 2 : RAYONS DU VESTIAIRE (TEXTE AGRANDI & SECTION RENOMMÉE EN "RAYONS") */}
               <div className="space-y-1.5 pt-2 border-t border-[#1F242D]">
                 <div className="flex items-center justify-between px-2">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#E5BAA3] font-bold">
-                    RAYONS &amp; CATÉGORIES
+                  <span className="text-xs font-mono uppercase tracking-widest text-[#E5BAA3] font-bold">
+                    RAYONS
                   </span>
-                  <span className="text-[9px] font-mono text-[#8E95A5]">13 Rayons</span>
+                  <span className="text-[10px] font-mono text-[#8E95A5]">13 Rayons</span>
                 </div>
                 <div className="grid grid-cols-1 gap-1">
                   {[
@@ -359,8 +355,8 @@ export default function UniversalDrawer({
                       c.key === "ACCUEIL"
                         ? (!catalogCategory || catalogCategory === "all")
                         : c.key === "B2B"
-                        ? user?.isB2B
-                        : catalogCategory === c.key;
+                          ? user?.isB2B
+                          : catalogCategory === c.key;
 
                     return (
                       <button
@@ -378,28 +374,28 @@ export default function UniversalDrawer({
                           }
                           onClose();
                         }}
-                        className={`w-full text-left px-3 py-2 rounded-lg text-xs font-sans font-semibold flex items-center justify-between transition-colors cursor-pointer ${
+                        className={`w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-sans font-bold flex items-center justify-between transition-colors cursor-pointer ${
                           isCatActive
-                            ? "bg-[#1C2230] text-[#E5BAA3] border border-[#E5BAA3]/50 font-bold"
+                            ? "bg-[#1C2230] text-[#E5BAA3] border border-[#E5BAA3]/50 font-black"
                             : c.highlight === "rose"
                             ? "text-rose-400 hover:bg-[#161B26]"
                             : c.highlight === "amber"
                             ? "text-amber-400 hover:bg-[#161B26]"
                             : c.highlight === "gold"
                             ? "text-[#E5BAA3] hover:bg-[#161B26]"
-                            : "text-[#D1D5DB] hover:text-white hover:bg-[#141822]"
+                            : "text-[#E5E7EB] hover:text-white hover:bg-[#141822]"
                         }`}
                       >
                         <span className="truncate">{c.label}</span>
                         {c.badge && (
                           <span
-                            className={`text-[9px] font-mono px-1.5 py-0.5 rounded border uppercase font-bold ${
+                            className={`text-[10px] font-mono px-2 py-0.5 rounded border uppercase font-bold ${
                               c.highlight === "rose"
                                 ? "bg-rose-950/40 text-rose-300 border-rose-800/40"
                                 : c.highlight === "amber"
                                 ? "bg-amber-950/40 text-amber-300 border-amber-800/40"
                                 : "bg-[#E5BAA3]/20 text-[#E5BAA3] border-[#E5BAA3]/40"
-                            }`}
+                              }`}
                           >
                             {c.badge}
                           </span>
@@ -481,8 +477,8 @@ export default function UniversalDrawer({
                 {legalModal === "cgv"
                   ? "Conditions Générales de Vente (CGV)"
                   : legalModal === "livraison"
-                  ? "Garantie Colis Discret & Livraison"
-                  : "Mentions Légales & Données Privées"}
+                    ? "Garantie Colis Discret & Livraison"
+                    : "Mentions Légales & Données Privées"}
               </h3>
               <button
                 type="button"
@@ -498,10 +494,10 @@ export default function UniversalDrawer({
                 <>
                   <p className="font-bold text-white">1. Champ d&apos;application &amp; Identité du vendeur</p>
                   <p>Les présentes Conditions Générales de Vente régissent l&apos;ensemble des commandes passées auprès de DARK-INK Paris, atelier spécialisé dans le vestiaire fétiche haut de gamme, accessoires cuir, néoprène et soins intimes depuis 2003.</p>
-                  
+
                   <p className="font-bold text-white">2. Tarifs &amp; Remises Professionnelles B2B</p>
                   <p>Les prix indiqués sont en euros TTC (Toutes Taxes Comprises). Les comptes professionnels disposent d&apos;une tarification grossiste remisée de 30% sur l&apos;ensemble du vestiaire sur présentation de justificatif SIRET ou numéro de TVA intracommunautaire.</p>
-                  
+
                   <p className="font-bold text-white">3. Droit de rétractation (14 jours)</p>
                   <p>Conformément aux dispositions légales, vous disposez d&apos;un délai de 14 jours à compter de la réception de votre commande pour exercer votre droit de rétractation. Pour des raisons d&apos;hygiène strictes et de sécurité sanitaire, les articles scellés (flacons d&apos;arômes, lubrifiants, sondes, plugs) descellés ou utilisés ne peuvent faire l&apos;objet d&apos;un retour.</p>
 

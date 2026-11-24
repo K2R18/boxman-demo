@@ -1182,25 +1182,25 @@ export default function BoutiqueNavbar({
       )}
 
       {/* ========================================================================= */}
-      {/* 5. NAVBAR INFÉRIEURE MOBILE FIXE CLIENT (STICKY / FIXED AVEC ACCUEIL SURÉLEVÉ) */}
+      {/* 5. NAVBAR INFÉRIEURE MOBILE FIXE CLIENT (MÊME COULEUR QUE LE MODE ERP : MODE CLAIR PREMIUM) */}
       {/* ========================================================================= */}
-      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#0B0D10]/95 backdrop-blur-md border-t border-[#1E2536] px-2 py-1.5 flex justify-around items-end select-none shadow-2xl">
+      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#FAF9F6]/95 backdrop-blur-md border-t border-[#E5E2DC] px-2 py-1.5 flex justify-around items-end select-none shadow-[0_-4px_20px_rgba(0,0,0,0.06)]">
         {/* 1. Complètement à gauche : MON COMPTE */}
         <button
           type="button"
           onClick={() => onNavigate("account")}
-          className={`flex flex-col items-center py-1 px-1.5 rounded-lg transition-all min-w-[54px] ${activeSection === "account"
-            ? "text-[#E5BAA3] font-bold scale-105"
-            : "text-[#D1D5DB] hover:text-white"
+          className={`flex flex-col items-center py-1 px-1.5 rounded-lg transition-all min-w-[54px] cursor-pointer ${activeSection === "account"
+            ? "text-[#0F141C] font-extrabold scale-105"
+            : "text-[#64748B] hover:text-[#0F172A] font-medium"
             }`}
           title="Mon Compte"
         >
           <div className="w-6 h-6 flex items-center justify-center">
-            <PuppyAccountIcon className="w-5 h-5" />
+            <PuppyAccountIcon className={`w-5 h-5 ${activeSection === "account" ? "text-[#B87333]" : "text-[#64748B]"}`} />
           </div>
           <span className="text-[10px] font-mono tracking-tight mt-1">Compte</span>
           {activeSection === "account" && (
-            <span className="w-1.5 h-1.5 rounded-full bg-[#E5BAA3] mt-0.5" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#B87333] mt-0.5" />
           )}
         </button>
 
@@ -1208,20 +1208,20 @@ export default function BoutiqueNavbar({
         <button
           type="button"
           onClick={() => onNavigate("account")}
-          className={`flex flex-col items-center py-1 px-1.5 rounded-lg transition-all min-w-[54px] ${activeSection === "account"
-            ? "text-[#E5BAA3] font-bold"
-            : "text-[#D1D5DB] hover:text-white"
+          className={`flex flex-col items-center py-1 px-1.5 rounded-lg transition-all min-w-[54px] cursor-pointer ${activeSection === "account"
+            ? "text-[#0F141C] font-extrabold"
+            : "text-[#64748B] hover:text-[#0F172A] font-medium"
             }`}
           title="Mes achats & Commandes"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={`w-5 h-5 ${activeSection === "account" ? "text-[#B87333]" : "text-[#64748B]"}`}>
             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
             <line x1="3" y1="6" x2="21" y2="6" />
             <path d="M16 10a4 4 0 0 1-8 0" />
           </svg>
           <span className="text-[10px] font-mono tracking-tight mt-1">Mes achats</span>
           {activeSection === "account" && (
-            <span className="w-1.5 h-1.5 rounded-full bg-[#E5BAA3] mt-0.5" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#B87333] mt-0.5" />
           )}
         </button>
 
@@ -1229,18 +1229,18 @@ export default function BoutiqueNavbar({
         <button
           type="button"
           onClick={() => onNavigate("home")}
-          className={`-mt-6 w-14 h-14 rounded-full flex flex-col items-center justify-center transition-all duration-200 border-4 border-[#0B0D10] active:scale-95 shrink-0 ${activeSection === "home" || activeSection === "products"
-            ? "bg-[#1E2638] text-white shadow-[0_4px_16px_rgba(212,145,94,0.35)]"
-            : "bg-[#252E40] text-[#FAF9F6] hover:bg-[#1E2638]"
+          className={`-mt-6 w-14 h-14 rounded-full flex flex-col items-center justify-center transition-all duration-200 border-4 border-[#FAF9F6] active:scale-95 shrink-0 shadow-md cursor-pointer ${activeSection === "home" || activeSection === "products"
+            ? "bg-[#0F141C] text-white shadow-[0_4px_16px_rgba(0,0,0,0.18)]"
+            : "bg-[#252E40] text-white hover:bg-[#1E2638]"
             }`}
           title="Accueil"
         >
-          <span className={`text-xl leading-none ${activeSection === "home" || activeSection === "products" ? "text-[#E5BAA3]" : "text-white"}`}>⌂</span>
+          <span className={`text-xl leading-none ${activeSection === "home" || activeSection === "products" ? "text-[#D4915E]" : "text-white"}`}>⌂</span>
           <span className="text-[8.5px] font-sans font-semibold tracking-tight leading-none mt-0.5 text-white">
             Accueil
           </span>
           {(activeSection === "home" || activeSection === "products") && (
-            <span className="w-1.5 h-1.5 rounded-full bg-[#E5BAA3] mt-0.5" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4915E] mt-0.5" />
           )}
         </button>
 
@@ -1248,16 +1248,16 @@ export default function BoutiqueNavbar({
         <button
           type="button"
           onClick={() => onNavigate("cruising")}
-          className={`flex flex-col items-center py-1 px-1.5 rounded-lg transition-all min-w-[54px] ${activeSection === "cruising"
-            ? "text-[#E5BAA3] font-bold scale-105"
-            : "text-[#D1D5DB] hover:text-white"
+          className={`flex flex-col items-center py-1 px-1.5 rounded-lg transition-all min-w-[54px] cursor-pointer ${activeSection === "cruising"
+            ? "text-[#0F141C] font-extrabold scale-105"
+            : "text-[#64748B] hover:text-[#0F172A] font-medium"
             }`}
           title="Espace Cruising"
         >
-          <span className="text-base leading-none text-[#E5BAA3]">◈</span>
+          <span className={`text-base leading-none ${activeSection === "cruising" ? "text-[#B87333] font-bold" : "text-[#64748B]"}`}>◈</span>
           <span className="text-[10px] font-mono tracking-tight mt-1">Cruising</span>
           {activeSection === "cruising" && (
-            <span className="w-1.5 h-1.5 rounded-full bg-[#E5BAA3] mt-0.5" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#B87333] mt-0.5" />
           )}
         </button>
 
@@ -1265,23 +1265,23 @@ export default function BoutiqueNavbar({
         <button
           type="button"
           onClick={() => onNavigate("cart")}
-          className={`relative flex flex-col items-center py-1 px-1.5 rounded-lg transition-all min-w-[54px] ${activeSection === "cart"
-            ? "text-[#E5BAA3] font-bold scale-105"
-            : "text-[#D1D5DB] hover:text-white"
-            } ${isCartBlinking ? "ring-2 ring-[#E5BAA3] animate-bounce bg-[#252E40]/80" : ""}`}
+          className={`relative flex flex-col items-center py-1 px-1.5 rounded-lg transition-all min-w-[54px] cursor-pointer ${activeSection === "cart"
+            ? "text-[#0F141C] font-extrabold scale-105"
+            : "text-[#64748B] hover:text-[#0F172A] font-medium"
+            } ${isCartBlinking ? "ring-2 ring-[#B87333] animate-bounce bg-[#E5E2DC]" : ""}`}
           title="Panier"
         >
           <div className="relative">
             <span className="text-base leading-none">🛒</span>
             {totalCartCount > 0 && (
-              <span className="absolute -top-1.5 -right-2.5 font-mono text-[9px] font-black bg-[#E5BAA3] text-black px-1.5 py-0.2 rounded-full shadow-xs">
+              <span className="absolute -top-1.5 -right-2.5 font-mono text-[9px] font-black bg-[#0F141C] text-white px-1.5 py-0.2 rounded-full shadow-xs">
                 {totalCartCount}
               </span>
             )}
           </div>
           <span className="text-[10px] font-mono tracking-tight mt-1">Panier</span>
           {activeSection === "cart" && (
-            <span className="w-1.5 h-1.5 rounded-full bg-[#E5BAA3] mt-0.5" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#B87333] mt-0.5" />
           )}
         </button>
       </nav>

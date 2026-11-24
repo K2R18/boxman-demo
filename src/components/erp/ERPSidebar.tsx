@@ -84,15 +84,15 @@ export default function ERPSidebar({
                 <div className="flex items-center space-x-3 min-w-0">
                   <span
                     className={`font-mono text-base leading-none shrink-0 transition-colors ${
-                      isActive ? "text-[#D4915E]" : "text-[#6B7280] group-hover:text-[#D4915E]"
+                      isActive ? "text-[#D4915E]" : "text-[#9CA3AF] group-hover:text-[#D4915E]"
                     }`}
                   >
                     {item.iconSymbol}
                   </span>
                   <div className="truncate">
-                    <span className="block truncate">{item.label}</span>
+                    <span className="block truncate text-white font-bold">{item.label}</span>
                     {item.desc && (
-                      <span className="block text-[10px] text-[#6B7280] font-mono truncate">
+                      <span className="block text-[10px] text-[#8E95A5] font-mono truncate">
                         {item.desc}
                       </span>
                     )}
@@ -206,8 +206,8 @@ export default function ERPSidebar({
         </div>
       )}
 
-      {/* Mobile Bottom Navigation Bar (Raccourcis en bas d'écran mobile) */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#12151B] border-t border-[#1F242D] px-1 py-1.5 flex justify-around items-center select-none shadow-2xl backdrop-blur-md">
+      {/* Mobile Bottom Navigation Bar (Raccourcis en bas d'écran mobile — Mode Clair Premium & Surbrillance) */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#FAF9F6]/95 backdrop-blur-md border-t border-[#E5E2DC] px-2 py-1.5 flex justify-around items-center select-none shadow-[0_-4px_20px_rgba(0,0,0,0.06)]">
         {bottomShortcuts.map((tabId) => {
           const item = erpNavItems.find((n) => n.id === tabId);
           if (!item) return null;
@@ -217,16 +217,20 @@ export default function ERPSidebar({
               key={item.id}
               type="button"
               onClick={() => onTabChange(item.id)}
-              className={`flex flex-col items-center py-1 px-1.5 rounded transition-all min-w-[50px] cursor-pointer ${
+              className={`flex flex-col items-center py-1 px-2.5 rounded-xl transition-all cursor-pointer ${
                 isActive
-                  ? "text-[#5B7A9D] font-bold scale-105"
-                  : "text-[#6B7280] hover:text-[#E2E4E9]"
+                  ? "bg-[#0F141C] text-white shadow-md scale-105 border border-[#2B3548]"
+                  : "text-[#5A6376] hover:text-[#0F172A]"
               }`}
             >
-              <span className="text-sm font-mono leading-none">{item.iconSymbol}</span>
-              <span className="text-[10px] tracking-tight mt-1">{item.short}</span>
+              <span className={`text-sm font-mono leading-none ${isActive ? "text-[#D4915E] font-bold" : "text-[#475569]"}`}>
+                {item.iconSymbol}
+              </span>
+              <span className={`text-[10px] tracking-tight mt-0.5 ${isActive ? "text-white font-black" : "text-[#5A6376] font-semibold"}`}>
+                {item.short}
+              </span>
               {isActive && (
-                <span className="w-1 h-1 rounded-full bg-[#5B7A9D] mt-0.5" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D4915E] mt-0.5" />
               )}
             </button>
           );

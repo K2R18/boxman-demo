@@ -38,8 +38,8 @@ export default function ERPApp() {
       {/* Main Content Workspace */}
       <div className="flex-1 flex flex-col min-w-0 w-full max-w-full">
         
-        {/* NAVBAR SUPÉRIEURE STICKY (DESIGN INTUITIF, MODERNE & PREMIUM) */}
-        <header className="sticky top-0 z-40 bg-[#0E1117]/95 backdrop-blur-md border-b border-[#1E2430] shadow-lg select-none w-full">
+        {/* NAVBAR SUPÉRIEURE STICKY (DESIGN INTUITIF, MODERNE & PREMIUM — COULEURS INVERSÉES SUR MOBILE / DARK DESKTOP) */}
+        <header className="sticky top-0 z-40 bg-[#1A202C]/95 md:bg-[#0E1117]/95 backdrop-blur-md border-b border-[#2D3748] md:border-[#1E2430] shadow-sm md:shadow-lg select-none w-full transition-colors">
           <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-14 sm:h-16 gap-3">
               
@@ -69,7 +69,7 @@ export default function ERPApp() {
                 </div>
               </div>
 
-              {/* Raccourcis horizontaux rapides sur grand écran (Desktop) */}
+              {/* Raccourcis horizontaux rapides sur grand écran (Desktop — surbrillance et texte blanc gras avec icônes) */}
               <div className="hidden xl:flex items-center space-x-1 bg-[#131720] border border-[#232B3A] p-1 rounded-xl">
                 {erpNavItems.slice(0, 5).map((item) => {
                   const isActive = activeTab === item.id;
@@ -78,13 +78,18 @@ export default function ERPApp() {
                       key={item.id}
                       type="button"
                       onClick={() => setActiveTab(item.id)}
-                      className={`px-2.5 py-1 rounded-lg text-xs font-mono transition-all cursor-pointer ${
+                      className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all cursor-pointer flex items-center space-x-1.5 ${
                         isActive
-                          ? "bg-[#D4915E] text-black font-extrabold shadow-xs"
+                          ? "bg-[#252F44] text-white font-black border border-[#D4915E] shadow-md ring-1 ring-[#D4915E]/50"
                           : "text-gray-400 hover:text-white hover:bg-[#1C2330]"
                       }`}
                     >
-                      {item.iconSymbol} {item.short}
+                      <span className={isActive ? "text-[#D4915E] font-bold" : "text-gray-400"}>
+                        {item.iconSymbol}
+                      </span>
+                      <span className={isActive ? "text-white font-black" : "font-medium"}>
+                        {item.short}
+                      </span>
                     </button>
                   );
                 })}
@@ -108,11 +113,11 @@ export default function ERPApp() {
                   ↺ Réinitialiser
                 </button>
 
-                {/* Basculer vers Boutique Web & Cruising */}
+                {/* Basculer vers Boutique Web & Cruising (Couleurs inversées sur mobile : fond clair premium, texte sombre) */}
                 <button
                   type="button"
                   onClick={() => setAppMode("boutique")}
-                  className="flex items-center space-x-1.5 sm:space-x-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-lg sm:rounded-xl bg-[#E5BAA3] hover:bg-[#EDC9B5] text-black font-bold sm:font-extrabold text-[11px] sm:text-xs font-mono uppercase tracking-normal sm:tracking-wider shadow-sm transition-all cursor-pointer select-none shrink-0"
+                  className="flex items-center space-x-1.5 sm:space-x-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-lg sm:rounded-xl bg-[#FAF9F6] md:bg-[#E5BAA3] hover:bg-white md:hover:bg-[#EDC9B5] text-[#1A202C] md:text-black border border-[#E5E2DC] md:border-transparent font-bold sm:font-extrabold text-[11px] sm:text-xs font-mono uppercase tracking-normal sm:tracking-wider shadow-xs sm:shadow-sm transition-all cursor-pointer select-none shrink-0"
                   title="Accéder à la boutique grand public et espace cruising"
                 >
                   <svg
@@ -122,7 +127,7 @@ export default function ERPApp() {
                     strokeWidth="2.2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-black"
+                    className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-[#1A202C] md:text-black"
                   >
                     <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
                     <line x1="3" y1="6" x2="21" y2="6" />
