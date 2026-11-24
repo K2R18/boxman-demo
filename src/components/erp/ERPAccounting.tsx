@@ -290,7 +290,7 @@ export default function ERPAccounting() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
             <div className="p-4 rounded bg-[#161A22] border border-[#222733] space-y-2">
-              <span className="text-[#A67C52] font-bold block uppercase text-[10px]">
+              <span className="text-[#F2F2F2] font-bold block uppercase text-[10px]">
                 Boxxman
               </span>
               <div className="text-lg font-bold text-white">12 450,00 € TTC</div>

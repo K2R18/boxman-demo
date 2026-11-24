@@ -77,14 +77,14 @@ export default function ERPSidebar({
                 onClick={() => handleSelect(item.id)}
                 className={`w-full text-left px-3.5 py-3 rounded-xl text-xs font-medium transition-all flex items-center justify-between group cursor-pointer border ${
                   isActive
-                    ? "bg-[#1E2536] text-white border-[#D4915E]/60 shadow-md font-bold"
+                    ? "bg-[#1E2536] text-white border-[#F2F2F2]/60 shadow-md font-bold"
                     : "text-[#8E95A5] hover:text-[#E2E4E9] hover:bg-[#161B26] border-transparent"
                 }`}
               >
                 <div className="flex items-center space-x-3 min-w-0">
                   <span
                     className={`font-mono text-base leading-none shrink-0 transition-colors ${
-                      isActive ? "text-[#D4915E]" : "text-[#9CA3AF] group-hover:text-[#D4915E]"
+                      isActive ? "text-[#F2F2F2]" : "text-[#9CA3AF] group-hover:text-[#F2F2F2]"
                     }`}
                   >
                     {item.iconSymbol}
@@ -99,7 +99,7 @@ export default function ERPSidebar({
                   </div>
                 </div>
                 {item.badge && (
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#D4915E]/15 text-[#D4915E] border border-[#D4915E]/30 shrink-0 ml-1.5 font-bold">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#F2F2F2]/15 text-[#F2F2F2] border border-[#F2F2F2]/30 shrink-0 ml-1.5 font-bold">
                     {item.badge}
                   </span>
                 )}
@@ -122,7 +122,7 @@ export default function ERPSidebar({
                 e.target.value as "Gérant" | "Responsable" | "Vendeur" | "Entrepôt",
               )
             }
-            className="w-full bg-[#161C26] border border-[#2B3548] text-xs text-white rounded-xl px-3 py-2 focus:outline-hidden focus:border-[#D4915E] font-mono cursor-pointer shadow-xs"
+            className="w-full bg-[#161C26] border border-[#2B3548] text-xs text-white rounded-xl px-3 py-2 focus:outline-hidden focus:border-[#F2F2F2] font-mono cursor-pointer shadow-xs"
           >
             <option value="Gérant">Gérant (Accès complet)</option>
             <option value="Responsable">Responsable Boutique</option>
@@ -140,7 +140,7 @@ export default function ERPSidebar({
         <button
           type="button"
           onClick={() => setAppMode("boutique")}
-          className="w-full bg-[#E5BAA3] hover:bg-[#EDC9B5] text-black font-extrabold text-xs uppercase tracking-wider rounded-xl py-2.5 px-3.5 flex items-center justify-between font-mono transition-all shadow-md cursor-pointer"
+          className="w-full bg-[#F2F2F2] hover:bg-[#FFFFFF] text-black font-extrabold text-xs uppercase tracking-wider rounded-xl py-2.5 px-3.5 flex items-center justify-between font-mono transition-all shadow-md cursor-pointer"
         >
           <div className="flex items-center space-x-2">
             <svg
@@ -223,14 +223,14 @@ export default function ERPSidebar({
                   : "text-[#5A6376] hover:text-[#0F172A]"
               }`}
             >
-              <span className={`text-sm font-mono leading-none ${isActive ? "text-[#D4915E] font-bold" : "text-[#475569]"}`}>
+              <span className={`text-sm font-mono leading-none ${isActive ? "text-[#F2F2F2] font-bold" : "text-[#475569]"}`}>
                 {item.iconSymbol}
               </span>
               <span className={`text-[10px] tracking-tight mt-0.5 ${isActive ? "text-white font-black" : "text-[#5A6376] font-semibold"}`}>
                 {item.short}
               </span>
               {isActive && (
-                <span className="w-1.5 h-1.5 rounded-full bg-[#D4915E] mt-0.5" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F2F2F2] mt-0.5" />
               )}
             </button>
           );

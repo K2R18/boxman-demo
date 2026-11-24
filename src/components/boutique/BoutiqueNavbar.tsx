@@ -48,7 +48,7 @@ function PuppyCatchIcon({ phase, image }: { phase: "open" | "bite"; image?: stri
           <circle cx="14" cy="14" r="0.7" fill="#FFFFFF" />
           <circle cx="23" cy="14" r="0.7" fill="#FFFFFF" />
           {/* Museau */}
-          <ellipse cx="18" cy="22" rx="6" ry="5" fill="#D9A68B" />
+          <ellipse cx="18" cy="22" rx="6" ry="5" fill="#F2F2F2" />
           <polygon points="17,20 19,20 18,21.5" fill="#0F141C" />
           {/* Bouche grande ouverte prête à gober */}
           <path d="M13.5 22.5 Q18 30 22.5 22.5 Z" fill="#6B1D1D" />
@@ -73,7 +73,7 @@ function PuppyCatchIcon({ phase, image }: { phase: "open" | "bite"; image?: stri
         <path d="M12 15 Q14 12.5 16 15" stroke="#0F141C" strokeWidth="1.8" fill="none" strokeLinecap="round" />
         <path d="M20 15 Q22 12.5 24 15" stroke="#0F141C" strokeWidth="1.8" fill="none" strokeLinecap="round" />
         {/* Museau */}
-        <ellipse cx="18" cy="21.5" rx="6.5" ry="4.5" fill="#D9A68B" />
+        <ellipse cx="18" cy="21.5" rx="6.5" ry="4.5" fill="#F2F2F2" />
         <polygon points="17,19.5 19,19.5 18,21" fill="#0F141C" />
         {/* Dents blanches bien visibles qui enserrent l'objet */}
         <rect x="13" y="21.5" width="10" height="3" rx="1" fill="#FFFFFF" stroke="#333333" strokeWidth="0.6" />
@@ -497,9 +497,9 @@ export default function BoutiqueNavbar({
   return (
     <>
       {/* ========================================================================= */}
-      {/* 1. NAVBAR SUPÉRIEURE (NON STICKY SUR DESKTOP, STICKY SUR MOBILE) */}
+      {/* 1. NAVBAR SUPÉRIEURE (RELATIVE ET Z-50 SUR DESKTOP POUR PASSER AU-DESSUS DE LA BARRE DES CATÉGORIES) */}
       {/* ========================================================================= */}
-      <header className="sticky top-0 lg:static z-40 lg:z-30 bg-[#0B0D10] text-[#FAF9F6] border-b border-[#1E2430] shadow-md select-none w-full max-w-full overflow-visible">
+      <header className="sticky top-0 lg:relative z-40 lg:z-50 bg-[#0B0D10] text-[#FAF9F6] border-b border-[#1E2430] shadow-md select-none w-full max-w-full overflow-visible">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* VUE DESKTOP (lg:flex) */}
@@ -514,7 +514,7 @@ export default function BoutiqueNavbar({
                 title="DARK-INK PARIS - Accueil"
               >
                 {/* Carré Logo DK */}
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#E5BAA3] to-[#B88265] flex items-center justify-center text-black font-mono font-black text-xs shadow-xs shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#F2F2F2] to-[#B88265] flex items-center justify-center text-black font-mono font-black text-xs shadow-xs shrink-0">
                   DK
                 </div>
 
@@ -523,7 +523,7 @@ export default function BoutiqueNavbar({
                   {/* Ligne 1 : Nom du site en grande taille d'origine (18px) */}
                   <div
                     style={{ fontSize: "18px", lineHeight: "20px" }}
-                    className="font-mono font-black text-white group-hover:text-[#E5BAA3] transition-colors whitespace-nowrap"
+                    className="font-mono font-black text-white group-hover:text-[#F2F2F2] transition-colors whitespace-nowrap"
                   >
                     DARK-INK PARIS
                   </div>
@@ -531,7 +531,7 @@ export default function BoutiqueNavbar({
                   {/* Ligne 2 : Slogan totalement indépendant et minuscule (6.5px) */}
                   <div
                     style={{ fontSize: "6.5px", lineHeight: "10px" }}
-                    className="font-sans font-bold uppercase text-[#E5BAA3] whitespace-nowrap"
+                    className="font-sans font-bold uppercase text-[#F2F2F2] whitespace-nowrap"
                   >
                     KINK ｜ FETISH ｜ EXCLUSIF ｜ DEPUIS 2003
                   </div>
@@ -546,8 +546,8 @@ export default function BoutiqueNavbar({
                 type="button"
                 onClick={() => onNavigate("home")}
                 className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-xl transition-all relative font-mono text-xs font-bold uppercase tracking-wider ${activeSection === "home" || activeSection === "products"
-                  ? "bg-[#E5BAA3] text-black shadow-xs font-extrabold"
-                  : "text-[#D1D5DB] hover:text-white bg-[#1C2230] border border-[#2B3548] hover:border-[#E5BAA3]"
+                  ? "bg-[#F2F2F2] text-black shadow-xs font-extrabold"
+                  : "text-[#D1D5DB] hover:text-white bg-[#1C2230] border border-[#2B3548] hover:border-[#F2F2F2]"
                   }`}
                 title="Boutique & Commander en ligne"
                 aria-label="Commander"
@@ -580,7 +580,7 @@ export default function BoutiqueNavbar({
               >
                 <span>New Millénium</span>
                 {activeSection === "stores" && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#E5BAA3]" />
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#F2F2F2]" />
                 )}
               </button>
 
@@ -595,7 +595,7 @@ export default function BoutiqueNavbar({
               >
                 <span>Boxxman</span>
                 {activeSection === "cruising" && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#E5BAA3]" />
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#F2F2F2]" />
                 )}
               </button>
 
@@ -609,7 +609,7 @@ export default function BoutiqueNavbar({
               >
                 <span>Nous Contacter</span>
                 {activeSection === "contact" && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#E5BAA3]" />
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#F2F2F2]" />
                 )}
               </button>
             </nav>
@@ -623,8 +623,8 @@ export default function BoutiqueNavbar({
                 onClick={toggleB2B}
                 className={`group relative flex items-center space-x-2.5 px-3.5 py-2 rounded-xl text-xs font-mono font-black transition-all duration-300 border-2 cursor-pointer select-none ${
                   user?.isB2B
-                    ? "bg-[#E5BAA3] text-black border-[#E5BAA3] shadow-[0_0_25px_rgba(229,186,163,0.65)] hover:bg-[#EDD0C0]"
-                    : "bg-gradient-to-r from-[#2A1E18] via-[#1E1510] to-[#2A1E18] hover:from-[#382820] hover:to-[#382820] border-[#E5BAA3] text-white shadow-[0_0_15px_rgba(229,186,163,0.35)] hover:shadow-[0_0_20px_rgba(229,186,163,0.55)]"
+                    ? "bg-[#F2F2F2] text-black border-[#F2F2F2] shadow-[0_0_25px_rgba(229,186,163,0.65)] hover:bg-[#EDD0C0]"
+                    : "bg-gradient-to-r from-[#2A1E18] via-[#1E1510] to-[#2A1E18] hover:from-[#382820] hover:to-[#382820] border-[#F2F2F2] text-white shadow-[0_0_15px_rgba(229,186,163,0.35)] hover:shadow-[0_0_20px_rgba(229,186,163,0.55)]"
                 }`}
                 title={
                   user?.isB2B
@@ -642,8 +642,8 @@ export default function BoutiqueNavbar({
                     </>
                   ) : (
                     <>
-                      <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-[#E5BAA3] opacity-60" />
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E5BAA3] shadow-[0_0_8px_#E5BAA3]" />
+                      <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-[#F2F2F2] opacity-60" />
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#F2F2F2] shadow-[0_0_8px_#F2F2F2]" />
                     </>
                   )}
                 </span>
@@ -651,7 +651,7 @@ export default function BoutiqueNavbar({
                 {/* Libellé B2B PRO bien visible */}
                 <span
                   className={`tracking-wider uppercase text-xs font-black ${
-                    user?.isB2B ? "text-black" : "text-white group-hover:text-[#E5BAA3] transition-colors"
+                    user?.isB2B ? "text-black" : "text-white group-hover:text-[#F2F2F2] transition-colors"
                   }`}
                 >
                   B2B PRO
@@ -661,8 +661,8 @@ export default function BoutiqueNavbar({
                 <span
                   className={`text-[10px] font-black px-2 py-0.5 rounded-md shadow-xs transition-all ${
                     user?.isB2B
-                      ? "bg-black text-[#E5BAA3]"
-                      : "bg-[#E5BAA3] text-black font-extrabold group-hover:scale-105"
+                      ? "bg-black text-[#F2F2F2]"
+                      : "bg-[#F2F2F2] text-black font-extrabold group-hover:scale-105"
                   }`}
                 >
                   -30%
@@ -674,22 +674,22 @@ export default function BoutiqueNavbar({
                 <button
                   type="button"
                   onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-                  className="bg-[#1C2230] hover:bg-[#252E40] border border-[#3A4354] hover:border-[#E5BAA3] rounded-xl px-2.5 py-2 flex items-center space-x-1.5 shadow-xs transition-colors"
+                  className="bg-[#1C2230] hover:bg-[#252E40] border border-[#3A4354] hover:border-[#F2F2F2] rounded-xl px-2.5 py-2 flex items-center space-x-1.5 shadow-xs transition-colors"
                   aria-label="Sélectionner la langue"
                   title="Changer de langue"
                 >
                   <FlagIcon lang={language} className="w-6 h-4" />
-                  <span className="text-[9px] text-[#E5BAA3]">▼</span>
+                  <span className="text-[9px] text-[#F2F2F2]">▼</span>
                 </button>
 
                 {/* Menu déroulant avec les drapeaux uniquement */}
                 {langDropdownOpen && (
                   <>
                     <div
-                      className="fixed inset-0 z-40"
+                      className="fixed inset-0 z-[90]"
                       onClick={() => setLangDropdownOpen(false)}
                     />
-                    <div className="absolute right-0 top-full mt-2 bg-[#161C26] border border-[#3A4354] rounded-xl shadow-2xl p-1.5 z-50 animate-in fade-in zoom-in-95 duration-100 flex flex-col space-y-1">
+                    <div className="absolute right-0 top-full mt-2 bg-[#161C26] border border-[#3A4354] rounded-xl shadow-2xl p-1.5 z-[100] animate-in fade-in zoom-in-95 duration-100 flex flex-col space-y-1">
                       {(["fr", "en", "es", "de"] as const).map((code) => (
                         <button
                           key={code}
@@ -699,7 +699,7 @@ export default function BoutiqueNavbar({
                             setLangDropdownOpen(false);
                           }}
                           className={`flex items-center justify-center p-2 rounded-lg transition-colors ${language === code
-                            ? "bg-[#252E40] border border-[#E5BAA3]"
+                            ? "bg-[#252E40] border border-[#F2F2F2]"
                             : "hover:bg-[#1E2536] border border-transparent"
                             }`}
                           title={code === "fr" ? "Français" : code === "en" ? "English" : code === "es" ? "Español" : "Deutsch"}
@@ -717,7 +717,7 @@ export default function BoutiqueNavbar({
                 <button
                   type="button"
                   onClick={() => setAccountMenuOpen(!accountMenuOpen)}
-                  className="w-10 h-10 rounded-xl border border-[#3A4354] bg-[#1C2230] hover:bg-[#252E40] hover:border-[#E5BAA3] flex items-center justify-center text-white transition-all shadow-xs"
+                  className="w-10 h-10 rounded-xl border border-[#3A4354] bg-[#1C2230] hover:bg-[#252E40] hover:border-[#F2F2F2] flex items-center justify-center text-white transition-all shadow-xs"
                   title="Mon Compte & Carte Membre (Puppy)"
                 >
                   <PuppyAccountIcon className="w-6 h-6" />
@@ -727,21 +727,21 @@ export default function BoutiqueNavbar({
                 {accountMenuOpen && (
                   <>
                     <div
-                      className="fixed inset-0 z-40"
+                      className="fixed inset-0 z-[90]"
                       onClick={() => setAccountMenuOpen(false)}
                     />
-                    <div className="absolute right-0 top-full mt-2 w-64 bg-[#161C26] border border-[#3A4354] rounded-2xl shadow-2xl p-4 text-xs z-50 animate-in fade-in zoom-in-95 duration-150">
+                    <div className="absolute right-0 top-full mt-2 w-64 bg-[#161C26] border border-[#3A4354] rounded-2xl shadow-2xl p-4 text-xs z-[100] animate-in fade-in zoom-in-95 duration-150">
                       {user ? (
                         <div className="space-y-3">
                           <div className="flex items-center space-x-3 pb-3 border-b border-[#2B3548]">
-                            <div className="w-10 h-10 rounded-full bg-[#1C2230] border border-[#E5BAA3] flex items-center justify-center text-white shrink-0">
+                            <div className="w-10 h-10 rounded-full bg-[#1C2230] border border-[#F2F2F2] flex items-center justify-center text-white shrink-0">
                               <PuppyAccountIcon className="w-6 h-6" />
                             </div>
                             <div className="truncate">
                               <span className="font-bold text-white block truncate">
                                 {user.name}
                               </span>
-                              <span className="text-[10px] font-mono text-[#E5BAA3] font-semibold block">
+                              <span className="text-[10px] font-mono text-[#F2F2F2] font-semibold block">
                                 {user.isB2B ? "Compte Pro B2B" : `${user.loyaltyPoints} pts de fidélité`}
                               </span>
                             </div>
@@ -772,7 +772,7 @@ export default function BoutiqueNavbar({
                       ) : (
                         <div className="space-y-2.5 font-mono">
                           <div className="pb-2 border-b border-[#2B3548]">
-                            <span className="text-[10px] uppercase font-bold text-[#E5BAA3] tracking-wider block">
+                            <span className="text-[10px] uppercase font-bold text-[#F2F2F2] tracking-wider block">
                               Espace Membre Privé
                             </span>
                             <p className="text-[11px] text-[#D1D5DB] mt-0.5 leading-relaxed">
@@ -787,7 +787,7 @@ export default function BoutiqueNavbar({
                               setAuthModalType("register");
                               setAccountMenuOpen(false);
                             }}
-                            className="w-full text-left py-2.5 px-3 rounded-xl bg-[#E5BAA3] hover:bg-[#EDC9B5] text-black font-extrabold text-xs transition-colors shadow-xs"
+                            className="w-full text-left py-2.5 px-3 rounded-xl bg-[#F2F2F2] hover:bg-[#FFFFFF] text-black font-extrabold text-xs transition-colors shadow-xs"
                           >
                             Créer mon compte
                           </button>
@@ -809,7 +809,7 @@ export default function BoutiqueNavbar({
                               setAuthModalType("forgot");
                               setAccountMenuOpen(false);
                             }}
-                            className="w-full text-left py-1.5 px-3 text-[11px] text-[#E5BAA3] hover:text-white transition-colors"
+                            className="w-full text-left py-1.5 px-3 text-[11px] text-[#F2F2F2] hover:text-white transition-colors"
                           >
                             Mot de passe oublié ?
                           </button>
@@ -824,11 +824,11 @@ export default function BoutiqueNavbar({
               <button
                 type="button"
                 onClick={() => setAppMode("erp")}
-                className="bg-[#1E2536] hover:bg-[#2A344A] border border-[#3A4354] hover:border-[#E5BAA3] text-white text-xs font-mono font-bold px-3.5 py-2 rounded-xl flex items-center space-x-1.5 transition-colors shadow-xs"
+                className="bg-[#1E2536] hover:bg-[#2A344A] border border-[#3A4354] hover:border-[#F2F2F2] text-white text-xs font-mono font-bold px-3.5 py-2 rounded-xl flex items-center space-x-1.5 transition-colors shadow-xs"
                 title="Basculer vers l'ERP Logistique"
               >
                 <span>Accès ERP</span>
-                <span className="text-[#E5BAA3] font-black">↗</span>
+                <span className="text-[#F2F2F2] font-black">↗</span>
               </button>
             </div>
           </div>
@@ -840,7 +840,7 @@ export default function BoutiqueNavbar({
               <button
                 type="button"
                 onClick={() => setDrawerOpen(true)}
-                className="w-9 h-9 rounded-xl border border-[#2B3548] bg-[#141822] flex items-center justify-center text-white transition-colors hover:border-[#E5BAA3]"
+                className="w-9 h-9 rounded-xl border border-[#2B3548] bg-[#141822] flex items-center justify-center text-white transition-colors hover:border-[#F2F2F2]"
                 aria-label="Ouvrir le menu"
               >
                 <span className="text-lg font-bold leading-none">☰</span>
@@ -856,7 +856,7 @@ export default function BoutiqueNavbar({
                 title="DARK-INK PARIS - Accueil"
               >
                 {/* Carré Logo DK */}
-                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#E5BAA3] to-[#B88265] flex items-center justify-center text-black font-mono font-black text-[10px] shadow-xs shrink-0">
+                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#F2F2F2] to-[#B88265] flex items-center justify-center text-black font-mono font-black text-[10px] shadow-xs shrink-0">
                   DK
                 </div>
 
@@ -865,7 +865,7 @@ export default function BoutiqueNavbar({
                   {/* Ligne 1 : Nom du site */}
                   <div
                     style={{ fontSize: "14px", lineHeight: "16px" }}
-                    className="font-mono font-black text-white group-hover:text-[#E5BAA3] transition-colors whitespace-nowrap"
+                    className="font-mono font-black text-white group-hover:text-[#F2F2F2] transition-colors whitespace-nowrap"
                   >
                     DARK-INK PARIS
                   </div>
@@ -873,7 +873,7 @@ export default function BoutiqueNavbar({
                   {/* Ligne 2 : Slogan aligné bord à bord sous le nom (ratio calibré identique desktop) */}
                   <div
                     style={{ fontSize: "5.1px", lineHeight: "8px" }}
-                    className="font-sans font-bold uppercase text-[#E5BAA3] whitespace-nowrap"
+                    className="font-sans font-bold uppercase text-[#F2F2F2] whitespace-nowrap"
                   >
                     KINK ｜ FETISH ｜ EXCLUSIF ｜ DEPUIS 2003
                   </div>
@@ -886,7 +886,7 @@ export default function BoutiqueNavbar({
               <button
                 type="button"
                 onClick={() => setMobileLangTopOpen(!mobileLangTopOpen)}
-                className="w-9 h-9 rounded-xl border border-[#2B3548] bg-[#141822] flex items-center justify-center text-white transition-colors hover:border-[#E5BAA3]"
+                className="w-9 h-9 rounded-xl border border-[#2B3548] bg-[#141822] flex items-center justify-center text-white transition-colors hover:border-[#F2F2F2]"
                 aria-label="Sélectionner la langue"
                 title="Changer de langue"
               >
@@ -909,7 +909,7 @@ export default function BoutiqueNavbar({
                           setMobileLangTopOpen(false);
                         }}
                         className={`flex items-center justify-center p-2 rounded-lg transition-colors ${language === code
-                          ? "bg-[#252E40] border border-[#E5BAA3]"
+                          ? "bg-[#252E40] border border-[#F2F2F2]"
                           : "hover:bg-[#1E2536] border border-transparent"
                           }`}
                         title={code === "fr" ? "Français" : code === "en" ? "English" : code === "es" ? "Español" : "Deutsch"}
@@ -976,14 +976,14 @@ export default function BoutiqueNavbar({
                               }}
                               className={`relative whitespace-nowrap px-1.5 xl:px-2.5 py-1 rounded-full transition-all duration-150 font-sans text-[10px] xl:text-[11px] 2xl:text-[11.5px] tracking-tight shrink-0 cursor-pointer select-none flex items-center gap-1 ${
                                 isCatActive
-                                  ? "bg-[#E5BAA3] text-black font-black shadow-xs"
+                                  ? "bg-[#F2F2F2] text-black font-black shadow-xs"
                                   : isHovered
-                                    ? "bg-[#1F2737] border border-[#E5BAA3] text-white shadow-xs"
+                                    ? "bg-[#1F2737] border border-[#F2F2F2] text-white shadow-xs"
                                     : c.key === "HOT DEALS"
                                       ? "bg-rose-500/10 border border-rose-500/30 text-rose-300 hover:text-white hover:bg-rose-500/20 font-bold"
                                       : c.key === "NEW"
                                         ? "bg-amber-500/10 border border-amber-500/30 text-amber-300 hover:text-white hover:bg-amber-500/20 font-bold"
-                                        : "bg-[#131720]/80 border border-[#232938] text-gray-300 hover:text-white hover:border-[#E5BAA3]/60 hover:bg-[#1A202E] font-medium"
+                                        : "bg-[#131720]/80 border border-[#232938] text-gray-300 hover:text-white hover:border-[#F2F2F2]/60 hover:bg-[#1A202E] font-medium"
                               }`}
                               title={c.key === "ACCUEIL" ? "Accueil" : `Filtrer par ${c.label}`}
                             >
@@ -1020,11 +1020,11 @@ export default function BoutiqueNavbar({
                               >
                                 <div
                                   style={{ backgroundColor: "#0C0F17", opacity: 1 }}
-                                  className="border-2 border-[#3A4354] rounded-2xl shadow-[0_25px_60px_-10px_rgba(0,0,0,0.98)] p-3.5 ring-1 ring-[#E5BAA3]/25"
+                                  className="border-2 border-[#3A4354] rounded-2xl shadow-[0_25px_60px_-10px_rgba(0,0,0,0.98)] p-3.5 ring-1 ring-[#F2F2F2]/25"
                                 >
                                   {/* En-tête du menu */}
                                   <div className="pb-2 mb-2 border-b border-[#252D3D] flex items-center justify-between gap-2">
-                                    <span className="text-[11px] font-mono font-black text-[#E5BAA3] uppercase tracking-wider">
+                                    <span className="text-[11px] font-mono font-black text-[#F2F2F2] uppercase tracking-wider">
                                       {c.label}
                                     </span>
                                     <span className="text-[10px] font-sans text-gray-300 truncate max-w-[190px] text-right font-medium">
@@ -1049,16 +1049,16 @@ export default function BoutiqueNavbar({
                                             onNavigate("products");
                                           }
                                         }}
-                                        className="flex items-center justify-between px-3 py-2 rounded-xl text-left font-sans text-xs text-white hover:text-[#E5BAA3] hover:bg-[#1A2232] transition-colors group/item cursor-pointer"
+                                        className="flex items-center justify-between px-3 py-2 rounded-xl text-left font-sans text-xs text-white hover:text-[#F2F2F2] hover:bg-[#1A2232] transition-colors group/item cursor-pointer"
                                       >
                                         <span className="flex items-center gap-2.5 truncate">
-                                          <span className="w-1.5 h-1.5 rounded-full bg-[#E5BAA3] shrink-0" />
+                                          <span className="w-1.5 h-1.5 rounded-full bg-[#F2F2F2] shrink-0" />
                                           <span className="truncate font-semibold">
                                             {item.label}
                                           </span>
                                         </span>
                                         {item.badge && (
-                                          <span className="text-[9.5px] font-mono font-black px-1.5 py-0.5 rounded bg-[#E5BAA3]/20 text-[#E5BAA3] border border-[#E5BAA3]/40 shrink-0 ml-2">
+                                          <span className="text-[9.5px] font-mono font-black px-1.5 py-0.5 rounded bg-[#F2F2F2]/20 text-[#F2F2F2] border border-[#F2F2F2]/40 shrink-0 ml-2">
                                             {item.badge}
                                           </span>
                                         )}
@@ -1083,7 +1083,7 @@ export default function BoutiqueNavbar({
                                           onNavigate("products");
                                         }
                                       }}
-                                      className="w-full flex items-center justify-between px-3 py-2 rounded-xl bg-[#161D2B] hover:bg-[#E5BAA3] text-[10.5px] font-mono font-bold text-[#E5BAA3] hover:text-black border border-[#2B3548] hover:border-[#E5BAA3] transition-all cursor-pointer shadow-xs"
+                                      className="w-full flex items-center justify-between px-3 py-2 rounded-xl bg-[#161D2B] hover:bg-[#F2F2F2] text-[10.5px] font-mono font-bold text-[#F2F2F2] hover:text-black border border-[#2B3548] hover:border-[#F2F2F2] transition-all cursor-pointer shadow-xs"
                                     >
                                       <span>
                                         {c.key === "ACCUEIL"
@@ -1115,15 +1115,15 @@ export default function BoutiqueNavbar({
                           }}
                           className={`flex items-center gap-1.5 px-2.5 xl:px-3 py-1 rounded-xl border-2 text-[10.5px] xl:text-[11px] font-mono font-bold transition-all shadow-md cursor-pointer select-none shrink-0 ${
                             catalogActiveFiltersCount > 0
-                              ? "bg-[#E5BAA3] text-black border-[#E5BAA3] hover:bg-[#EDD0C0]"
-                              : "bg-[#252E3E] hover:bg-[#323D52] text-[#E5BAA3] hover:text-white border-[#E5BAA3] shadow-[0_0_12px_rgba(229,186,163,0.2)]"
+                              ? "bg-[#F2F2F2] text-black border-[#F2F2F2] hover:bg-[#EDD0C0]"
+                              : "bg-[#252E3E] hover:bg-[#323D52] text-[#F2F2F2] hover:text-white border-[#F2F2F2] shadow-[0_0_12px_rgba(229,186,163,0.2)]"
                           }`}
                           title="Ouvrir les filtres avancés (tailles, diamètres, matériaux, prix, etc.)"
                         >
                           <span className="text-xs">⚙</span>
                           <span>FILTRES</span>
                           {catalogActiveFiltersCount > 0 && (
-                            <span className="w-3.5 h-3.5 rounded-full bg-black text-[#E5BAA3] text-[9px] font-black flex items-center justify-center shrink-0">
+                            <span className="w-3.5 h-3.5 rounded-full bg-black text-[#F2F2F2] text-[9px] font-black flex items-center justify-center shrink-0">
                               {catalogActiveFiltersCount}
                             </span>
                           )}
@@ -1137,10 +1137,10 @@ export default function BoutiqueNavbar({
                           setIsSearchExpanded(true);
                           setTimeout(() => searchInputRef.current?.focus(), 60);
                         }}
-                        className="flex items-center gap-1.5 px-2.5 xl:px-3 py-1 bg-[#252E3E] hover:bg-[#323D52] border-2 border-[#E5BAA3] hover:border-[#F2D6C7] rounded-xl text-[10.5px] xl:text-[11px] font-sans font-bold text-white hover:text-[#E5BAA3] transition-all shadow-md shrink-0 cursor-pointer"
+                        className="flex items-center gap-1.5 px-2.5 xl:px-3 py-1 bg-[#252E3E] hover:bg-[#323D52] border-2 border-[#F2F2F2] hover:border-[#F2D6C7] rounded-xl text-[10.5px] xl:text-[11px] font-sans font-bold text-white hover:text-[#F2F2F2] transition-all shadow-md shrink-0 cursor-pointer"
                         title="Rechercher un produit (masque les catégories pour plein écran)"
                       >
-                        <svg className="w-3.5 h-3.5 text-[#E5BAA3] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <svg className="w-3.5 h-3.5 text-[#F2F2F2] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                         <span className="tracking-normal uppercase text-[10.5px] xl:text-[11px]">Rechercher</span>
@@ -1151,7 +1151,7 @@ export default function BoutiqueNavbar({
                   /* RECHERCHE ALLONGÉE : MASQUE TOUTES LES CATÉGORIES */
                   <div className="w-full flex-1 flex items-center gap-2 sm:gap-3 py-0.5 animate-fadeIn">
                     <div className="relative flex-1 flex items-center">
-                      <span className="absolute left-3 text-sm text-[#E5BAA3] pointer-events-none">
+                      <span className="absolute left-3 text-sm text-[#F2F2F2] pointer-events-none">
                         🔍
                       </span>
                       <input
@@ -1166,7 +1166,7 @@ export default function BoutiqueNavbar({
                             setCatalogSearchQuery("");
                           }
                         }}
-                        className="w-full bg-[#181E2A] border border-[#3A4354] focus:border-[#E5BAA3] rounded-lg pl-9 pr-9 py-1.5 text-xs sm:text-sm font-sans text-white placeholder-[#8E95A5] outline-none shadow-xs transition-colors"
+                        className="w-full bg-[#181E2A] border border-[#3A4354] focus:border-[#F2F2F2] rounded-lg pl-9 pr-9 py-1.5 text-xs sm:text-sm font-sans text-white placeholder-[#8E95A5] outline-none shadow-xs transition-colors"
                         autoFocus
                       />
                       {catalogSearchQuery && (
@@ -1221,7 +1221,7 @@ export default function BoutiqueNavbar({
             </button>
 
             <div className="text-center space-y-1 mb-5">
-              <div className="w-12 h-12 mx-auto rounded-full bg-[#111111] text-[#D9A68B] flex items-center justify-center mb-2">
+              <div className="w-12 h-12 mx-auto rounded-full bg-[#111111] text-[#F2F2F2] flex items-center justify-center mb-2">
                 <PuppyAccountIcon className="w-7 h-7" />
               </div>
               <h3 className="text-base font-bold text-[#111111]">
@@ -1278,7 +1278,7 @@ export default function BoutiqueNavbar({
 
               <button
                 type="submit"
-                className="w-full py-3 rounded-xl bg-[#111111] hover:bg-[#D9A68B] text-white font-bold uppercase tracking-wider text-xs transition-colors mt-2"
+                className="w-full py-3 rounded-xl bg-[#111111] hover:bg-[#F2F2F2] text-black font-bold uppercase tracking-wider text-xs transition-colors mt-2"
               >
                 {authModalType === "login"
                   ? "Se connecter"
@@ -1323,11 +1323,11 @@ export default function BoutiqueNavbar({
           title="Mon Compte"
         >
           <div className="w-6 h-6 flex items-center justify-center">
-            <PuppyAccountIcon className={`w-5 h-5 ${activeSection === "account" ? "text-[#B87333]" : "text-[#64748B]"}`} />
+            <PuppyAccountIcon className={`w-5 h-5 ${activeSection === "account" ? "text-[#F2F2F2]" : "text-[#64748B]"}`} />
           </div>
           <span className="text-[10px] font-mono tracking-tight mt-1">Compte</span>
           {activeSection === "account" && (
-            <span className="w-1.5 h-1.5 rounded-full bg-[#B87333] mt-0.5" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#F2F2F2] mt-0.5" />
           )}
         </button>
 
@@ -1341,14 +1341,14 @@ export default function BoutiqueNavbar({
             }`}
           title="Mes achats & Commandes"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={`w-5 h-5 ${activeSection === "account" ? "text-[#B87333]" : "text-[#64748B]"}`}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={`w-5 h-5 ${activeSection === "account" ? "text-[#F2F2F2]" : "text-[#64748B]"}`}>
             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
             <line x1="3" y1="6" x2="21" y2="6" />
             <path d="M16 10a4 4 0 0 1-8 0" />
           </svg>
           <span className="text-[10px] font-mono tracking-tight mt-1">Mes achats</span>
           {activeSection === "account" && (
-            <span className="w-1.5 h-1.5 rounded-full bg-[#B87333] mt-0.5" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#F2F2F2] mt-0.5" />
           )}
         </button>
 
@@ -1362,12 +1362,12 @@ export default function BoutiqueNavbar({
             }`}
           title="Accueil"
         >
-          <span className={`text-xl leading-none ${activeSection === "home" || activeSection === "products" ? "text-[#D4915E]" : "text-white"}`}>⌂</span>
+          <span className={`text-xl leading-none ${activeSection === "home" || activeSection === "products" ? "text-[#F2F2F2]" : "text-white"}`}>⌂</span>
           <span className="text-[8.5px] font-sans font-semibold tracking-tight leading-none mt-0.5 text-white">
             Accueil
           </span>
           {(activeSection === "home" || activeSection === "products") && (
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D4915E] mt-0.5" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#F2F2F2] mt-0.5" />
           )}
         </button>
 
@@ -1381,10 +1381,10 @@ export default function BoutiqueNavbar({
             }`}
           title="Espace Cruising"
         >
-          <span className={`text-base leading-none ${activeSection === "cruising" ? "text-[#B87333] font-bold" : "text-[#64748B]"}`}>◈</span>
+          <span className={`text-base leading-none ${activeSection === "cruising" ? "text-[#F2F2F2] font-bold" : "text-[#64748B]"}`}>◈</span>
           <span className="text-[10px] font-mono tracking-tight mt-1">Cruising</span>
           {activeSection === "cruising" && (
-            <span className="w-1.5 h-1.5 rounded-full bg-[#B87333] mt-0.5" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#F2F2F2] mt-0.5" />
           )}
         </button>
 
@@ -1413,7 +1413,7 @@ export default function BoutiqueNavbar({
           </div>
           <span className="text-[10px] font-mono tracking-tight mt-1">Panier</span>
           {activeSection === "cart" && (
-            <span className="w-1.5 h-1.5 rounded-full bg-[#B87333] mt-0.5" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#F2F2F2] mt-0.5" />
           )}
         </button>
       </nav>
@@ -1428,8 +1428,8 @@ export default function BoutiqueNavbar({
           type="button"
           onClick={() => onNavigate("cart")}
           className={`flex items-center space-x-3.5 px-5 py-3.5 rounded-full border-2 transition-all duration-300 shadow-2xl cursor-pointer group select-none ${activeSection === "cart"
-              ? "bg-[#E5BAA3] text-black border-[#E5BAA3] shadow-[0_8px_30px_rgba(212,145,94,0.5)] scale-105"
-              : "bg-[#0B0D10]/95 hover:bg-[#161C26] text-white border-[#E5BAA3]/80 hover:border-[#E5BAA3] hover:scale-105 shadow-[0_10px_35px_rgba(0,0,0,0.8)]"
+              ? "bg-[#F2F2F2] text-black border-[#F2F2F2] shadow-[0_8px_30px_rgba(212,145,94,0.5)] scale-105"
+              : "bg-[#0B0D10]/95 hover:bg-[#161C26] text-white border-[#F2F2F2]/80 hover:border-[#F2F2F2] hover:scale-105 shadow-[0_10px_35px_rgba(0,0,0,0.8)]"
             }`}
           title="Accéder au Panier"
         >
@@ -1441,7 +1441,7 @@ export default function BoutiqueNavbar({
             )}
             {totalCartCount > 0 && (
               <span
-                className={`absolute -top-2 -right-2 font-mono text-[10px] font-black px-1.5 py-0.5 rounded-full shadow-xs ${activeSection === "cart" ? "bg-black text-[#E5BAA3]" : "bg-[#E5BAA3] text-black"
+                className={`absolute -top-2 -right-2 font-mono text-[10px] font-black px-1.5 py-0.5 rounded-full shadow-xs ${activeSection === "cart" ? "bg-black text-[#F2F2F2]" : "bg-[#F2F2F2] text-black"
                   }`}
               >
                 {totalCartCount}
@@ -1450,7 +1450,7 @@ export default function BoutiqueNavbar({
           </div>
           <div className="text-left font-mono">
             <span
-              className={`block text-xs font-black tracking-wider uppercase ${activeSection === "cart" ? "text-black" : "text-white group-hover:text-[#E5BAA3]"
+              className={`block text-xs font-black tracking-wider uppercase ${activeSection === "cart" ? "text-black" : "text-white group-hover:text-[#F2F2F2]"
                 }`}
             >
               Panier
@@ -1479,7 +1479,7 @@ export default function BoutiqueNavbar({
           }}
         >
           <div
-            className="w-20 h-20 rounded-2xl overflow-hidden shadow-2xl border-2 border-[#D4915E] bg-black/90 flex items-center justify-center animate-throw-to-cart p-1.5"
+            className="w-20 h-20 rounded-2xl overflow-hidden shadow-2xl border-2 border-[#F2F2F2] bg-black/90 flex items-center justify-center animate-throw-to-cart p-1.5"
             style={{
               "--target-x": `${flyingPhoto.targetX - flyingPhoto.startX}px`,
               "--target-y": `${flyingPhoto.targetY - flyingPhoto.startY}px`,

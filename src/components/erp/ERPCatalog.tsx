@@ -245,7 +245,7 @@ export default function ERPCatalog() {
                   Studio Multilingue & Meta SEO
                 </h3>
                 {/* Fallback anti-censure badge */}
-                <span className="font-mono text-[10px] text-[#D4915E] bg-amber-950/40 border border-amber-900/50 px-2 py-0.5 rounded font-semibold">
+                <span className="font-mono text-[10px] text-[#F2F2F2] bg-amber-950/40 border border-amber-900/50 px-2 py-0.5 rounded font-semibold">
                   Fallback Anti-Censure : Actif
                 </span>
               </div>

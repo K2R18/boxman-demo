@@ -410,7 +410,7 @@ export default function ERPHr() {
           type="button"
           onClick={() => setSelectedView("Planning")}
           className={`flex items-center space-x-2 px-3.5 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${selectedView === "Planning"
-            ? "bg-[#1E2430] text-[#D4915E] border border-[#D4915E]/50 shadow-xs"
+            ? "bg-[#1E2430] text-[#F2F2F2] border border-[#F2F2F2]/50 shadow-xs"
             : "text-[#8E95A5] hover:text-[#E2E4E9] hover:bg-[#161B23] border border-transparent"
             }`}
         >
@@ -422,7 +422,7 @@ export default function ERPHr() {
           type="button"
           onClick={() => setSelectedView("Badgeuse PIN")}
           className={`flex items-center space-x-2 px-3.5 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${selectedView === "Badgeuse PIN"
-            ? "bg-[#1E2430] text-[#D4915E] border border-[#D4915E]/50 shadow-xs"
+            ? "bg-[#1E2430] text-[#F2F2F2] border border-[#F2F2F2]/50 shadow-xs"
             : "text-[#8E95A5] hover:text-[#E2E4E9] hover:bg-[#161B23] border border-transparent"
             }`}
         >
@@ -434,7 +434,7 @@ export default function ERPHr() {
           type="button"
           onClick={() => setSelectedView("Congés")}
           className={`flex items-center space-x-2 px-3.5 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${selectedView === "Congés"
-            ? "bg-[#1E2430] text-[#D4915E] border border-[#D4915E]/50 shadow-xs"
+            ? "bg-[#1E2430] text-[#F2F2F2] border border-[#F2F2F2]/50 shadow-xs"
             : "text-[#8E95A5] hover:text-[#E2E4E9] hover:bg-[#161B23] border border-transparent"
             }`}
         >
@@ -446,7 +446,7 @@ export default function ERPHr() {
           type="button"
           onClick={() => setSelectedView("Matrice")}
           className={`flex items-center space-x-2 px-3.5 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${selectedView === "Matrice"
-            ? "bg-[#1E2430] text-[#D4915E] border border-[#D4915E]/50 shadow-xs"
+            ? "bg-[#1E2430] text-[#F2F2F2] border border-[#F2F2F2]/50 shadow-xs"
             : "text-[#8E95A5] hover:text-[#E2E4E9] hover:bg-[#161B23] border border-transparent"
             }`}
         >
@@ -732,7 +732,7 @@ export default function ERPHr() {
                   {selectedPeriod === "Mensuel" && "Planning Mensuel • Novembre 2026"}
                   {selectedPeriod === "Annuel" && "Bilan Annuel du Temps de Travail • Exercice 2026"}
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1E2430] text-[#D4915E] border border-[#D4915E]/30">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1E2430] text-[#F2F2F2] border border-[#F2F2F2]/30">
                   {selectedPeriod}
                 </span>
               </h2>

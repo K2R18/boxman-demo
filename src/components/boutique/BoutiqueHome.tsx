@@ -316,7 +316,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
             return (
               <div
                 key={item.id}
-                className="group relative bg-[#12161D] rounded-2xl overflow-hidden border border-[#252C37] hover:border-[#E5BAA3]/60 transition-all duration-300 shadow-xl flex flex-col justify-between"
+                className="group relative bg-[#12161D] rounded-2xl overflow-hidden border border-[#252C37] hover:border-[#F2F2F2]/60 transition-all duration-300 shadow-xl flex flex-col justify-between"
               >
                 {/* Zone Photo plein format avec transition en ralenti au début et ralenti à la fin (apparition & disparition progressive) */}
                 <div
@@ -353,7 +353,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
 
                   {/* Badge Marque / Statut en haut à gauche */}
                   <div className="absolute top-3.5 left-3.5 flex items-center gap-1.5 z-10">
-                    <span className="font-mono text-[10px] font-black tracking-widest text-black bg-[#E5BAA3] px-2.5 py-1 rounded-full uppercase shadow-md">
+                    <span className="font-mono text-[10px] font-black tracking-widest text-black bg-[#F2F2F2] px-2.5 py-1 rounded-full uppercase shadow-md">
                       {item.badge}
                     </span>
                   </div>
@@ -372,7 +372,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
                       e.stopPropagation();
                       handlePrevFlagship(cardIdx);
                     }}
-                    className="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-[#E5BAA3] text-white hover:text-black border border-white/20 hover:border-[#E5BAA3] flex items-center justify-center text-sm font-bold opacity-0 group-hover:opacity-100 transition-all cursor-pointer z-20 shadow-lg"
+                    className="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-[#F2F2F2] text-black hover:text-black border border-white/20 hover:border-[#F2F2F2] flex items-center justify-center text-sm font-bold opacity-0 group-hover:opacity-100 transition-all cursor-pointer z-20 shadow-lg"
                     title="Photo précédente"
                   >
                     &lsaquo;
@@ -383,7 +383,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
                       e.stopPropagation();
                       handleNextFlagship(cardIdx);
                     }}
-                    className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-[#E5BAA3] text-white hover:text-black border border-white/20 hover:border-[#E5BAA3] flex items-center justify-center text-sm font-bold opacity-0 group-hover:opacity-100 transition-all cursor-pointer z-20 shadow-lg"
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-[#F2F2F2] text-black hover:text-black border border-white/20 hover:border-[#F2F2F2] flex items-center justify-center text-sm font-bold opacity-0 group-hover:opacity-100 transition-all cursor-pointer z-20 shadow-lg"
                     title="Photo suivante"
                   >
                     &rsaquo;
@@ -404,7 +404,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
                           });
                         }}
                         className={`h-1.5 rounded-full transition-all cursor-pointer ${dotIdx === currentImgIndex
-                          ? "w-5 bg-[#E5BAA3]"
+                          ? "w-5 bg-[#F2F2F2]"
                           : "w-1.5 bg-white/40 hover:bg-white/70"
                           }`}
                         title={`Image ${dotIdx + 1}`}
@@ -416,10 +416,10 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
                 {/* Bloc Contenu & Informations Marque */}
                 <div className="p-4 sm:p-5 flex flex-col justify-between flex-1 gap-3 bg-[#12161D]">
                   <div className="space-y-1">
-                    <span className="font-mono text-[10px] tracking-widest uppercase text-[#E5BAA3] font-bold block">
+                    <span className="font-mono text-[10px] tracking-widest uppercase text-[#F2F2F2] font-bold block">
                       {item.brand}
                     </span>
-                    <h3 className="text-base sm:text-lg font-black text-white tracking-wide group-hover:text-[#E5BAA3] transition-colors line-clamp-1">
+                    <h3 className="text-base sm:text-lg font-black text-white tracking-wide group-hover:text-[#F2F2F2] transition-colors line-clamp-1">
                       {item.title}
                     </h3>
                     <p className="text-xs text-gray-400 font-sans line-clamp-1">
@@ -438,7 +438,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
                         setCatalogCategory(item.linkCategory);
                         onNavigate("products");
                       }}
-                      className="flex-1 bg-[#1C2230] hover:bg-[#E5BAA3] hover:text-black text-white font-mono font-bold text-xs uppercase tracking-wider py-2.5 px-3 rounded-xl border border-[#2B3548] hover:border-[#E5BAA3] transition-all text-center cursor-pointer shadow-xs"
+                      className="flex-1 bg-[#1C2230] hover:bg-[#F2F2F2] hover:text-black text-white font-mono font-bold text-xs uppercase tracking-wider py-2.5 px-3 rounded-xl border border-[#2B3548] hover:border-[#F2F2F2] transition-all text-center cursor-pointer shadow-xs"
                     >
                       Explorer la collection &rarr;
                     </button>
@@ -446,7 +446,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
                       href={item.externalUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-9 h-9 rounded-xl bg-[#161C26] hover:bg-[#1E2536] border border-[#2B3548] text-[#E5BAA3] flex items-center justify-center text-xs font-mono font-black transition-colors shrink-0 shadow-xs"
+                      className="w-9 h-9 rounded-xl bg-[#161C26] hover:bg-[#1E2536] border border-[#2B3548] text-[#F2F2F2] flex items-center justify-center text-xs font-mono font-black transition-colors shrink-0 shadow-xs"
                       title="Voir sur dark-ink.com"
                     >
                       ↗
@@ -465,7 +465,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between pb-4 border-b border-[#252C37]">
           <div className="flex items-center gap-3">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#E5BAA3] animate-pulse" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#F2F2F2] animate-pulse" />
             <h2 className="text-xl sm:text-2xl font-black tracking-wider text-white uppercase font-sans">
               NOUVEAUTÉS
             </h2>
@@ -475,7 +475,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
               type="button"
               onClick={prevSlide}
               aria-label="Précédent"
-              className="w-8 h-8 rounded-full border border-[#252C37] bg-[#161C26] hover:border-[#E5BAA3] hover:text-[#E5BAA3] text-gray-300 flex items-center justify-center text-sm font-bold transition-colors"
+              className="w-8 h-8 rounded-full border border-[#252C37] bg-[#161C26] hover:border-[#F2F2F2] hover:text-[#F2F2F2] text-gray-300 flex items-center justify-center text-sm font-bold transition-colors"
             >
               ←
             </button>
@@ -483,14 +483,14 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
               type="button"
               onClick={nextSlide}
               aria-label="Suivant"
-              className="w-8 h-8 rounded-full border border-[#252C37] bg-[#161C26] hover:border-[#E5BAA3] hover:text-[#E5BAA3] text-gray-300 flex items-center justify-center text-sm font-bold transition-colors"
+              className="w-8 h-8 rounded-full border border-[#252C37] bg-[#161C26] hover:border-[#F2F2F2] hover:text-[#F2F2F2] text-gray-300 flex items-center justify-center text-sm font-bold transition-colors"
             >
               →
             </button>
             <button
               type="button"
               onClick={() => onNavigate("products")}
-              className="text-xs font-semibold uppercase tracking-wider text-[#E5BAA3] hover:underline ml-3 hidden sm:inline-block"
+              className="text-xs font-semibold uppercase tracking-wider text-[#F2F2F2] hover:underline ml-3 hidden sm:inline-block"
             >
               Tout voir ({NOUVEAUTES.length}) →
             </button>
@@ -520,11 +520,11 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
                   setCatalogCategory(targetCat);
                   onNavigate("products");
                 }}
-                className="group bg-[#12161D] border border-[#252C37] hover:border-[#E5BAA3]/60 rounded-xl overflow-hidden flex flex-col justify-between transition-all duration-200 hover:shadow-xl cursor-pointer"
+                className="group bg-[#12161D] border border-[#252C37] hover:border-[#F2F2F2]/60 rounded-xl overflow-hidden flex flex-col justify-between transition-all duration-200 hover:shadow-xl cursor-pointer"
                 title={`Voir dans ${targetCat}`}
               >
                 <div className="relative aspect-square w-full overflow-hidden bg-white/5 p-2">
-                  <span className="absolute top-2 left-2 z-10 text-[9px] font-mono font-bold tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/70 text-[#E5BAA3] border border-[#E5BAA3]/30">
+                  <span className="absolute top-2 left-2 z-10 text-[9px] font-mono font-bold tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/70 text-[#F2F2F2] border border-[#F2F2F2]/30">
                     {item.badge}
                   </span>
                   <img
@@ -540,13 +540,13 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
                     <span className="text-[10px] font-mono text-gray-400 uppercase tracking-wider block">
                       {item.brand}
                     </span>
-                    <h4 className="text-xs font-semibold text-white line-clamp-2 mt-0.5 group-hover:text-[#E5BAA3] transition-colors leading-snug">
+                    <h4 className="text-xs font-semibold text-white line-clamp-2 mt-0.5 group-hover:text-[#F2F2F2] transition-colors leading-snug">
                       {item.name}
                     </h4>
                   </div>
 
                   <div className="pt-2 border-t border-[#1F2530] flex items-center justify-between">
-                    <span className="text-sm font-mono font-bold text-[#E5BAA3]">
+                    <span className="text-sm font-mono font-bold text-[#F2F2F2]">
                       {item.price.toFixed(2).replace(".", ",")} €
                     </span>
                     <button
@@ -556,7 +556,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
                         handleQuickAdd(item.id);
                       }}
                       title="Ajouter au panier"
-                      className="w-7 h-7 rounded bg-[#252C37] hover:bg-[#E5BAA3] hover:text-black text-gray-200 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer"
+                      className="w-7 h-7 rounded bg-[#252C37] hover:bg-[#F2F2F2] hover:text-black text-gray-200 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer"
                     >
                       +
                     </button>
@@ -589,7 +589,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
             <div className="absolute bottom-4 left-4 right-4">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-[#E5BAA3] font-bold">
+              <span className="text-[10px] font-mono tracking-widest uppercase text-[#F2F2F2] font-bold">
                 SILICONE HAUTE DENSITÉ
               </span>
               <h3 className="text-lg font-black text-white tracking-wide mt-0.5">
@@ -617,7 +617,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
             <div className="absolute bottom-4 left-4 right-4">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-[#E5BAA3] font-bold">
+              <span className="text-[10px] font-mono tracking-widest uppercase text-[#F2F2F2] font-bold">
                 EMPREINTE RÉELLE / LIFECAST
               </span>
               <h3 className="text-lg font-black text-white tracking-wide mt-0.5">
@@ -645,7 +645,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
             <div className="absolute bottom-4 left-4 right-4">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-[#E5BAA3] font-bold">
+              <span className="text-[10px] font-mono tracking-widest uppercase text-[#F2F2F2] font-bold">
                 RESTRAINTS & CAGES
               </span>
               <h3 className="text-lg font-black text-white tracking-wide mt-0.5">
@@ -679,7 +679,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent pointer-events-none" />
           <div className="absolute inset-0 p-6 sm:p-10 flex flex-col justify-center max-w-lg">
-            <span className="font-mono text-xs font-bold text-[#E5BAA3] tracking-widest uppercase">
+            <span className="font-mono text-xs font-bold text-[#F2F2F2] tracking-widest uppercase">
               MISTER B • FORMULATION EXCLUSIVE
             </span>
             <h3 className="text-2xl sm:text-3xl font-black text-white mt-1 tracking-wide">
@@ -691,7 +691,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
             <div className="pt-4">
               <button
                 type="button"
-                className="bg-[#E5BAA3] hover:bg-[#C99377] text-black font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-lg shadow-md transition-colors cursor-pointer"
+                className="bg-[#F2F2F2] hover:bg-[#C99377] text-black font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-lg shadow-md transition-colors cursor-pointer"
               >
                 Commander maintenant →
               </button>
@@ -718,7 +718,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
             <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
               <div>
-                <span className="text-[10px] font-mono tracking-widest uppercase text-[#E5BAA3] font-bold">
+                <span className="text-[10px] font-mono tracking-widest uppercase text-[#F2F2F2] font-bold">
                   MR S LEATHER • SAN FRANCISCO
                 </span>
                 <h3 className="text-lg font-black text-white tracking-wide mt-1">
@@ -728,7 +728,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
                   11 coloris néoprène & finitions cuir renforcé.
                 </p>
               </div>
-              <span className="shrink-0 text-xs font-bold text-[#E5BAA3] border border-[#E5BAA3]/40 px-3 py-1.5 rounded-md bg-black/60">
+              <span className="shrink-0 text-xs font-bold text-[#F2F2F2] border border-[#F2F2F2]/40 px-3 py-1.5 rounded-md bg-black/60">
                 Découvrir
               </span>
             </div>
@@ -751,7 +751,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
             <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
               <div>
-                <span className="text-[10px] font-mono tracking-widest uppercase text-[#E5BAA3] font-bold">
+                <span className="text-[10px] font-mono tracking-widest uppercase text-[#F2F2F2] font-bold">
                   PUPPY PLAY • SÉLECTION PRO
                 </span>
                 <h3 className="text-lg font-black text-white tracking-wide mt-1">
@@ -761,7 +761,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
                   16 combinaisons de couleurs personnalisables.
                 </p>
               </div>
-              <span className="shrink-0 text-xs font-bold text-[#E5BAA3] border border-[#E5BAA3]/40 px-3 py-1.5 rounded-md bg-black/60">
+              <span className="shrink-0 text-xs font-bold text-[#F2F2F2] border border-[#F2F2F2]/40 px-3 py-1.5 rounded-md bg-black/60">
                 Découvrir
               </span>
             </div>
@@ -783,7 +783,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
               setCatalogCategory("GARDE ROBE");
               onNavigate("products");
             }}
-            className="text-xs font-semibold uppercase tracking-wider text-[#E5BAA3] hover:underline cursor-pointer"
+            className="text-xs font-semibold uppercase tracking-wider text-[#F2F2F2] hover:underline cursor-pointer"
           >
             Toute la garde-robe →
           </button>
@@ -806,7 +806,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
             <div className="absolute bottom-4 left-4 right-4">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-[#E5BAA3] font-bold">
+              <span className="text-[10px] font-mono tracking-widest uppercase text-[#F2F2F2] font-bold">
                 SAN FRANCISCO
               </span>
               <h3 className="text-base font-black text-white tracking-wide mt-0.5">
@@ -831,7 +831,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
             <div className="absolute bottom-4 left-4 right-4">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-[#E5BAA3] font-bold">
+              <span className="text-[10px] font-mono tracking-widest uppercase text-[#F2F2F2] font-bold">
                 MONTREAL • UNDERWEAR
               </span>
               <h3 className="text-base font-black text-white tracking-wide mt-0.5">
@@ -856,7 +856,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
             <div className="absolute bottom-4 left-4 right-4">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-[#E5BAA3] font-bold">
+              <span className="text-[10px] font-mono tracking-widest uppercase text-[#F2F2F2] font-bold">
                 CALIFORNIA • ATHLETIC
               </span>
               <h3 className="text-base font-black text-white tracking-wide mt-0.5">
@@ -881,7 +881,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
             <div className="absolute bottom-4 left-4 right-4">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-[#E5BAA3] font-bold">
+              <span className="text-[10px] font-mono tracking-widest uppercase text-[#F2F2F2] font-bold">
                 EUROPE • RUBBER & LEATHER
               </span>
               <h3 className="text-base font-black text-white tracking-wide mt-0.5">
@@ -899,7 +899,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
         <div className="bg-[#12161D] border border-[#252C37] rounded-2xl p-6 sm:p-10 space-y-8">
           {/* H1 Authentique */}
           <div className="border-b border-[#252C37] pb-6">
-            <span className="font-mono text-xs uppercase tracking-widest text-[#E5BAA3] font-bold">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#F2F2F2] font-bold">
               MAISON PARISIENNE DE RÉFÉRENCE ｜ DEPUIS 2003
             </span>
             <h1 className="text-2xl sm:text-3xl font-black text-white mt-2 tracking-tight">
@@ -916,7 +916,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
               <h2 className="text-lg sm:text-xl font-black text-white tracking-wide uppercase">
                 DES MARQUES QUI COMPTENT
               </h2>
-              <span className="text-xs font-mono text-[#E5BAA3]">
+              <span className="text-xs font-mono text-[#F2F2F2]">
                 Import directeurs & distributeur officiel
               </span>
             </div>
@@ -929,7 +929,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
               {BRANDS_LIST.map((brand) => (
                 <span
                   key={brand}
-                  className="px-3 py-1.5 rounded-lg bg-[#161C26] border border-[#252C37] text-xs font-semibold text-gray-200 hover:border-[#E5BAA3] hover:text-[#E5BAA3] transition-colors cursor-pointer"
+                  className="px-3 py-1.5 rounded-lg bg-[#161C26] border border-[#252C37] text-xs font-semibold text-gray-200 hover:border-[#F2F2F2] hover:text-[#F2F2F2] transition-colors cursor-pointer"
                   onClick={() => onNavigate("products")}
                 >
                   {brand}
@@ -941,7 +941,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
           {/* 4 Paragraphes Thématiques Officiels */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-[#252C37]">
             <div className="space-y-2">
-              <h3 className="text-sm font-bold text-white uppercase tracking-wider text-[#E5BAA3]">
+              <h3 className="text-sm font-bold text-white uppercase tracking-wider text-[#F2F2F2]">
                 SEX TOYS, COCKRINGS &amp; BDSM GEAR
               </h3>
               <p className="text-xs text-gray-400 leading-relaxed">
@@ -950,7 +950,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-sm font-bold text-white uppercase tracking-wider text-[#E5BAA3]">
+              <h3 className="text-sm font-bold text-white uppercase tracking-wider text-[#F2F2F2]">
                 FETISH WEAR &amp; PUPPY GEAR
               </h3>
               <p className="text-xs text-gray-400 leading-relaxed">
@@ -959,7 +959,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-sm font-bold text-white uppercase tracking-wider text-[#E5BAA3]">
+              <h3 className="text-sm font-bold text-white uppercase tracking-wider text-[#F2F2F2]">
                 POPPERS, LEATHER CLEANERS &amp; LUBRIFIANTS
               </h3>
               <p className="text-xs text-gray-400 leading-relaxed">
@@ -968,7 +968,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-sm font-bold text-white uppercase tracking-wider text-[#E5BAA3]">
+              <h3 className="text-sm font-bold text-white uppercase tracking-wider text-[#F2F2F2]">
                 DARK-INK, À PARIS ET EN LIGNE
               </h3>
               <p className="text-xs text-gray-400 leading-relaxed">
@@ -986,7 +986,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Card 1 */}
           <div className="bg-[#12161D] border border-[#252C37] rounded-xl p-5 flex items-start gap-4">
-            <div className="w-10 h-10 rounded-lg bg-[#E5BAA3]/10 border border-[#E5BAA3]/30 flex items-center justify-center shrink-0 text-[#E5BAA3] font-bold text-lg">
+            <div className="w-10 h-10 rounded-lg bg-[#F2F2F2]/10 border border-[#F2F2F2]/30 flex items-center justify-center shrink-0 text-[#F2F2F2] font-bold text-lg">
               🔒
             </div>
             <div>
@@ -1001,7 +1001,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
 
           {/* Card 2 */}
           <div className="bg-[#12161D] border border-[#252C37] rounded-xl p-5 flex items-start gap-4">
-            <div className="w-10 h-10 rounded-lg bg-[#E5BAA3]/10 border border-[#E5BAA3]/30 flex items-center justify-center shrink-0 text-[#E5BAA3] font-bold text-lg">
+            <div className="w-10 h-10 rounded-lg bg-[#F2F2F2]/10 border border-[#F2F2F2]/30 flex items-center justify-center shrink-0 text-[#F2F2F2] font-bold text-lg">
               📦
             </div>
             <div>
@@ -1016,7 +1016,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
 
           {/* Card 3 */}
           <div className="bg-[#12161D] border border-[#252C37] rounded-xl p-5 flex items-start gap-4">
-            <div className="w-10 h-10 rounded-lg bg-[#E5BAA3]/10 border border-[#E5BAA3]/30 flex items-center justify-center shrink-0 text-[#E5BAA3] font-bold text-lg">
+            <div className="w-10 h-10 rounded-lg bg-[#F2F2F2]/10 border border-[#F2F2F2]/30 flex items-center justify-center shrink-0 text-[#F2F2F2] font-bold text-lg">
               ✨
             </div>
             <div>
@@ -1031,7 +1031,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
 
           {/* Card 4 */}
           <div className="bg-[#12161D] border border-[#252C37] rounded-xl p-5 flex items-start gap-4">
-            <div className="w-10 h-10 rounded-lg bg-[#E5BAA3]/10 border border-[#E5BAA3]/30 flex items-center justify-center shrink-0 text-[#E5BAA3] font-bold text-lg">
+            <div className="w-10 h-10 rounded-lg bg-[#F2F2F2]/10 border border-[#F2F2F2]/30 flex items-center justify-center shrink-0 text-[#F2F2F2] font-bold text-lg">
               💬
             </div>
             <div>

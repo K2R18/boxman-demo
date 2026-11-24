@@ -25,9 +25,9 @@ export default function BoutiqueCruising() {
     <div className="space-y-12 py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Title & Introduction */}
       <section className="text-center max-w-3xl mx-auto space-y-4">
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#E5BAA3]/10 border border-[#E5BAA3]/30">
-          <span className="w-2 h-2 rounded-full bg-[#E5BAA3] animate-pulse" />
-          <span className="font-mono text-xs uppercase tracking-widest text-[#E5BAA3] font-bold">
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#F2F2F2]/10 border border-[#F2F2F2]/30">
+          <span className="w-2 h-2 rounded-full bg-[#F2F2F2] animate-pulse" />
+          <span className="font-mono text-xs uppercase tracking-widest text-[#F2F2F2] font-bold">
             BOUTIQUE GRAND PUBLIC • COMPLEXE CRUISING PRIVATISÉ (18+)
           </span>
         </div>
@@ -49,7 +49,7 @@ export default function BoutiqueCruising() {
       {/* Ambiance & Rules */}
       <section className="bg-white border border-[#E5E2DC] rounded-2xl p-6 sm:p-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-[#555555]">
         <div className="space-y-1.5">
-          <span className="font-mono text-xs font-bold text-[#D9A68B] uppercase block">
+          <span className="font-mono text-xs font-bold text-[#F2F2F2] uppercase block">
             Rez-de-Chaussée • Boutique Grand Public
           </span>
           <p>
@@ -58,7 +58,7 @@ export default function BoutiqueCruising() {
         </div>
 
         <div className="space-y-1.5">
-          <span className="font-mono text-xs font-bold text-[#D9A68B] uppercase block">
+          <span className="font-mono text-xs font-bold text-[#F2F2F2] uppercase block">
             Sous-Sol Voûté • Complexe Cruising 18+
           </span>
           <p>
@@ -67,7 +67,7 @@ export default function BoutiqueCruising() {
         </div>
 
         <div className="space-y-1.5">
-          <span className="font-mono text-xs font-bold text-[#D9A68B] uppercase block">
+          <span className="font-mono text-xs font-bold text-[#F2F2F2] uppercase block">
             Règles &amp; Discrétion Totale
           </span>
           <p>
@@ -87,8 +87,8 @@ export default function BoutiqueCruising() {
               key={offer.id}
               className={`bg-white rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all duration-200 border ${
                 isBestValue
-                  ? "border-[#D9A68B] shadow-md ring-1 ring-[#D9A68B]/20"
-                  : "border-[#E5E2DC] hover:border-[#D9A68B]/50"
+                  ? "border-[#F2F2F2] shadow-md ring-1 ring-[#F2F2F2]/20"
+                  : "border-[#E5E2DC] hover:border-[#F2F2F2]/50"
               }`}
             >
               <div className="space-y-4">
@@ -97,7 +97,7 @@ export default function BoutiqueCruising() {
                     {offer.name}
                   </h3>
                   {isBestValue && (
-                    <span className="font-mono text-[10px] bg-[#D9A68B] text-white px-2 py-0.5 rounded font-bold uppercase">
+                    <span className="font-mono text-[10px] bg-[#F2F2F2] text-black px-2 py-0.5 rounded font-bold uppercase">
                       Économie 20%
                     </span>
                   )}
@@ -126,7 +126,7 @@ export default function BoutiqueCruising() {
                 <button
                   type="button"
                   onClick={() => handleBook(offer, "online")}
-                  className="w-full bg-[#111111] hover:bg-[#D9A68B] text-white text-xs font-semibold uppercase tracking-wider py-3 rounded transition-colors shadow-xs"
+                  className="w-full bg-[#111111] hover:bg-[#F2F2F2] text-black text-xs font-semibold uppercase tracking-wider py-3 rounded transition-colors shadow-xs"
                 >
                   Payer en ligne (CB discrète)
                 </button>
@@ -148,7 +148,7 @@ export default function BoutiqueCruising() {
         <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-4">
           <div className="bg-white border border-[#E5E2DC] rounded-2xl max-w-md w-full p-6 sm:p-8 space-y-6 shadow-2xl text-center">
             <div className="space-y-1">
-              <span className="font-mono text-xs uppercase tracking-widest text-[#D9A68B] font-semibold">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#F2F2F2] font-semibold">
                 RÉSERVATION ENREGISTRÉE AVEC SUCCÈS
               </span>
               <h2 className="text-2xl font-bold text-[#111111]">
@@ -166,7 +166,7 @@ export default function BoutiqueCruising() {
                   <span className="font-bold text-sm text-[#111111]">
                     {confirmedPass.offerName}
                   </span>
-                  <span className="text-[11px] text-[#D9A68B] block font-medium">
+                  <span className="text-[11px] text-[#F2F2F2] block font-medium">
                     Boutique 1 — Marais
                   </span>
                 </div>
@@ -222,7 +222,7 @@ export default function BoutiqueCruising() {
             <button
               type="button"
               onClick={() => setConfirmedPass(null)}
-              className="w-full bg-[#111111] hover:bg-[#D9A68B] text-white text-xs font-semibold uppercase tracking-wider py-3 rounded transition-colors"
+              className="w-full bg-[#111111] hover:bg-[#F2F2F2] text-black text-xs font-semibold uppercase tracking-wider py-3 rounded transition-colors"
             >
               Fermer et conserver mon pass
             </button>

@@ -60,11 +60,11 @@ export default function BoutiqueProductDetail({ product }: { product: Product })
         {/* Barre de Navigation Supérieure & Fil d'Ariane */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E5E2DC] pb-4">
           <nav className="flex items-center gap-2 text-xs font-mono text-[#666666] flex-wrap">
-            <Link href="/" className="hover:text-[#E5BAA3] transition-colors">
+            <Link href="/" className="hover:text-[#F2F2F2] transition-colors">
               Accueil
             </Link>
             <span>&bull;</span>
-            <Link href="/" className="hover:text-[#E5BAA3] transition-colors">
+            <Link href="/" className="hover:text-[#F2F2F2] transition-colors">
               {product.category}
             </Link>
             <span>&bull;</span>
@@ -122,7 +122,7 @@ export default function BoutiqueProductDetail({ product }: { product: Product })
               {/* Badge Compteur */}
               {imagesList.length > 1 && (
                 <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-mono font-bold text-white border border-white/10 flex items-center gap-1.5 shadow-lg">
-                  <span className="w-2 h-2 rounded-full bg-[#E5BAA3]"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#F2F2F2]"></span>
                   <span>{activeImageIndex + 1} / {imagesList.length}</span>
                 </div>
               )}
@@ -162,12 +162,12 @@ export default function BoutiqueProductDetail({ product }: { product: Product })
                       onClick={() => setActiveImageIndex(idx)}
                       className={`relative w-20 h-20 rounded-xl overflow-hidden shrink-0 border-2 transition-all cursor-pointer bg-[#0B0D10] ${
                         isActive
-                          ? "border-[#E5BAA3] ring-2 ring-[#E5BAA3]/40 shadow-md scale-102"
-                          : "border-[#E5E2DC] opacity-70 hover:opacity-100 hover:border-[#D9A68B]"
+                          ? "border-[#F2F2F2] ring-2 ring-[#F2F2F2]/40 shadow-md scale-102"
+                          : "border-[#E5E2DC] opacity-70 hover:opacity-100 hover:border-[#F2F2F2]"
                       }`}
                     >
                       <img src={thumbUrl} alt={`Miniature ${idx + 1}`} className="w-full h-full object-cover" />
-                      {isActive && <div className="absolute inset-0 bg-[#E5BAA3]/10 pointer-events-none" />}
+                      {isActive && <div className="absolute inset-0 bg-[#F2F2F2]/10 pointer-events-none" />}
                     </button>
                   );
                 })}
@@ -182,12 +182,12 @@ export default function BoutiqueProductDetail({ product }: { product: Product })
           <div className="space-y-6">
             <div>
               <div className="flex flex-wrap items-center gap-2 mb-2">
-                <span className="font-mono text-xs font-bold text-[#D9A68B] tracking-wider uppercase">
+                <span className="font-mono text-xs font-bold text-[#F2F2F2] tracking-wider uppercase">
                   {product.brand || "DARKLINE"} &bull; {product.sku} &bull; {product.category}
                 </span>
                 {product.inStockLabel && (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-mono font-bold bg-amber-500/10 text-[#D9A68B] border border-[#D9A68B]/30">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D9A68B] animate-pulse"></span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-mono font-bold bg-amber-500/10 text-[#F2F2F2] border border-[#F2F2F2]/30">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#F2F2F2] animate-pulse"></span>
                     {product.inStockLabel}
                   </span>
                 )}
@@ -203,7 +203,7 @@ export default function BoutiqueProductDetail({ product }: { product: Product })
                 <span className="text-xs text-[#666666] uppercase font-mono block">Prix TTC</span>
                 <span className="font-mono text-3xl font-black text-[#111111]">
                   {finalPrice.toFixed(2)} €{" "}
-                  {user?.isB2B && <span className="text-sm text-[#D9A68B] font-bold block">(Tarif Pro B2B HT)</span>}
+                  {user?.isB2B && <span className="text-sm text-[#F2F2F2] font-bold block">(Tarif Pro B2B HT)</span>}
                 </span>
               </div>
 
@@ -229,7 +229,7 @@ export default function BoutiqueProductDetail({ product }: { product: Product })
                 <button
                   type="button"
                   onClick={handleAddToCart}
-                  className="bg-[#111111] hover:bg-[#D9A68B] text-white font-black text-xs uppercase px-6 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer whitespace-nowrap tracking-wider"
+                  className="bg-[#111111] hover:bg-[#F2F2F2] text-black font-black text-xs uppercase px-6 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer whitespace-nowrap tracking-wider"
                 >
                   Ajouter au panier
                 </button>
@@ -249,13 +249,13 @@ export default function BoutiqueProductDetail({ product }: { product: Product })
             {/* Points Clés & Caractéristiques */}
             {product.features && product.features.length > 0 && (
               <div className="bg-white border border-[#E5E2DC] rounded-2xl p-4 sm:p-5 space-y-3 shadow-2xs">
-                <span className="text-xs font-mono font-bold uppercase text-[#D9A68B] tracking-wider block">
+                <span className="text-xs font-mono font-bold uppercase text-[#F2F2F2] tracking-wider block">
                   Points Clés &amp; Fonctionnalités
                 </span>
                 <ul className="space-y-2 text-xs sm:text-sm text-[#111111]">
                   {product.features.map((feat, i) => (
                     <li key={i} className="flex items-center gap-2.5">
-                      <span className="w-2 h-2 rounded-full bg-[#E5BAA3] shrink-0" />
+                      <span className="w-2 h-2 rounded-full bg-[#F2F2F2] shrink-0" />
                       <span className="font-bold text-[#111111]">{feat}</span>
                     </li>
                   ))}
@@ -265,7 +265,7 @@ export default function BoutiqueProductDetail({ product }: { product: Product })
 
             {/* Fiche Technique Complète */}
             <div className="bg-white border border-[#E5E2DC] rounded-2xl p-4 sm:p-5 space-y-3 shadow-2xs">
-              <span className="text-xs font-mono font-bold uppercase text-[#D9A68B] tracking-wider block">
+              <span className="text-xs font-mono font-bold uppercase text-[#F2F2F2] tracking-wider block">
                 Fiche Technique &amp; Guide des Tailles
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
@@ -283,7 +283,7 @@ export default function BoutiqueProductDetail({ product }: { product: Product })
                 </div>
                 <div>
                   <span className="text-[#777777] block text-[11px]">Conseil de taille :</span>
-                  <span className="font-sans font-bold text-[#D9A68B]">{product.fitAdvice}</span>
+                  <span className="font-sans font-bold text-[#F2F2F2]">{product.fitAdvice}</span>
                 </div>
                 <div>
                   <span className="text-[#777777] block text-[11px]">Dimensions :</span>
@@ -298,7 +298,7 @@ export default function BoutiqueProductDetail({ product }: { product: Product })
 
             {/* Disponibilité & Stocks en Magasin */}
             <div className="bg-white border border-[#E5E2DC] rounded-2xl p-4 sm:p-5 space-y-3 shadow-2xs">
-              <span className="text-xs font-mono font-bold uppercase text-[#D9A68B] tracking-wider block">
+              <span className="text-xs font-mono font-bold uppercase text-[#F2F2F2] tracking-wider block">
                 Disponibilité &amp; Stocks par Établissement
               </span>
               <div className="grid grid-cols-3 gap-2.5 text-xs font-mono">
@@ -346,7 +346,7 @@ export default function BoutiqueProductDetail({ product }: { product: Product })
               <h3 className="font-mono text-sm uppercase tracking-wider text-[#111111] font-bold">
                 ★ Produits Associés dans la Catégorie {product.category}
               </h3>
-              <Link href="/" className="text-xs font-mono text-[#E5BAA3] hover:underline">
+              <Link href="/" className="text-xs font-mono text-[#F2F2F2] hover:underline">
                 Voir tout &rarr;
               </Link>
             </div>
@@ -356,13 +356,13 @@ export default function BoutiqueProductDetail({ product }: { product: Product })
                 <Link
                   key={p.id}
                   href={`/produit/${p.id}`}
-                  className="bg-white border border-[#E5E2DC] hover:border-[#D9A68B] rounded-xl p-3 transition-all text-left shadow-2xs group flex flex-col justify-between"
+                  className="bg-white border border-[#E5E2DC] hover:border-[#F2F2F2] rounded-xl p-3 transition-all text-left shadow-2xs group flex flex-col justify-between"
                 >
                   <div className="aspect-square bg-[#0B0D10] rounded-lg overflow-hidden mb-2 relative">
                     {p.image && p.image !== "/placeholder.jpg" ? (
                       <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                     ) : (
-                      <div className="w-full h-full flex items-center justify-center font-mono text-xs text-[#D9A68B] font-bold">
+                      <div className="w-full h-full flex items-center justify-center font-mono text-xs text-[#F2F2F2] font-bold">
                         {p.sku}
                       </div>
                     )}
@@ -371,7 +371,7 @@ export default function BoutiqueProductDetail({ product }: { product: Product })
                     <span className="font-bold text-xs text-[#111111] block line-clamp-2 leading-tight">
                       {p.name}
                     </span>
-                    <span className="font-mono text-sm font-black text-[#D9A68B] block mt-1">
+                    <span className="font-mono text-sm font-black text-[#F2F2F2] block mt-1">
                       {p.price.toFixed(2)} €
                     </span>
                   </div>

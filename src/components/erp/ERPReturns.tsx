@@ -179,7 +179,7 @@ export default function ERPReturns() {
           <div className="bg-[#12151B] border border-[#2B3342] rounded-xl max-w-xl w-full p-6 space-y-4 shadow-2xl">
             <div className="flex items-center justify-between pb-3 border-b border-[#1F242D]">
               <div>
-                <span className="font-mono text-xs uppercase text-[#A67C52]">
+                <span className="font-mono text-xs uppercase text-[#F2F2F2]">
                   Traitement SAV &amp; Décision
                 </span>
                 <h3 className="text-base font-bold text-white">

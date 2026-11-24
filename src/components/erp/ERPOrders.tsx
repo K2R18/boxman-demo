@@ -767,7 +767,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
             <h1 className="text-xl font-bold tracking-tight text-[#E2E4E9]">
               Commandes &amp; Dispatch
             </h1>
-            <span className="text-[11px] font-mono font-bold bg-[#D4915E]/15 text-[#D4915E] border border-[#D4915E]/30 px-2 py-0.5 rounded">
+            <span className="text-[11px] font-mono font-bold bg-[#F2F2F2]/15 text-[#F2F2F2] border border-[#F2F2F2]/30 px-2 py-0.5 rounded">
               Dark Ink • Boxxman • New Millenium
             </span>
           </div>
@@ -785,7 +785,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
             setNewReceiverName("Boxxman");
             setShowCreateModal(true);
           }}
-          className="bg-[#D4915E] hover:bg-[#c27f4d] text-black font-bold text-xs px-4 py-2.5 rounded shadow-md transition-all flex items-center justify-center space-x-2 self-start md:self-auto"
+          className="bg-[#F2F2F2] hover:bg-[#c27f4d] text-black font-bold text-xs px-4 py-2.5 rounded shadow-md transition-all flex items-center justify-center space-x-2 self-start md:self-auto"
         >
           <span>＋</span>
           <span>Passer une commande</span>
@@ -801,7 +801,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
             <select
               value={filterEmitter}
               onChange={(e) => setFilterEmitter(e.target.value)}
-              className="w-full bg-[#161A22] border border-[#262D3B] text-white rounded px-2.5 py-1.5 text-xs focus:border-[#D4915E] focus:outline-hidden"
+              className="w-full bg-[#161A22] border border-[#262D3B] text-white rounded px-2.5 py-1.5 text-xs focus:border-[#F2F2F2] focus:outline-hidden"
             >
               <option value="all">Tous les émetteurs</option>
               {ALL_PARTIES.map((p) => (
@@ -816,7 +816,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
             <select
               value={filterReceiver}
               onChange={(e) => setFilterReceiver(e.target.value)}
-              className="w-full bg-[#161A22] border border-[#262D3B] text-white rounded px-2.5 py-1.5 text-xs focus:border-[#D4915E] focus:outline-hidden"
+              className="w-full bg-[#161A22] border border-[#262D3B] text-white rounded px-2.5 py-1.5 text-xs focus:border-[#F2F2F2] focus:outline-hidden"
             >
               <option value="all">Tous les destinataires</option>
               {ALL_PARTIES.map((p) => (
@@ -831,7 +831,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="w-full bg-[#161A22] border border-[#262D3B] text-white rounded px-2.5 py-1.5 text-xs focus:border-[#D4915E] focus:outline-hidden"
+              className="w-full bg-[#161A22] border border-[#262D3B] text-white rounded px-2.5 py-1.5 text-xs focus:border-[#F2F2F2] focus:outline-hidden"
             >
               <option value="all">Tous les statuts ({orders.length})</option>
               {ALL_STATUSES.map((st) => (
@@ -846,7 +846,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
             <select
               value={filterConformity}
               onChange={(e) => setFilterConformity(e.target.value)}
-              className="w-full bg-[#161A22] border border-[#262D3B] text-white rounded px-2.5 py-1.5 text-xs focus:border-[#D4915E] focus:outline-hidden"
+              className="w-full bg-[#161A22] border border-[#262D3B] text-white rounded px-2.5 py-1.5 text-xs focus:border-[#F2F2F2] focus:outline-hidden"
             >
               <option value="all">Toutes les réceptions</option>
               <option value="conform_100">100% Conformes</option>
@@ -867,7 +867,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                 if (e.key === "Enter") setActiveSearch(searchInput);
               }}
               placeholder="Recherche par N° commande, réf fournisseur, réf interne, nom tiers..."
-              className="w-full bg-[#161A22] border border-[#262D3B] text-white rounded px-3 py-1.5 text-xs focus:border-[#D4915E] focus:outline-hidden placeholder:text-[#525969]"
+              className="w-full bg-[#161A22] border border-[#262D3B] text-white rounded px-3 py-1.5 text-xs focus:border-[#F2F2F2] focus:outline-hidden placeholder:text-[#525969]"
             />
           </div>
           <button
@@ -929,7 +929,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                     >
                       {/* Réf & Date */}
                       <td className="py-3 px-3 align-top">
-                        <div className="font-mono font-bold text-white group-hover:text-[#D4915E] transition-colors">
+                        <div className="font-mono font-bold text-white group-hover:text-[#F2F2F2] transition-colors">
                           {order.orderNumber}
                         </div>
                         <div className="text-[10px] text-[#6B7280] mt-0.5">{order.date}</div>
@@ -1076,7 +1076,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                   onClick={() => setConsultTab("overview")}
                   className={`py-2 text-xs font-bold border-b-2 text-center transition-all cursor-pointer ${
                     consultTab === "overview"
-                      ? "border-[#D4915E] text-[#D4915E] bg-[#161B23]/50"
+                      ? "border-[#F2F2F2] text-[#F2F2F2] bg-[#161B23]/50"
                       : "border-transparent text-[#8E95A5] hover:text-white hover:bg-[#141820]"
                   }`}
                 >
@@ -1087,13 +1087,13 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                   onClick={() => setConsultTab("po_scan")}
                   className={`py-2 text-xs font-bold border-b-2 text-center transition-all flex items-center justify-center space-x-1.5 cursor-pointer ${
                     consultTab === "po_scan"
-                      ? "border-[#D4915E] text-[#D4915E] bg-[#161B23]/50"
+                      ? "border-[#F2F2F2] text-[#F2F2F2] bg-[#161B23]/50"
                       : "border-transparent text-[#8E95A5] hover:text-white hover:bg-[#141820]"
                   }`}
                 >
                   <span>Scan bon de commande</span>
                   {extractedItems.length > 0 && (
-                    <span className="bg-[#D4915E] text-black text-[10px] font-bold px-1.5 py-0.2 rounded-full">
+                    <span className="bg-[#F2F2F2] text-black text-[10px] font-bold px-1.5 py-0.2 rounded-full">
                       {extractedItems.length}
                     </span>
                   )}
@@ -1103,7 +1103,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                   onClick={() => setConsultTab("ai_studio")}
                   className={`py-2 text-xs font-bold border-b-2 text-center transition-all cursor-pointer ${
                     consultTab === "ai_studio"
-                      ? "border-[#D4915E] text-[#D4915E] bg-[#161B23]/50"
+                      ? "border-[#F2F2F2] text-[#F2F2F2] bg-[#161B23]/50"
                       : "border-transparent text-[#8E95A5] hover:text-white hover:bg-[#141820]"
                   }`}
                 >
@@ -1114,7 +1114,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                   onClick={() => setConsultTab("inspection")}
                   className={`py-2 text-xs font-bold border-b-2 text-center transition-all cursor-pointer ${
                     consultTab === "inspection"
-                      ? "border-[#D4915E] text-[#D4915E] bg-[#161B23]/50"
+                      ? "border-[#F2F2F2] text-[#F2F2F2] bg-[#161B23]/50"
                       : "border-transparent text-[#8E95A5] hover:text-white hover:bg-[#141820]"
                   }`}
                 >
@@ -1259,7 +1259,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                       <button
                         type="button"
                         onClick={handleSaveOrderHeader}
-                        className="bg-[#D4915E] hover:bg-[#c27f4d] text-black font-bold text-xs px-4 py-1.5 rounded transition-all shadow-xs"
+                        className="bg-[#F2F2F2] hover:bg-[#c27f4d] text-black font-bold text-xs px-4 py-1.5 rounded transition-all shadow-xs"
                       >
                         Enregistrer modifications
                       </button>
@@ -1272,7 +1272,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                       <span className="font-bold text-white text-xs">
                         Articles rattachés ({consultOrder.items.length})
                       </span>
-                      <span className="whitespace-nowrap font-mono text-xs text-[#D4915E] font-bold">
+                      <span className="whitespace-nowrap font-mono text-xs text-[#F2F2F2] font-bold">
                         Total TTC :&nbsp;{consultOrder.totalTTC.toFixed(2)}&nbsp;€
                       </span>
                     </div>
@@ -1338,7 +1338,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                       value={poRawText}
                       onChange={(e) => setPoRawText(e.target.value)}
                       placeholder="Collez ici le texte du bon de commande fournisseur..."
-                      className="w-full bg-[#12151B] border border-[#262D3B] text-white rounded p-3 text-xs font-mono focus:border-[#D4915E] focus:outline-hidden"
+                      className="w-full bg-[#12151B] border border-[#262D3B] text-white rounded p-3 text-xs font-mono focus:border-[#F2F2F2] focus:outline-hidden"
                     />
 
                     <div className="flex justify-end">
@@ -1346,7 +1346,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                         type="button"
                         onClick={handleRunOcrExtraction}
                         disabled={isOcrScanning}
-                        className="bg-[#D4915E] hover:bg-[#c27f4d] disabled:opacity-50 text-black font-bold text-xs px-5 py-2 rounded transition-all shadow-md flex items-center space-x-2"
+                        className="bg-[#F2F2F2] hover:bg-[#c27f4d] disabled:opacity-50 text-black font-bold text-xs px-5 py-2 rounded transition-all shadow-md flex items-center space-x-2"
                       >
                         {isOcrScanning ? (
                           <>
@@ -1407,7 +1407,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                                       setSelectedExtractedIndex(idx);
                                       setConsultTab("ai_studio");
                                     }}
-                                    className="text-[10px] bg-[#1F2532] hover:bg-[#2A3345] text-[#D4915E] font-semibold px-2 py-1 rounded border border-[#2F3A4E]"
+                                    className="text-[10px] bg-[#1F2532] hover:bg-[#2A3345] text-[#F2F2F2] font-semibold px-2 py-1 rounded border border-[#2F3A4E]"
                                   >
                                     Éditer
                                   </button>
@@ -1460,7 +1460,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                           setPoRawText(samplePOTexts[0].text);
                           handleRunOcrExtraction();
                         }}
-                        className="bg-[#D4915E] text-black font-bold text-xs px-4 py-2 rounded"
+                        className="bg-[#F2F2F2] text-black font-bold text-xs px-4 py-2 rounded"
                       >
                         ⚡ Charger exemple et extraire
                       </button>
@@ -1480,7 +1480,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                               onClick={() => setSelectedExtractedIndex(idx)}
                               className={`w-full text-left p-2 rounded transition-all text-xs border ${
                                 selectedExtractedIndex === idx
-                                  ? "bg-[#1C2330] border-[#D4915E] text-white"
+                                  ? "bg-[#1C2330] border-[#F2F2F2] text-white"
                                   : "bg-[#161A22] border-transparent text-[#8E95A5] hover:text-white"
                               }`}
                             >
@@ -1517,7 +1517,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                                   onClick={() => setActiveLangTab(lang)}
                                   className={`px-3 py-1 text-xs uppercase font-mono font-bold rounded transition-colors ${
                                     activeLangTab === lang
-                                      ? "bg-[#252B37] text-[#D4915E]"
+                                      ? "bg-[#252B37] text-[#F2F2F2]"
                                       : "text-[#6B7280] hover:text-white"
                                   }`}
                                 >
@@ -1657,7 +1657,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                             name="lossChoice"
                             checked={!isLossMode}
                             onChange={() => setIsLossMode(false)}
-                            className="text-[#D4915E]"
+                            className="text-[#F2F2F2]"
                           />
                           <span className="font-bold text-white">
                             ✓ Valider et dispatcher
@@ -1751,7 +1751,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                           className={`font-bold text-xs px-5 py-2.5 rounded shadow-lg transition-all ${
                             isLossMode
                               ? "bg-rose-700 hover:bg-rose-600 text-white"
-                              : "bg-[#D4915E] hover:bg-[#c27f4d] text-black"
+                              : "bg-[#F2F2F2] hover:bg-[#c27f4d] text-black"
                           }`}
                         >
                           {isLossMode ? "Enregistrer la Perte" : "Valider & Dispatcher"}
@@ -1902,7 +1902,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                         },
                       ]);
                     }}
-                    className="text-[11px] text-[#D4915E] hover:underline font-semibold"
+                    className="text-[11px] text-[#F2F2F2] hover:underline font-semibold"
                   >
                     ＋ Ajouter un article
                   </button>
@@ -1999,7 +1999,7 @@ Réf Fournisseur: MB-COCKRING-TRIPLE | EAN13: 3760089012472 | Triple Anneau Pén
                   </button>
                   <button
                     type="submit"
-                    className="bg-[#D4915E] hover:bg-[#c27f4d] text-black font-bold text-xs px-5 py-2 rounded shadow-md"
+                    className="bg-[#F2F2F2] hover:bg-[#c27f4d] text-black font-bold text-xs px-5 py-2 rounded shadow-md"
                   >
                     Valider la commande
                   </button>

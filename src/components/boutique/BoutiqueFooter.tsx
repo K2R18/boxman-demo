@@ -30,7 +30,7 @@ export default function BoutiqueFooter({ onNavigate }: BoutiqueFooterProps) {
             <p className="text-[#888888] leading-relaxed text-[11px]">
               Maison indépendante de vestiaire fétiche, maroquinerie d&apos;art et club cruising privé depuis 2019.
             </p>
-            <span className="font-mono text-[10px] text-[#D9A68B] block">
+            <span className="font-mono text-[10px] text-[#F2F2F2] block">
               Paris Marais • Paris Bastille
             </span>
           </div>

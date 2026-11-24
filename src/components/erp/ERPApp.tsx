@@ -49,11 +49,11 @@ export default function ERPApp() {
                 <button
                   type="button"
                   onClick={() => setBurgerOpen(true)}
-                  className="flex items-center space-x-2 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl border border-[#2B3548] bg-[#141822] hover:bg-[#1C2330] hover:border-[#D4915E] text-white transition-all shadow-xs cursor-pointer group"
+                  className="flex items-center space-x-2 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl border border-[#2B3548] bg-[#141822] hover:bg-[#1C2330] hover:border-[#F2F2F2] text-white transition-all shadow-xs cursor-pointer group"
                   aria-label="Ouvrir le menu des onglets"
                   title="Ouvrir le menu des onglets"
                 >
-                  <span className="text-lg sm:text-xl font-bold leading-none text-[#D4915E] group-hover:scale-110 transition-transform">
+                  <span className="text-lg sm:text-xl font-bold leading-none text-[#F2F2F2] group-hover:scale-110 transition-transform">
                     ☰
                   </span>
                   <span className="text-xs font-mono font-bold hidden sm:inline text-gray-200">
@@ -63,7 +63,7 @@ export default function ERPApp() {
 
                 {/* Badge Rôle (Desktop & Tablette) */}
                 <div className="hidden sm:flex items-center">
-                  <span className="font-mono text-[10px] font-bold text-[#D4915E] bg-[#D4915E]/10 border border-[#D4915E]/30 px-2.5 py-1 rounded-full">
+                  <span className="font-mono text-[10px] font-bold text-[#F2F2F2] bg-[#F2F2F2]/10 border border-[#F2F2F2]/30 px-2.5 py-1 rounded-full">
                     Rôle : {currentRole}
                   </span>
                 </div>
@@ -80,11 +80,11 @@ export default function ERPApp() {
                       onClick={() => setActiveTab(item.id)}
                       className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all cursor-pointer flex items-center space-x-1.5 ${
                         isActive
-                          ? "bg-[#252F44] text-white font-black border border-[#D4915E] shadow-md ring-1 ring-[#D4915E]/50"
+                          ? "bg-[#252F44] text-white font-black border border-[#F2F2F2] shadow-md ring-1 ring-[#F2F2F2]/50"
                           : "text-gray-400 hover:text-white hover:bg-[#1C2330]"
                       }`}
                     >
-                      <span className={isActive ? "text-[#D4915E] font-bold" : "text-gray-400"}>
+                      <span className={isActive ? "text-[#F2F2F2] font-bold" : "text-gray-400"}>
                         {item.iconSymbol}
                       </span>
                       <span className={isActive ? "text-white font-black" : "font-medium"}>
@@ -111,7 +111,7 @@ export default function ERPApp() {
                 <button
                   type="button"
                   onClick={() => setAppMode("boutique")}
-                  className="flex items-center space-x-1.5 sm:space-x-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-lg sm:rounded-xl bg-[#FAF9F6] md:bg-[#E5BAA3] hover:bg-white md:hover:bg-[#EDC9B5] text-[#1A202C] md:text-black border border-[#E5E2DC] md:border-transparent font-bold sm:font-extrabold text-[11px] sm:text-xs font-mono uppercase tracking-normal sm:tracking-wider shadow-xs sm:shadow-sm transition-all cursor-pointer select-none shrink-0"
+                  className="flex items-center space-x-1.5 sm:space-x-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-lg sm:rounded-xl bg-[#F2F2F2] hover:bg-white text-black border border-[#E5E2DC] md:border-transparent font-bold sm:font-extrabold text-[11px] sm:text-xs font-mono uppercase tracking-normal sm:tracking-wider shadow-xs sm:shadow-sm transition-all cursor-pointer select-none shrink-0"
                   title="Accéder à la boutique grand public et espace cruising"
                 >
                   <svg

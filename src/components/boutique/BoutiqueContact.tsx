@@ -24,7 +24,7 @@ export default function BoutiqueContact() {
     <div className="space-y-12 py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Title */}
       <div className="border-b border-[#E5E2DC] pb-5">
-        <span className="font-mono text-xs uppercase tracking-widest text-[#D9A68B] font-semibold">
+        <span className="font-mono text-xs uppercase tracking-widest text-[#F2F2F2] font-semibold">
           SERVICE CLIENTÈLE & ADRESSES
         </span>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-[#111111] tracking-tight mt-1">
@@ -65,7 +65,7 @@ export default function BoutiqueContact() {
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    className="w-full border border-[#E5E2DC] rounded px-3 py-2 text-xs focus:outline-hidden focus:border-[#D9A68B]"
+                    className="w-full border border-[#E5E2DC] rounded px-3 py-2 text-xs focus:outline-hidden focus:border-[#F2F2F2]"
                   />
                 </div>
 
@@ -80,7 +80,7 @@ export default function BoutiqueContact() {
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
-                    className="w-full border border-[#E5E2DC] rounded px-3 py-2 text-xs focus:outline-hidden focus:border-[#D9A68B]"
+                    className="w-full border border-[#E5E2DC] rounded px-3 py-2 text-xs focus:outline-hidden focus:border-[#F2F2F2]"
                   />
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function BoutiqueContact() {
                   onChange={(e) =>
                     setFormData({ ...formData, subject: e.target.value })
                   }
-                  className="w-full border border-[#E5E2DC] rounded px-3 py-2 text-xs focus:outline-hidden focus:border-[#D9A68B]"
+                  className="w-full border border-[#E5E2DC] rounded px-3 py-2 text-xs focus:outline-hidden focus:border-[#F2F2F2]"
                 >
                   <option value="question">Conseil produit ou disponibilité</option>
                   <option value="cruising">Réservation ou question Cruising</option>
@@ -114,14 +114,14 @@ export default function BoutiqueContact() {
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  className="w-full border border-[#E5E2DC] rounded px-3 py-2 text-xs focus:outline-hidden focus:border-[#D9A68B]"
+                  className="w-full border border-[#E5E2DC] rounded px-3 py-2 text-xs focus:outline-hidden focus:border-[#F2F2F2]"
                   placeholder="Détaillez votre question en toute confiance..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="bg-[#111111] hover:bg-[#D9A68B] text-white text-xs font-semibold uppercase tracking-wider px-6 py-3 rounded transition-colors shadow-xs"
+                className="bg-[#111111] hover:bg-[#F2F2F2] text-black text-xs font-semibold uppercase tracking-wider px-6 py-3 rounded transition-colors shadow-xs"
               >
                 Envoyer le message
               </button>
@@ -135,7 +135,7 @@ export default function BoutiqueContact() {
           <div className="bg-white border border-[#E5E2DC] rounded-2xl p-6 space-y-3">
             <div className="flex justify-between items-start">
               <div>
-                <span className="font-mono text-[10px] text-[#D9A68B] uppercase font-bold tracking-wider">
+                <span className="font-mono text-[10px] text-[#F2F2F2] uppercase font-bold tracking-wider">
                   BOUTIQUE GRAND PUBLIC &amp; CRUISING
                 </span>
                 <h3 className="text-base font-bold text-[#111111] mt-0.5">
@@ -163,7 +163,7 @@ export default function BoutiqueContact() {
           <div className="bg-white border border-[#E5E2DC] rounded-2xl p-6 space-y-3">
             <div className="flex justify-between items-start">
               <div>
-                <span className="font-mono text-[10px] text-[#D9A68B] uppercase font-bold tracking-wider">
+                <span className="font-mono text-[10px] text-[#F2F2F2] uppercase font-bold tracking-wider">
                   GALERIE D&apos;ART &amp; HAUTE FÉTICHE
                 </span>
                 <h3 className="text-base font-bold text-[#111111] mt-0.5">

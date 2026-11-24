@@ -13,7 +13,7 @@ export default function AgeModal() {
     <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
       <div className="bg-[#FFFFFF] border border-[#E5E2DC] rounded-xl max-w-md w-full p-8 text-center space-y-6 shadow-2xl">
         <div className="space-y-2">
-          <span className="font-mono text-xs uppercase tracking-widest text-[#D9A68B] font-semibold">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#F2F2F2] font-semibold">
             ACCÈS RÉSERVÉ AUX PERSONNES MAJEURES
           </span>
           <h2 className="text-2xl font-bold tracking-tight text-[#111111]">
@@ -29,7 +29,7 @@ export default function AgeModal() {
           <button
             type="button"
             onClick={() => setAgeVerified(true)}
-            className="w-full bg-[#111111] hover:bg-[#D9A68B] text-white text-xs font-semibold uppercase tracking-wider py-3.5 rounded transition-colors shadow-xs"
+            className="w-full bg-[#111111] hover:bg-[#F2F2F2] text-black text-xs font-semibold uppercase tracking-wider py-3.5 rounded transition-colors shadow-xs"
           >
             Je certifie avoir 18 ans ou plus — Entrer
           </button>

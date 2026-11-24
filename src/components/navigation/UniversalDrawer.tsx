@@ -204,16 +204,16 @@ export default function UniversalDrawer({
                       type="button"
                       onClick={() => handleSelectErpTab(item.id)}
                       className={`w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-mono font-bold flex items-center justify-between transition-colors ${isActive
-                        ? "bg-[#1E2536] text-white border border-[#D4915E]/60 shadow-sm"
+                        ? "bg-[#1E2536] text-white border border-[#F2F2F2]/60 shadow-sm"
                         : "text-white hover:bg-[#121620]"
                         }`}
                     >
                       <div className="flex items-center space-x-2.5">
-                        <span className="text-[#D4915E] text-sm font-mono">{item.icon}</span>
+                        <span className="text-[#F2F2F2] text-sm font-mono">{item.icon}</span>
                         <span className="text-white font-bold">{item.label}</span>
                       </div>
                       {item.badge && (
-                        <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-[#E5BAA3] border border-amber-500/30">
+                        <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-[#F2F2F2] border border-amber-500/30">
                           {item.badge}
                         </span>
                       )}
@@ -252,7 +252,7 @@ export default function UniversalDrawer({
               <div className="bg-[#121620] border border-[#222938] rounded-2xl p-3 flex items-center justify-between gap-2 shadow-xs">
                 {/* Photo / Avatar Puppy + Prénom uniquement */}
                 <div className="flex items-center space-x-2.5 truncate">
-                  <div className="w-9 h-9 rounded-full bg-[#1C2333] border border-[#D9A68B]/50 flex items-center justify-center text-[#D9A68B] shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-[#1C2333] border border-[#F2F2F2]/50 flex items-center justify-center text-[#F2F2F2] shrink-0">
                     {/* Silhouette masque puppy */}
                     <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
                       <path d="M12 2C8.5 2 6 4.5 6 8c0 2 .8 3.8 2 5.1V18c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-4.9c1.2-1.3 2-3.1 2-5.1 0-3.5-2.5-6-6-6zm-3.5 1L5 6l2.5 1L9 4.5 8.5 3zm7 0l-.5 1.5 1.5 2.5 2.5-1-3.5-3zM12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
@@ -262,7 +262,7 @@ export default function UniversalDrawer({
                     <span className="text-xs font-bold text-white block truncate">
                       {user?.name ? user.name.split(" ")[0] : "Invité"}
                     </span>
-                    <span className="text-[9px] font-mono text-[#D9A68B] block truncate">
+                    <span className="text-[9px] font-mono text-[#F2F2F2] block truncate">
                       {user ? (user.isB2B ? "Compte Pro B2B" : "Membre DARK-INK") : "Non connecté"}
                     </span>
                   </div>
@@ -288,7 +288,7 @@ export default function UniversalDrawer({
 
               {/* SECTION 1 : NAVIGATION PRINCIPALE (SANS ICÔNES, TEXTE AGRANDI & LISIBLE) */}
               <div className="space-y-1.5">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#E5BAA3] font-bold block px-2">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#F2F2F2] font-bold block px-2">
                   NAVIGATION MAISON
                 </span>
                 <nav className="space-y-1.5">
@@ -305,7 +305,7 @@ export default function UniversalDrawer({
                         type="button"
                         onClick={() => handleSelectBoutiqueSec(item.id)}
                         className={`w-full text-left px-4 py-3 rounded-xl flex items-center justify-between transition-colors cursor-pointer ${isActive
-                          ? "bg-[#1E232E] text-white border border-[#E5BAA3]/60 font-bold"
+                          ? "bg-[#1E232E] text-white border border-[#F2F2F2]/60 font-bold"
                           : "text-[#E5E7EB] hover:text-white hover:bg-[#121620]"
                           }`}
                       >
@@ -313,7 +313,7 @@ export default function UniversalDrawer({
                           <span className="block font-black text-sm text-white tracking-wide">{item.label}</span>
                           <span className="block text-xs text-[#9CA3AF] font-sans mt-0.5">{item.sub}</span>
                         </div>
-                        <span className="text-sm font-bold text-[#E5BAA3]">→</span>
+                        <span className="text-sm font-bold text-[#F2F2F2]">→</span>
                       </button>
                     );
                   })}
@@ -323,7 +323,7 @@ export default function UniversalDrawer({
               {/* SECTION 2 : RAYONS DU VESTIAIRE (TEXTE AGRANDI & SECTION RENOMMÉE EN "RAYONS") */}
               <div className="space-y-1.5 pt-2 border-t border-[#1F242D]">
                 <div className="flex items-center justify-between px-2">
-                  <span className="text-xs font-mono uppercase tracking-widest text-[#E5BAA3] font-bold">
+                  <span className="text-xs font-mono uppercase tracking-widest text-[#F2F2F2] font-bold">
                     RAYONS
                   </span>
                   <span className="text-[10px] font-mono text-[#8E95A5]">13 Rayons</span>
@@ -368,27 +368,25 @@ export default function UniversalDrawer({
                           }
                           onClose();
                         }}
-                        className={`w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-sans font-bold flex items-center justify-between transition-colors cursor-pointer ${
-                          isCatActive
-                            ? "bg-[#1C2230] text-[#E5BAA3] border border-[#E5BAA3]/50 font-black"
-                            : c.highlight === "rose"
+                        className={`w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-sans font-bold flex items-center justify-between transition-colors cursor-pointer ${isCatActive
+                          ? "bg-[#1C2230] text-[#F2F2F2] border border-[#F2F2F2]/50 font-black"
+                          : c.highlight === "rose"
                             ? "text-rose-400 hover:bg-[#161B26]"
                             : c.highlight === "amber"
-                            ? "text-amber-400 hover:bg-[#161B26]"
-                            : c.highlight === "gold"
-                            ? "text-[#E5BAA3] hover:bg-[#161B26]"
-                            : "text-[#E5E7EB] hover:text-white hover:bg-[#141822]"
-                        }`}
+                              ? "text-amber-400 hover:bg-[#161B26]"
+                              : c.highlight === "gold"
+                                ? "text-[#F2F2F2] hover:bg-[#161B26]"
+                                : "text-[#E5E7EB] hover:text-white hover:bg-[#141822]"
+                          }`}
                       >
                         <span className="truncate">{c.label}</span>
                         {c.badge && (
                           <span
-                            className={`text-[10px] font-mono px-2 py-0.5 rounded border uppercase font-bold ${
-                              c.highlight === "rose"
-                                ? "bg-rose-950/40 text-rose-300 border-rose-800/40"
-                                : c.highlight === "amber"
+                            className={`text-[10px] font-mono px-2 py-0.5 rounded border uppercase font-bold ${c.highlight === "rose"
+                              ? "bg-rose-950/40 text-rose-300 border-rose-800/40"
+                              : c.highlight === "amber"
                                 ? "bg-amber-950/40 text-amber-300 border-amber-800/40"
-                                : "bg-[#E5BAA3]/20 text-[#E5BAA3] border-[#E5BAA3]/40"
+                                : "bg-[#F2F2F2]/20 text-[#F2F2F2] border-[#F2F2F2]/40"
                               }`}
                           >
                             {c.badge}
@@ -402,7 +400,7 @@ export default function UniversalDrawer({
 
               {/* SECTION 3 : INFORMATIONS & CGV */}
               <div className="space-y-1.5 pt-2 border-t border-[#1F242D]">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#E5BAA3] font-bold block px-2">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#F2F2F2] font-bold block px-2">
                   INFORMATIONS &amp; CGV
                 </span>
                 <div className="space-y-1">
@@ -442,7 +440,7 @@ export default function UniversalDrawer({
                 <button
                   type="button"
                   onClick={toggleB2B}
-                  className="font-bold text-[#E5BAA3] hover:underline cursor-pointer"
+                  className="font-bold text-[#F2F2F2] hover:underline cursor-pointer"
                 >
                   {user?.isB2B ? "Désactiver" : "Activer (-30%)"}
                 </button>
@@ -528,7 +526,7 @@ export default function UniversalDrawer({
               <button
                 type="button"
                 onClick={() => setLegalModal(null)}
-                className="px-4 py-2 rounded-lg bg-[#E5BAA3] text-black font-bold text-xs cursor-pointer"
+                className="px-4 py-2 rounded-lg bg-[#F2F2F2] text-black font-bold text-xs cursor-pointer"
               >
                 J&apos;ai compris
               </button>
@@ -543,7 +541,7 @@ export default function UniversalDrawer({
           <div className="bg-[#12151B] border border-[#2B3342] rounded-2xl max-w-sm w-full p-6 space-y-4 shadow-2xl text-xs font-sans">
             <div className="flex items-center justify-between pb-3 border-b border-[#1F242D]">
               <div>
-                <span className="font-mono text-[10px] uppercase text-[#D9A68B] font-bold">
+                <span className="font-mono text-[10px] uppercase text-[#F2F2F2] font-bold">
                   ESPACE MEMBRE &bull; DARK-INK
                 </span>
                 <h3 className="text-base font-bold text-white mt-0.5">
@@ -597,7 +595,7 @@ export default function UniversalDrawer({
 
               <button
                 type="submit"
-                className="w-full bg-[#D9A68B] hover:bg-[#8F6841] text-white font-bold py-2.5 rounded-lg uppercase tracking-wider transition-colors shadow-xs"
+                className="w-full bg-[#F2F2F2] hover:bg-[#8F6841] text-white font-bold py-2.5 rounded-lg uppercase tracking-wider transition-colors shadow-xs"
               >
                 {authMode === "login" ? "Se Connecter" : "Créer Mon Compte"}
               </button>
@@ -608,7 +606,7 @@ export default function UniversalDrawer({
                 <button
                   type="button"
                   onClick={() => setAuthMode("register")}
-                  className="hover:underline text-[#E5BAA3]"
+                  className="hover:underline text-[#F2F2F2]"
                 >
                   Pas encore de compte ? S&apos;inscrire &rarr;
                 </button>
@@ -616,7 +614,7 @@ export default function UniversalDrawer({
                 <button
                   type="button"
                   onClick={() => setAuthMode("login")}
-                  className="hover:underline text-[#E5BAA3]"
+                  className="hover:underline text-[#F2F2F2]"
                 >
                   Déjà membre ? Se connecter &rarr;
                 </button>

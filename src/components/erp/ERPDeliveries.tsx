@@ -231,7 +231,7 @@ export default function ERPDeliveries() {
                       </td>
                       <td className="py-3 px-3 font-sans">
                         <span className="font-semibold text-white block">{d.productName}</span>
-                        <span className="text-[10px] font-mono text-[#A67C52]">{d.sku}</span>
+                        <span className="text-[10px] font-mono text-[#F2F2F2]">{d.sku}</span>
                       </td>
                       <td className="py-3 px-3 text-[#8E95A5] font-sans">{d.supplier}</td>
                       <td className="py-3 px-3 text-center font-bold text-white">
@@ -295,7 +295,7 @@ export default function ERPDeliveries() {
         <div className="space-y-4">
           <div className="bg-[#12151B] border border-[#1F242D] rounded-lg p-4 flex flex-col sm:flex-row items-center justify-between gap-3">
             <div>
-              <span className="text-[10px] font-mono uppercase text-[#A67C52] font-semibold">
+              <span className="text-[10px] font-mono uppercase text-[#F2F2F2] font-semibold">
                 RÉCEPTION ET MISE EN RAYON / RÉSERVE
               </span>
               <h2 className="text-sm font-bold text-white mt-0.5">

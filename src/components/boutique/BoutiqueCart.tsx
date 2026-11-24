@@ -119,7 +119,7 @@ export default function BoutiqueCart({ onNavigate }: BoutiqueCartProps) {
       {/* Title */}
       <div className="border-b border-[#E5E2DC] pb-4 flex items-center justify-between">
         <div>
-          <span className="font-mono text-xs uppercase tracking-widest text-[#D9A68B] font-semibold">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#F2F2F2] font-semibold">
             PANIER &amp; COMMANDE SÉCURISÉE
           </span>
           <h1 className="text-2xl font-extrabold text-[#111111] mt-0.5">
@@ -129,7 +129,7 @@ export default function BoutiqueCart({ onNavigate }: BoutiqueCartProps) {
         <button
           type="button"
           onClick={() => onNavigate("products")}
-          className="text-xs text-[#D9A68B] hover:underline font-medium"
+          className="text-xs text-[#F2F2F2] hover:underline font-medium"
         >
           &larr; Continuer mes achats
         </button>
@@ -158,7 +158,7 @@ export default function BoutiqueCart({ onNavigate }: BoutiqueCartProps) {
               setIsOrdered(false);
               onNavigate("products");
             }}
-            className="bg-[#111111] hover:bg-[#D9A68B] text-white text-xs font-semibold uppercase tracking-wider px-6 py-2.5 rounded transition-colors"
+            className="bg-[#111111] hover:bg-[#F2F2F2] text-black text-xs font-semibold uppercase tracking-wider px-6 py-2.5 rounded transition-colors"
           >
             Retourner au catalogue
           </button>
@@ -169,7 +169,7 @@ export default function BoutiqueCart({ onNavigate }: BoutiqueCartProps) {
           <button
             type="button"
             onClick={() => onNavigate("products")}
-            className="bg-[#111111] hover:bg-[#D9A68B] text-white text-xs font-semibold uppercase tracking-wider px-6 py-3 rounded transition-colors"
+            className="bg-[#111111] hover:bg-[#F2F2F2] text-black text-xs font-semibold uppercase tracking-wider px-6 py-3 rounded transition-colors"
           >
             Découvrir nos produits
           </button>
@@ -189,7 +189,7 @@ export default function BoutiqueCart({ onNavigate }: BoutiqueCartProps) {
                     className="p-4 flex items-center justify-between text-xs gap-3"
                   >
                     <div className="min-w-0 flex-1">
-                      <span className="font-mono text-[10px] text-[#D9A68B] font-semibold">
+                      <span className="font-mono text-[10px] text-[#F2F2F2] font-semibold">
                         {item.product.sku}
                       </span>
                       <h3 className="font-bold text-[#111111] truncate mt-0.5">
@@ -253,7 +253,7 @@ export default function BoutiqueCart({ onNavigate }: BoutiqueCartProps) {
                     key={key}
                     className={`flex items-center justify-between p-2.5 rounded border cursor-pointer transition-colors ${
                       deliveryMethod === key
-                        ? "bg-[#FAF9F6] border-[#D9A68B] text-[#111111]"
+                        ? "bg-[#FAF9F6] border-[#F2F2F2] text-[#111111]"
                         : "bg-white border-[#E5E2DC] text-[#666666]"
                     }`}
                   >
@@ -263,7 +263,7 @@ export default function BoutiqueCart({ onNavigate }: BoutiqueCartProps) {
                         name="cartDelivery"
                         checked={deliveryMethod === key}
                         onChange={() => setDeliveryMethod(key)}
-                        className="accent-[#D9A68B]"
+                        className="accent-[#F2F2F2]"
                       />
                       <span>{label}</span>
                     </div>
@@ -314,7 +314,7 @@ export default function BoutiqueCart({ onNavigate }: BoutiqueCartProps) {
                 )}
 
                 {user?.isB2B && (
-                  <div className="flex justify-between text-[#D9A68B] font-semibold">
+                  <div className="flex justify-between text-[#F2F2F2] font-semibold">
                     <span>Remise Professionnelle B2B :</span>
                     <span>-30% Inclus</span>
                   </div>
@@ -366,12 +366,12 @@ export default function BoutiqueCart({ onNavigate }: BoutiqueCartProps) {
                         value={promoInput}
                         onChange={(e) => setPromoInput(e.target.value.toUpperCase())}
                         placeholder="Ex: DARK10, VIP20, FREESHIP"
-                        className="flex-1 bg-[#FAF9F6] border border-[#E5E2DC] rounded-lg px-3 py-2 text-xs font-mono uppercase focus:outline-hidden focus:border-[#D9A68B]"
+                        className="flex-1 bg-[#FAF9F6] border border-[#E5E2DC] rounded-lg px-3 py-2 text-xs font-mono uppercase focus:outline-hidden focus:border-[#F2F2F2]"
                       />
                       <button
                         type="button"
                         onClick={() => handleApplyPromo()}
-                        className="bg-[#111111] hover:bg-[#D9A68B] text-white px-4 py-2 rounded-lg text-xs font-semibold uppercase transition-colors cursor-pointer shrink-0"
+                        className="bg-[#111111] hover:bg-[#F2F2F2] text-black px-4 py-2 rounded-lg text-xs font-semibold uppercase transition-colors cursor-pointer shrink-0"
                       >
                         Appliquer
                       </button>
@@ -383,21 +383,21 @@ export default function BoutiqueCart({ onNavigate }: BoutiqueCartProps) {
                       <button
                         type="button"
                         onClick={() => handleApplyPromo("DARK10")}
-                        className="px-2 py-0.5 rounded bg-[#FAF9F6] border border-[#E5E2DC] hover:border-[#D9A68B] text-[#111111] cursor-pointer"
+                        className="px-2 py-0.5 rounded bg-[#FAF9F6] border border-[#E5E2DC] hover:border-[#F2F2F2] text-[#111111] cursor-pointer"
                       >
                         DARK10 (-10%)
                       </button>
                       <button
                         type="button"
                         onClick={() => handleApplyPromo("VIP20")}
-                        className="px-2 py-0.5 rounded bg-[#FAF9F6] border border-[#E5E2DC] hover:border-[#D9A68B] text-[#111111] cursor-pointer"
+                        className="px-2 py-0.5 rounded bg-[#FAF9F6] border border-[#E5E2DC] hover:border-[#F2F2F2] text-[#111111] cursor-pointer"
                       >
                         VIP20 (-20%)
                       </button>
                       <button
                         type="button"
                         onClick={() => handleApplyPromo("FREESHIP")}
-                        className="px-2 py-0.5 rounded bg-[#FAF9F6] border border-[#E5E2DC] hover:border-[#D9A68B] text-[#111111] cursor-pointer"
+                        className="px-2 py-0.5 rounded bg-[#FAF9F6] border border-[#E5E2DC] hover:border-[#F2F2F2] text-[#111111] cursor-pointer"
                       >
                         FREESHIP
                       </button>
@@ -431,7 +431,7 @@ export default function BoutiqueCart({ onNavigate }: BoutiqueCartProps) {
               <button
                 type="button"
                 onClick={handleCheckout}
-                className="w-full bg-[#111111] hover:bg-[#D9A68B] text-white text-xs font-semibold uppercase tracking-wider py-3.5 rounded transition-colors shadow-xs"
+                className="w-full bg-[#111111] hover:bg-[#F2F2F2] text-black text-xs font-semibold uppercase tracking-wider py-3.5 rounded transition-colors shadow-xs"
               >
                 Valider ma commande ({grandTotal.toFixed(2)} €)
               </button>

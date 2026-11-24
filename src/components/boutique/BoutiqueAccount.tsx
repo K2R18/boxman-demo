@@ -31,7 +31,7 @@ export default function BoutiqueAccount() {
     <div className="space-y-12 py-8 max-w-4xl mx-auto px-4 sm:px-6">
       {/* Title */}
       <div className="border-b border-[#E5E2DC] pb-5">
-        <span className="font-mono text-xs uppercase tracking-widest text-[#D9A68B] font-semibold">
+        <span className="font-mono text-xs uppercase tracking-widest text-[#F2F2F2] font-semibold">
           ESPACE CLIENT & CARTE NUMÉRIQUE
         </span>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-[#111111] tracking-tight mt-1">
@@ -62,7 +62,7 @@ export default function BoutiqueAccount() {
                 placeholder="Ex : Alexandre M."
                 value={loginName}
                 onChange={(e) => setLoginName(e.target.value)}
-                className="w-full border border-[#E5E2DC] rounded px-3 py-2 text-xs focus:outline-hidden focus:border-[#D9A68B]"
+                className="w-full border border-[#E5E2DC] rounded px-3 py-2 text-xs focus:outline-hidden focus:border-[#F2F2F2]"
               />
             </div>
 
@@ -75,13 +75,13 @@ export default function BoutiqueAccount() {
                 placeholder="client@domaine.fr"
                 value={loginEmail}
                 onChange={(e) => setLoginEmail(e.target.value)}
-                className="w-full border border-[#E5E2DC] rounded px-3 py-2 text-xs focus:outline-hidden focus:border-[#D9A68B]"
+                className="w-full border border-[#E5E2DC] rounded px-3 py-2 text-xs focus:outline-hidden focus:border-[#F2F2F2]"
               />
             </div>
 
             <button
               type="submit"
-              className="bg-[#111111] hover:bg-[#D9A68B] text-white text-xs font-semibold uppercase tracking-wider px-6 py-2.5 rounded transition-colors"
+              className="bg-[#111111] hover:bg-[#F2F2F2] text-black text-xs font-semibold uppercase tracking-wider px-6 py-2.5 rounded transition-colors"
             >
               Se connecter à mon compte
             </button>
@@ -92,12 +92,12 @@ export default function BoutiqueAccount() {
         <div className="space-y-8">
           {/* Universal Digital Member Card */}
           <div className="bg-linear-to-br from-[#1A1D24] to-[#0F1115] text-white rounded-2xl p-6 sm:p-8 border border-[#2B313E] shadow-xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#D9A68B]/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#F2F2F2]/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 relative z-10">
               <div className="space-y-4">
                 <div>
-                  <span className="font-mono text-xs uppercase tracking-widest text-[#D9A68B] font-semibold block">
+                  <span className="font-mono text-xs uppercase tracking-widest text-[#F2F2F2] font-semibold block">
                     BOXMAN PRIVILÈGE CLUB
                   </span>
                   <h2 className="text-xl sm:text-2xl font-bold tracking-tight mt-0.5">
@@ -114,7 +114,7 @@ export default function BoutiqueAccount() {
                     <span className="text-[10px] text-[#8E95A5] uppercase block">
                       Points Fidélité
                     </span>
-                    <span className="text-2xl font-extrabold text-[#E5BAA3]">
+                    <span className="text-2xl font-extrabold text-[#F2F2F2]">
                       {user.loyaltyPoints} pts
                     </span>
                     <span className="text-[10px] text-[#6B7280] block">
@@ -142,8 +142,8 @@ export default function BoutiqueAccount() {
                   <span className="font-mono text-[9px] uppercase tracking-widest text-center font-bold">
                     BOXMAN<br />PASS
                   </span>
-                  <span className="w-12 h-0.5 bg-[#D9A68B]"></span>
-                  <span className="font-mono text-[8px] text-[#D9A68B]">
+                  <span className="w-12 h-0.5 bg-[#F2F2F2]"></span>
+                  <span className="font-mono text-[8px] text-[#F2F2F2]">
                     SCAN COMPTOIR
                   </span>
                 </div>
@@ -197,7 +197,7 @@ export default function BoutiqueAccount() {
                       </span>
                     </div>
                     <div className="text-right">
-                      <span className="text-base font-bold text-[#D9A68B] block">
+                      <span className="text-base font-bold text-[#F2F2F2] block">
                         {res.price.toFixed(2)} €
                       </span>
                       <span className="text-[10px] text-amber-800 bg-amber-100 px-1.5 py-0.2 rounded font-semibold">
@@ -239,8 +239,8 @@ export default function BoutiqueAccount() {
                 onClick={toggleB2B}
                 className={`shrink-0 px-5 py-2.5 rounded font-mono text-xs font-bold transition-all shadow-xs ${
                   user.isB2B
-                    ? "bg-[#D9A68B] text-white hover:bg-[#A87357]"
-                    : "bg-[#111111] text-white hover:bg-[#D9A68B]"
+                    ? "bg-[#F2F2F2] text-black hover:bg-[#A87357]"
+                    : "bg-[#111111] text-white hover:bg-[#F2F2F2]"
                 }`}
               >
                 {user.isB2B ? "Désactiver le mode Pro" : "Activer le mode Pro (-30%)"}

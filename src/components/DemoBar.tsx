@@ -32,7 +32,7 @@ export default function DemoBar() {
             onClick={() => setAppMode("boutique")}
             className={`px-2.5 py-1 text-xs rounded transition-all font-medium ${
               appMode === "boutique"
-                ? "bg-[#A67C52] text-white shadow-xs"
+                ? "bg-[#F2F2F2] text-black shadow-xs"
                 : "text-[#8E95A5] hover:text-[#C5CAD5]"
             }`}
           >

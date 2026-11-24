@@ -40,7 +40,7 @@ export default function MobileFilterModal({
         {/* Header style Airbnb */}
         <div className="flex items-center justify-between pb-3 border-b border-gray-200 dark:border-[#1F242D]">
           <div className="flex items-center space-x-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#D9A68B]"></span>
+            <span className="w-2.5 h-2.5 rounded-full bg-[#F2F2F2]"></span>
             <h3 className="text-base font-bold font-sans">
               Filtres &amp; Préférences
             </h3>
@@ -126,7 +126,7 @@ export default function MobileFilterModal({
         ) : (
           <div className="space-y-4 text-xs font-mono">
             {/* 1. Mode Espace Pro B2B */}
-            <div className="p-3.5 rounded-xl border border-[#D9A68B]/40 bg-[#FAF9F6] flex items-center justify-between">
+            <div className="p-3.5 rounded-xl border border-[#F2F2F2]/40 bg-[#FAF9F6] flex items-center justify-between">
               <div>
                 <span className="font-bold text-sm text-[#111111] block font-sans">
                   Tarification Espace Pro (-30%)
@@ -140,7 +140,7 @@ export default function MobileFilterModal({
                 onClick={toggleB2B}
                 className={`px-3 py-1.5 rounded-full font-bold text-xs uppercase transition-colors ${
                   user?.isB2B
-                    ? "bg-[#D9A68B] text-white"
+                    ? "bg-[#F2F2F2] text-black"
                     : "bg-white border border-[#CCCCCC] text-[#555555]"
                 }`}
               >
@@ -180,7 +180,7 @@ export default function MobileFilterModal({
                 type="checkbox"
                 checked={inStockOnly}
                 onChange={(e) => setInStockOnly(e.target.checked)}
-                className="w-4 h-4 accent-[#D9A68B]"
+                className="w-4 h-4 accent-[#F2F2F2]"
               />
             </div>
           </div>
@@ -204,7 +204,7 @@ export default function MobileFilterModal({
             className={`px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-colors shadow-xs ${
               mode === "erp"
                 ? "bg-[#5B7A9D] hover:bg-[#4E6B8D] text-white"
-                : "bg-[#111111] hover:bg-[#D9A68B] text-white"
+                : "bg-[#111111] hover:bg-[#F2F2F2] text-black"
             }`}
           >
             Afficher les résultats

@@ -23,9 +23,9 @@ export default function BoutiqueStoresUnified({
     <div className="py-8 sm:py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 text-[#E0E0E0]">
       {/* En-tête exclusif New Millénium */}
       <div className="border-b border-[#252C37] pb-8 space-y-3">
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#E5BAA3]/10 border border-[#E5BAA3]/30">
-          <span className="w-2 h-2 rounded-full bg-[#E5BAA3] animate-pulse" />
-          <span className="font-mono text-xs uppercase tracking-widest text-[#E5BAA3] font-bold">
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#F2F2F2]/10 border border-[#F2F2F2]/30">
+          <span className="w-2 h-2 rounded-full bg-[#F2F2F2] animate-pulse" />
+          <span className="font-mono text-xs uppercase tracking-widest text-[#F2F2F2] font-bold">
             2NDE BOUTIQUE • GALERIE D&apos;ART &amp; HAUTE FÉTICHE
           </span>
         </div>
@@ -43,7 +43,7 @@ export default function BoutiqueStoresUnified({
         <div className="lg:col-span-1 bg-[#12161D] border border-[#252C37] rounded-2xl p-6 sm:p-7 space-y-6">
           <div className="flex items-start justify-between">
             <div>
-              <span className="text-[10px] font-mono tracking-widest uppercase text-[#E5BAA3] font-bold block">
+              <span className="text-[10px] font-mono tracking-widest uppercase text-[#F2F2F2] font-bold block">
                 PARIS 11E • OBERKAMPF
               </span>
               <h2 className="text-xl font-black text-white mt-0.5">
@@ -76,7 +76,7 @@ export default function BoutiqueStoresUnified({
               <p className="text-gray-200 font-sans text-xs mt-0.5">
                 Mardi &ndash; Samedi : 12h00 &ndash; 20h00
               </p>
-              <p className="text-[#E5BAA3] text-[11px] mt-0.5">
+              <p className="text-[#F2F2F2] text-[11px] mt-0.5">
                 Dimanche &amp; Lundi : Salons privés sur rendez-vous
               </p>
             </div>
@@ -95,7 +95,7 @@ export default function BoutiqueStoresUnified({
             <button
               type="button"
               onClick={() => onNavigate("contact")}
-              className="w-full bg-[#161C26] hover:bg-[#E5BAA3] hover:text-black text-white border border-[#252C37] text-xs font-bold py-2.5 rounded-xl transition-all"
+              className="w-full bg-[#161C26] hover:bg-[#F2F2F2] hover:text-black text-white border border-[#252C37] text-xs font-bold py-2.5 rounded-xl transition-all"
             >
               Prendre rendez-vous privé &rarr;
             </button>
@@ -128,9 +128,9 @@ export default function BoutiqueStoresUnified({
           </div>
 
           {/* Click & Collect Banner */}
-          <div className="bg-gradient-to-r from-[#181E2A] to-[#12161D] border border-[#E5BAA3]/40 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="bg-gradient-to-r from-[#181E2A] to-[#12161D] border border-[#F2F2F2]/40 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <span className="text-[10px] font-mono tracking-widest text-[#E5BAA3] uppercase font-bold">
+              <span className="text-[10px] font-mono tracking-widest text-[#F2F2F2] uppercase font-bold">
                 CLICK &amp; COLLECT PRIVILEGE (1H)
               </span>
               <h3 className="text-base font-black text-white mt-1">
@@ -143,7 +143,7 @@ export default function BoutiqueStoresUnified({
             <button
               type="button"
               onClick={() => onNavigate("products")}
-              className="bg-[#E5BAA3] hover:bg-[#C99377] text-black font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl shadow-md transition-colors shrink-0"
+              className="bg-[#F2F2F2] hover:bg-[#C99377] text-black font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl shadow-md transition-colors shrink-0"
             >
               Commander en ligne &rarr;
             </button>
@@ -160,7 +160,7 @@ export default function BoutiqueStoresUnified({
                   Échantillon des articles actuellement exposés au 37 rue Jean-Pierre Timbaud ({newMilleniumProducts.length} pièces disponibles) :
                 </p>
               </div>
-              <span className="text-[11px] font-mono text-[#E5BAA3] font-bold">
+              <span className="text-[11px] font-mono text-[#F2F2F2] font-bold">
                 Stock temps réel
               </span>
             </div>
@@ -176,7 +176,7 @@ export default function BoutiqueStoresUnified({
                     <span className="text-white font-medium truncate mr-2">
                       {p.name}
                     </span>
-                    <span className="shrink-0 font-mono text-[10px] text-[#E5BAA3] font-bold bg-black/50 px-2 py-0.5 rounded border border-[#E5BAA3]/20">
+                    <span className="shrink-0 font-mono text-[10px] text-[#F2F2F2] font-bold bg-black/50 px-2 py-0.5 rounded border border-[#F2F2F2]/20">
                       {qty} en galerie
                     </span>
                   </div>

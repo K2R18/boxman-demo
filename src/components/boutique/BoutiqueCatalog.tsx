@@ -422,7 +422,7 @@ export default function BoutiqueCatalog() {
           <h1 className="text-lg xl:text-xl font-black text-white uppercase tracking-wider shrink-0 whitespace-nowrap">
             {currentMeta.title}
           </h1>
-          <span className="text-[#E5BAA3] font-black text-base shrink-0 select-none">
+          <span className="text-[#F2F2F2] font-black text-base shrink-0 select-none">
             —
           </span>
           <p className="text-xs xl:text-sm text-gray-300 truncate font-sans whitespace-nowrap max-w-4xl">
@@ -450,7 +450,7 @@ export default function BoutiqueCatalog() {
                   className="px-2.5 py-1.5 rounded-lg border border-[#3A4354] bg-[#161C26] hover:bg-[#222B3D] text-gray-200 hover:text-white text-xs font-mono font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
                   title="Rechercher un produit..."
                 >
-                  <svg className="w-3.5 h-3.5 text-[#E5BAA3]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <svg className="w-3.5 h-3.5 text-[#F2F2F2]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                   <span>Rechercher</span>
@@ -467,7 +467,7 @@ export default function BoutiqueCatalog() {
                 >
                   <span>⚙ FILTRES</span>
                   {activeFiltersCount > 0 && (
-                    <span className="w-3.5 h-3.5 rounded-full bg-[#E5BAA3] text-black text-[9px] font-bold flex items-center justify-center">
+                    <span className="w-3.5 h-3.5 rounded-full bg-[#F2F2F2] text-black text-[9px] font-bold flex items-center justify-center">
                       {activeFiltersCount}
                     </span>
                   )}
@@ -478,7 +478,7 @@ export default function BoutiqueCatalog() {
             /* ÉTAT AGRANDI : LE CHAMP RECHERCHE S'ALLONGE SUR TOUTE LA LARGEUR À GAUCHE DE FILTRES */
             <div className="flex items-center gap-2 w-full animate-fadeIn">
               <div className="relative flex-1 flex items-center min-w-0">
-                <span className="absolute left-2.5 text-xs text-[#E5BAA3] pointer-events-none">
+                <span className="absolute left-2.5 text-xs text-[#F2F2F2] pointer-events-none">
                   🔍
                 </span>
                 <input
@@ -497,7 +497,7 @@ export default function BoutiqueCatalog() {
                       setCatalogSearchQuery("");
                     }
                   }}
-                  className="w-full bg-[#161C26] border border-[#3A4354] focus:border-[#E5BAA3] rounded-lg pl-8 pr-7 py-2 text-xs font-mono text-white placeholder-[#8E95A5] outline-none shadow-xs transition-colors"
+                  className="w-full bg-[#161C26] border border-[#3A4354] focus:border-[#F2F2F2] rounded-lg pl-8 pr-7 py-2 text-xs font-mono text-white placeholder-[#8E95A5] outline-none shadow-xs transition-colors"
                   autoFocus
                 />
                 {effectiveSearch && (
@@ -541,7 +541,7 @@ export default function BoutiqueCatalog() {
               >
                 <span>⚙ FILTRES</span>
                 {activeFiltersCount > 0 && (
-                  <span className="w-3.5 h-3.5 rounded-full bg-[#E5BAA3] text-black text-[9px] font-bold flex items-center justify-center">
+                  <span className="w-3.5 h-3.5 rounded-full bg-[#F2F2F2] text-black text-[9px] font-bold flex items-center justify-center">
                     {activeFiltersCount}
                   </span>
                 )}
@@ -557,7 +557,7 @@ export default function BoutiqueCatalog() {
         </div>
 
         {user?.isB2B && (
-          <div className="inline-block mt-2 bg-[#E5BAA3]/10 border border-[#E5BAA3]/30 px-3.5 py-1 rounded-full text-xs font-mono text-[#E5BAA3] font-semibold">
+          <div className="inline-block mt-2 bg-[#F2F2F2]/10 border border-[#F2F2F2]/30 px-3.5 py-1 rounded-full text-xs font-mono text-[#F2F2F2] font-semibold">
             Tarifs Professionnels B2B : -30% remisé sur l&apos;ensemble du vestiaire
           </div>
         )}
@@ -588,7 +588,7 @@ export default function BoutiqueCatalog() {
           <button
             type="button"
             onClick={resetAllFilters}
-            className="text-[#D9A68B] hover:underline font-bold ml-2"
+            className="text-[#F2F2F2] hover:underline font-bold ml-2"
           >
             Réinitialiser tout
           </button>
@@ -603,7 +603,7 @@ export default function BoutiqueCatalog() {
             <div className="bg-[#111111] text-white p-4 flex items-center justify-between border-b border-[#252525]">
               <div className="flex items-center space-x-2">
                 <span className="text-base font-bold">⚙ Tous les filtres de recherche</span>
-                <span className="text-xs font-mono text-[#D9A68B]">
+                <span className="text-xs font-mono text-[#F2F2F2]">
                   ({filteredProducts.length} articles correspondants)
                 </span>
               </div>
@@ -623,7 +623,7 @@ export default function BoutiqueCatalog() {
             <div className="p-6 overflow-y-auto space-y-6 text-xs text-[#111111]">
               {/* 1. Tailles (Cases à cocher) */}
               <div className="space-y-2">
-                <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#D9A68B] block">
+                <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#F2F2F2] block">
                   Tailles disponibles
                 </span>
                 <div className="grid grid-cols-4 sm:grid-cols-7 gap-2">
@@ -654,7 +654,7 @@ export default function BoutiqueCatalog() {
 
               {/* 2. Diamètres (Pour harnais, anneaux, plugs) */}
               <div className="space-y-2">
-                <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#D9A68B] block">
+                <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#F2F2F2] block">
                   Diamètre &amp; Calibre
                 </span>
                 <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
@@ -685,7 +685,7 @@ export default function BoutiqueCatalog() {
 
               {/* 3. Couleurs */}
               <div className="space-y-2">
-                <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#D9A68B] block">
+                <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#F2F2F2] block">
                   Couleurs
                 </span>
                 <div className="flex flex-wrap gap-2">
@@ -716,7 +716,7 @@ export default function BoutiqueCatalog() {
 
               {/* 4. Matériaux de sellerie & confection */}
               <div className="space-y-2">
-                <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#D9A68B] block">
+                <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#F2F2F2] block">
                   Matériau &amp; Finition
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -726,7 +726,7 @@ export default function BoutiqueCatalog() {
                       <label
                         key={m}
                         className={`flex items-center space-x-2 p-2.5 rounded-lg border cursor-pointer transition-colors ${checked
-                          ? "bg-white border-[#D9A68B] shadow-2xs"
+                          ? "bg-white border-[#F2F2F2] shadow-2xs"
                           : "bg-white/60 border-[#E5E2DC] hover:bg-white"
                           }`}
                       >
@@ -740,7 +740,7 @@ export default function BoutiqueCatalog() {
                               setSelectedMaterials([...selectedMaterials, m]);
                             }
                           }}
-                          className="accent-[#D9A68B] rounded"
+                          className="accent-[#F2F2F2] rounded"
                         />
                         <span className="text-xs">{m}</span>
                       </label>
@@ -752,7 +752,7 @@ export default function BoutiqueCatalog() {
               {/* 5. Fourchette de Prix (Saisie manuelle + range) */}
               <div className="space-y-3 bg-white p-4 rounded-xl border border-[#E5E2DC]">
                 <div className="flex justify-between items-center">
-                  <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#D9A68B]">
+                  <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#F2F2F2]">
                     Fourchette de Prix
                   </span>
                   <span className="font-mono font-bold text-xs text-[#111111]">
@@ -789,14 +789,14 @@ export default function BoutiqueCatalog() {
                   max={300}
                   value={priceMax}
                   onChange={(e) => setPriceMax(Number(e.target.value))}
-                  className="w-full accent-[#D9A68B] cursor-pointer"
+                  className="w-full accent-[#F2F2F2] cursor-pointer"
                 />
               </div>
 
               {/* 6. Tri & Disponibilité */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#D9A68B] block mb-1.5">
+                  <label className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#F2F2F2] block mb-1.5">
                     Trier les résultats par
                   </label>
                   <select
@@ -817,7 +817,7 @@ export default function BoutiqueCatalog() {
                       type="checkbox"
                       checked={onlyInStock}
                       onChange={(e) => setOnlyInStock(e.target.checked)}
-                      className="accent-[#D9A68B]"
+                      className="accent-[#F2F2F2]"
                     />
                     <span>Uniquement les articles en stock immédiat</span>
                   </label>
@@ -826,7 +826,7 @@ export default function BoutiqueCatalog() {
                       type="checkbox"
                       checked={onlyPromos}
                       onChange={(e) => setOnlyPromos(e.target.checked)}
-                      className="accent-[#D9A68B]"
+                      className="accent-[#F2F2F2]"
                     />
                     <span>Uniquement les offres et tarifs remisés</span>
                   </label>
@@ -850,7 +850,7 @@ export default function BoutiqueCatalog() {
                   setShowMoreFilters(false);
                   setCatalogShowMoreModal(false);
                 }}
-                className="bg-[#111111] hover:bg-[#D9A68B] text-white font-bold text-xs uppercase tracking-wider py-3 px-8 rounded-xl shadow-md transition-all font-mono"
+                className="bg-[#111111] hover:bg-[#F2F2F2] text-black font-bold text-xs uppercase tracking-wider py-3 px-8 rounded-xl shadow-md transition-all font-mono"
               >
                 VALIDER ({filteredProducts.length} ARTICLES)
               </button>
@@ -891,7 +891,7 @@ export default function BoutiqueCatalog() {
           return (
             <div
               key={p.id}
-              className="bg-white border border-[#E5E2DC] hover:border-[#D9A68B]/60 rounded-xl overflow-hidden transition-all duration-200 flex flex-col justify-between group shadow-2xs"
+              className="bg-white border border-[#E5E2DC] hover:border-[#F2F2F2]/60 rounded-xl overflow-hidden transition-all duration-200 flex flex-col justify-between group shadow-2xs"
             >
               <div>
                 {/* Visual Box with Authentic Product Photo filling 100% of the frame */}
@@ -908,13 +908,13 @@ export default function BoutiqueCatalog() {
                     />
                   ) : (
                     <div className="w-full h-full flex flex-col items-center justify-center text-center p-4">
-                      <span className="font-mono text-xs font-bold text-[#E5BAA3] tracking-wider uppercase block">
+                      <span className="font-mono text-xs font-bold text-[#F2F2F2] tracking-wider uppercase block">
                         {p.sku}
                       </span>
                       <span className="text-xs text-gray-400 font-mono block mt-1">
                         {p.category}
                       </span>
-                      <span className="text-[11px] text-[#E5BAA3] underline font-medium mt-1 inline-block">
+                      <span className="text-[11px] text-[#F2F2F2] underline font-medium mt-1 inline-block">
                         Fiche technique &amp; guide tailles &rarr;
                       </span>
                     </div>
@@ -926,7 +926,7 @@ export default function BoutiqueCatalog() {
                   </span>
 
                   {user?.isB2B && (
-                    <span className="absolute top-2.5 right-2.5 bg-[#E5BAA3] text-black text-[10px] font-mono font-black px-2 py-0.5 rounded shadow-xs">
+                    <span className="absolute top-2.5 right-2.5 bg-[#F2F2F2] text-black text-[10px] font-mono font-black px-2 py-0.5 rounded shadow-xs">
                       -30% PRO
                     </span>
                   )}
@@ -936,7 +936,7 @@ export default function BoutiqueCatalog() {
                 <div className="p-3.5 pb-2">
                   <h3
                     onClick={() => openProductModal(p)}
-                    className="font-bold text-xs sm:text-sm text-[#111111] hover:text-[#E5BAA3] cursor-pointer transition-colors leading-snug line-clamp-2 min-h-[2.5rem]"
+                    className="font-bold text-xs sm:text-sm text-[#111111] hover:text-[#F2F2F2] cursor-pointer transition-colors leading-snug line-clamp-2 min-h-[2.5rem]"
                     title={trans.name}
                   >
                     {trans.name}
@@ -953,7 +953,7 @@ export default function BoutiqueCatalog() {
                       {finalPrice.toFixed(2)} €
                     </span>
                     {user?.isB2B && (
-                      <span className="block text-[8px] font-mono text-[#E5BAA3] font-bold -mt-0.5">
+                      <span className="block text-[8px] font-mono text-[#F2F2F2] font-bold -mt-0.5">
                         HT PRO
                       </span>
                     )}
@@ -991,7 +991,7 @@ export default function BoutiqueCatalog() {
                       setAddedToast(`Ajouté (${qty}) : ${p.name}`);
                       setTimeout(() => setAddedToast(null), 2500);
                     }}
-                    className="flex-1 min-w-0 bg-[#111111] hover:bg-[#E5BAA3] hover:text-black text-white text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-tight py-2 px-1.5 sm:px-2 rounded-md transition-all whitespace-nowrap text-center shadow-2xs cursor-pointer truncate"
+                    className="flex-1 min-w-0 bg-[#111111] hover:bg-[#F2F2F2] hover:text-black text-white text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-tight py-2 px-1.5 sm:px-2 rounded-md transition-all whitespace-nowrap text-center shadow-2xs cursor-pointer truncate"
                     title="Ajouter au panier"
                   >
                     Ajouter au panier
@@ -1037,7 +1037,7 @@ export default function BoutiqueCatalog() {
                   right: "-14px",
                   zIndex: 9999,
                 }}
-                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#111111] hover:bg-[#E5BAA3] text-white hover:text-black border-2 border-white shadow-2xl flex items-center justify-center font-mono font-bold text-base sm:text-lg cursor-pointer transition-all hover:scale-110 active:scale-95"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#111111] hover:bg-[#F2F2F2] text-black hover:text-black border-2 border-white shadow-2xl flex items-center justify-center font-mono font-bold text-base sm:text-lg cursor-pointer transition-all hover:scale-110 active:scale-95"
                 title="Fermer la pop-up"
                 aria-label="Fermer la pop-up"
               >
@@ -1048,13 +1048,13 @@ export default function BoutiqueCatalog() {
               <div className="shrink-0 bg-white/95 backdrop-blur-md border-b border-[#E5E2DC] px-5 sm:px-7 py-3 rounded-t-2xl z-40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
                 {/* Côté Gauche du Header : Marque, SKU, Catégorie (HORS DU TITRE, SANS DOUBLON DE STOCK) */}
                 <div className="flex flex-wrap items-center gap-2 min-w-0">
-                  <span className="font-mono text-xs font-bold text-[#D9A68B] tracking-wider uppercase">
+                  <span className="font-mono text-xs font-bold text-[#F2F2F2] tracking-wider uppercase">
                     {selectedProduct.brand ? `${selectedProduct.brand} • ` : ""}{selectedProduct.sku} &bull; {selectedProduct.category}
                   </span>
 
                   <a
                     href={`/produit/${selectedProduct.id}`}
-                    className="hidden sm:inline-flex items-center gap-1 text-[11px] font-mono text-[#888888] hover:text-[#E5BAA3] hover:underline ml-2"
+                    className="hidden sm:inline-flex items-center gap-1 text-[11px] font-mono text-[#888888] hover:text-[#F2F2F2] hover:underline ml-2"
                     title="Ouvrir la page complète dédiée"
                   >
                     <span>Fiche dédiée SEO &rarr;</span>
@@ -1067,7 +1067,7 @@ export default function BoutiqueCatalog() {
                     <span className="text-[9px] text-[#777777] uppercase font-mono block leading-none">Prix unitaire TTC</span>
                     <span className="font-mono text-xl sm:text-2xl font-black text-[#111111]">
                       {getEffectivePrice(selectedProduct.price).toFixed(2)} €{" "}
-                      {user?.isB2B && <span className="text-[10px] text-[#D9A68B] block -mt-1 font-sans font-bold">(Tarif Pro B2B)</span>}
+                      {user?.isB2B && <span className="text-[10px] text-[#F2F2F2] block -mt-1 font-sans font-bold">(Tarif Pro B2B)</span>}
                     </span>
                   </div>
 
@@ -1095,7 +1095,7 @@ export default function BoutiqueCatalog() {
                     <button
                       type="button"
                       onClick={handleModalAdd}
-                      className="bg-[#111111] hover:bg-[#E5BAA3] hover:text-black text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg transition-all shadow-xs cursor-pointer whitespace-nowrap"
+                      className="bg-[#111111] hover:bg-[#F2F2F2] hover:text-black text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg transition-all shadow-xs cursor-pointer whitespace-nowrap"
                     >
                       Ajouter au panier
                     </button>
@@ -1131,7 +1131,7 @@ export default function BoutiqueCatalog() {
                         {/* Badge Compteur de photos */}
                         {imagesList.length > 1 && (
                           <div className="absolute top-3 right-3 bg-black/80 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-mono font-bold text-white/90 border border-white/10 flex items-center gap-1.5 shadow-md">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#E5BAA3]"></span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#F2F2F2]"></span>
                             <span>{activeModalImageIndex + 1} / {imagesList.length}</span>
                           </div>
                         )}
@@ -1178,8 +1178,8 @@ export default function BoutiqueCatalog() {
                                 type="button"
                                 onClick={() => setActiveModalImageIndex(idx)}
                                 className={`relative w-14 h-14 sm:w-16 sm:h-16 rounded-lg overflow-hidden shrink-0 border-2 transition-all cursor-pointer bg-[#0B0D10] ${isActive
-                                  ? "border-[#E5BAA3] ring-2 ring-[#E5BAA3]/40 shadow-md scale-102"
-                                  : "border-[#E5E2DC] opacity-65 hover:opacity-100 hover:border-[#D9A68B]"
+                                  ? "border-[#F2F2F2] ring-2 ring-[#F2F2F2]/40 shadow-md scale-102"
+                                  : "border-[#E5E2DC] opacity-65 hover:opacity-100 hover:border-[#F2F2F2]"
                                   }`}
                                 title={`Afficher la photo ${idx + 1}`}
                               >
@@ -1189,7 +1189,7 @@ export default function BoutiqueCatalog() {
                                   className="w-full h-full object-cover"
                                 />
                                 {isActive && (
-                                  <div className="absolute inset-0 bg-[#E5BAA3]/10 pointer-events-none" />
+                                  <div className="absolute inset-0 bg-[#F2F2F2]/10 pointer-events-none" />
                                 )}
                               </button>
                             );
@@ -1206,7 +1206,7 @@ export default function BoutiqueCatalog() {
                       {/* Disponibilité & Stocks en Temps Réel par Établissement */}
                       <div className="bg-[#FAF9F6] border border-[#E5E2DC] rounded-xl p-2.5 space-y-1.5 shadow-2xs">
                         <div className="flex items-center justify-between">
-                          <span className="text-[10px] font-mono font-bold uppercase text-[#D9A68B] tracking-wider block">
+                          <span className="text-[10px] font-mono font-bold uppercase text-[#F2F2F2] tracking-wider block">
                             Disponibilités en Magasins (Paris) &amp; Web
                           </span>
                           <span className="text-[9px] font-mono text-[#888888]">Direct ERP</span>
@@ -1287,14 +1287,14 @@ export default function BoutiqueCatalog() {
                       {/* Points Clés & Fonctionnalités Réels du Produit */}
                       {selectedProduct.features && selectedProduct.features.length > 0 && (
                         <div className="bg-[#FAF9F6] border border-[#E5E2DC] rounded-xl p-3.5 space-y-2 shadow-2xs">
-                          <span className="text-[11px] font-mono font-bold uppercase text-[#D9A68B] tracking-wider block flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#D9A68B]"></span>
+                          <span className="text-[11px] font-mono font-bold uppercase text-[#F2F2F2] tracking-wider block flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#F2F2F2]"></span>
                             Points Clés &amp; Atouts
                           </span>
                           <ul className="space-y-1.5 text-xs text-[#111111]">
                             {selectedProduct.features.map((feat, i) => (
                               <li key={i} className="flex items-start gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#E5BAA3] shrink-0 mt-1.5" />
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#F2F2F2] shrink-0 mt-1.5" />
                                 <span className="font-semibold text-[#111111] leading-snug">{feat}</span>
                               </li>
                             ))}
@@ -1304,8 +1304,8 @@ export default function BoutiqueCatalog() {
 
                       {/* Fiche Technique Complète & Guide des Tailles */}
                       <div className="bg-[#FAF9F6] border border-[#E5E2DC] rounded-xl p-3.5 space-y-2 shadow-2xs">
-                        <span className="text-[11px] font-mono font-bold uppercase text-[#D9A68B] tracking-wider block flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#D9A68B]"></span>
+                        <span className="text-[11px] font-mono font-bold uppercase text-[#F2F2F2] tracking-wider block flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#F2F2F2]"></span>
                           Caractéristiques Techniques &amp; Guide des Tailles
                         </span>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] font-mono">
@@ -1329,7 +1329,7 @@ export default function BoutiqueCatalog() {
                           </div>
                           <div className="p-1.5 rounded-md bg-white border border-[#EFECE6]">
                             <span className="text-[#777777] block text-[9px] uppercase">Conseil de taille :</span>
-                            <span className="font-sans font-bold text-[#D9A68B]">
+                            <span className="font-sans font-bold text-[#F2F2F2]">
                               {selectedProduct.fitAdvice}
                             </span>
                           </div>
@@ -1352,14 +1352,14 @@ export default function BoutiqueCatalog() {
                     {/* Note de Conseil & Service Personnalisé en Boutique */}
                     <div className="bg-[#111111] text-white rounded-xl p-3 flex items-center justify-between gap-3 shadow-sm">
                       <div className="min-w-0">
-                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#E5BAA3] block">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#F2F2F2] block">
                           Conseil Expert &amp; Click &amp; Collect 1h
                         </span>
                         <p className="text-[11px] text-white/80 font-sans truncate">
                           Retrait discret en boutique Paris Marais ou Bastille en 1 heure
                         </p>
                       </div>
-                      <span className="text-xs font-mono font-bold text-[#E5BAA3] shrink-0 border border-[#E5BAA3]/40 px-2.5 py-1 rounded-md">
+                      <span className="text-xs font-mono font-bold text-[#F2F2F2] shrink-0 border border-[#F2F2F2]/40 px-2.5 py-1 rounded-md">
                         Gratuit
                       </span>
                     </div>
@@ -1382,18 +1382,18 @@ export default function BoutiqueCatalog() {
                       <div
                         key={p.id}
                         onClick={() => openProductModal(p)}
-                        className="min-w-[140px] max-w-[140px] bg-[#FAF9F6] border border-[#E5E2DC] hover:border-[#D9A68B] rounded-xl p-2.5 cursor-pointer shrink-0 transition-all text-left group"
+                        className="min-w-[140px] max-w-[140px] bg-[#FAF9F6] border border-[#E5E2DC] hover:border-[#F2F2F2] rounded-xl p-2.5 cursor-pointer shrink-0 transition-all text-left group"
                       >
                         <div className="h-16 bg-[#0B0D10] rounded-lg overflow-hidden relative">
                           {p.image && p.image !== "/placeholder.jpg" ? (
                             <img src={p.image} alt={p.name} className="h-full w-full object-cover transition-transform group-hover:scale-105" />
                           ) : (
-                            <div className="h-full w-full flex items-center justify-center font-mono text-[10px] text-[#D9A68B] font-bold">
+                            <div className="h-full w-full flex items-center justify-center font-mono text-[10px] text-[#F2F2F2] font-bold">
                               {p.sku}
                             </div>
                           )}
                         </div>
-                        <span className="font-bold text-[11px] text-[#111111] block truncate mt-1.5 font-sans group-hover:text-[#D9A68B] transition-colors">
+                        <span className="font-bold text-[11px] text-[#111111] block truncate mt-1.5 font-sans group-hover:text-[#F2F2F2] transition-colors">
                           {p.name}
                         </span>
                         <span className="font-mono text-xs font-extrabold text-[#111111] block mt-0.5">

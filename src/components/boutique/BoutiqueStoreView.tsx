@@ -70,13 +70,13 @@ export default function BoutiqueStoreView({
       <section className="bg-white border border-[#E5E2DC] rounded-2xl p-6 sm:p-10 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-[#F0EDE8] pb-6">
           <div className="space-y-1">
-            <span className="font-mono text-xs uppercase tracking-widest text-[#D9A68B] font-semibold">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#F2F2F2] font-semibold">
               POINT DE VENTE PHYSIQUE • PARIS
             </span>
             <h1 className="text-2xl sm:text-4xl font-extrabold text-[#111111] tracking-tight">
               {storeInfo.name}
             </h1>
-            <p className="text-xs sm:text-sm text-[#D9A68B] font-medium">
+            <p className="text-xs sm:text-sm text-[#F2F2F2] font-medium">
               {storeInfo.tagline}
             </p>
           </div>
@@ -115,9 +115,9 @@ export default function BoutiqueStoreView({
 
         {/* Special Cruising Highlight for Boutique 1 */}
         {storeInfo.cruisingHighlight && (
-          <div className="bg-[#FAF9F6] border border-[#D9A68B]/40 rounded-xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="bg-[#FAF9F6] border border-[#F2F2F2]/40 rounded-xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="space-y-1">
-              <span className="font-mono text-[11px] uppercase tracking-wider text-[#D9A68B] font-bold">
+              <span className="font-mono text-[11px] uppercase tracking-wider text-[#F2F2F2] font-bold">
                 SPÉCIFICITÉ BOUTIQUE 1 • SOUS-SOL PRIVATISÉ
               </span>
               <h2 className="text-base font-bold text-[#111111]">
@@ -131,7 +131,7 @@ export default function BoutiqueStoreView({
             <button
               type="button"
               onClick={() => onNavigate("cruising")}
-              className="shrink-0 bg-[#111111] hover:bg-[#D9A68B] text-white text-xs font-semibold uppercase tracking-wider px-5 py-3 rounded transition-colors shadow-xs"
+              className="shrink-0 bg-[#111111] hover:bg-[#F2F2F2] text-black text-xs font-semibold uppercase tracking-wider px-5 py-3 rounded transition-colors shadow-xs"
             >
               Billetterie Cruising →
             </button>
@@ -143,7 +143,7 @@ export default function BoutiqueStoreView({
       <section className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#E5E2DC] pb-4 gap-2">
           <div>
-            <span className="font-mono text-xs uppercase tracking-widest text-[#D9A68B] font-semibold">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#F2F2F2] font-semibold">
               DISPONIBILITÉS PHYSIQUES EN TEMPS RÉEL
             </span>
             <h2 className="text-xl sm:text-2xl font-bold text-[#111111] tracking-tight mt-0.5">
@@ -166,11 +166,11 @@ export default function BoutiqueStoreView({
             return (
               <div
                 key={p.id}
-                className="bg-white border border-[#E5E2DC] hover:border-[#D9A68B]/60 rounded-xl p-5 flex flex-col justify-between space-y-4 transition-all duration-200"
+                className="bg-white border border-[#E5E2DC] hover:border-[#F2F2F2]/60 rounded-xl p-5 flex flex-col justify-between space-y-4 transition-all duration-200"
               >
                 <div className="space-y-3">
                   <div className="flex justify-between items-start">
-                    <span className="font-mono text-xs font-bold text-[#D9A68B]">
+                    <span className="font-mono text-xs font-bold text-[#F2F2F2]">
                       {p.sku}
                     </span>
                     <span className="font-mono text-xs text-neutral-500 bg-neutral-100 px-2 py-0.5 rounded">
@@ -213,7 +213,7 @@ export default function BoutiqueStoreView({
                 <button
                   type="button"
                   onClick={() => handleQuickCollect(p)}
-                  className="w-full bg-[#111111] hover:bg-[#D9A68B] text-white text-xs font-semibold uppercase tracking-wider py-2.5 rounded transition-colors shadow-xs"
+                  className="w-full bg-[#111111] hover:bg-[#F2F2F2] text-black text-xs font-semibold uppercase tracking-wider py-2.5 rounded transition-colors shadow-xs"
                 >
                   Réserver en Click & Collect 1h
                 </button>
