@@ -161,6 +161,16 @@ const FLAGSHIP_BRANDS = [
         name: "Lampwick Cut Lifecast Realistic Dildo",
         tag: "Surdimensionné"
       },
+      {
+        url: "/brands/hankeys/assberge-egg.webp",
+        name: "Hankey's Toys Assberge Egg Plug",
+        tag: "Assberge Egg"
+      },
+      {
+        url: "/brands/hankeys/knaughty-dragon.webp",
+        name: "Hankey's Toys Knaughty Dragon Dildo",
+        tag: "Knaughty Dragon"
+      },
     ],
   },
   {
@@ -183,9 +193,19 @@ const FLAGSHIP_BRANDS = [
         tag: "K9 Puppy Kit"
       },
       {
-        url: "/brands/mrsleather/mrs-4.jpg",
-        name: "Mr S Leather Bold Color Jockstrap",
-        tag: "Fetish Wear"
+        url: "/brands/mrsleather/mr-s-leather-bondage-dog-muzzle.webp",
+        name: "Mr S Leather Bondage Dog Muzzle",
+        tag: "Muselière Cuir"
+      },
+      {
+        url: "/brands/mrsleather/mr-s-leather-neoprene-cocksucker-hood.webp",
+        name: "Mr S Leather Neoprene Hood",
+        tag: "Cagoule Néoprène"
+      },
+      {
+        url: "/brands/mrsleather/mr-s-leather-x-factor-bold-color-body-harness-harnais-neoprene-pink.webp",
+        name: "Mr S Leather X-Factor Bold Color Harness",
+        tag: "Harnais X-Factor"
       },
     ],
   },
@@ -207,6 +227,16 @@ const FLAGSHIP_BRANDS = [
         url: "/brands/poppers/iron-fist-amyl-24ml.webp",
         name: "Iron Fist Amyl Poppers Grand Format 24ml",
         tag: "Amyle Pur 24ml"
+      },
+      {
+        url: "/brands/poppers/iron-fist-pentyl-buthanol-24ml.webp",
+        name: "Iron Fist Pentyl & Buthanol Formule Forte 24ml",
+        tag: "Pentyle 24ml"
+      },
+      {
+        url: "/brands/poppers/isoamyl-nitrite-ich3-24ml.webp",
+        name: "Isoamyl Nitrite ICH3 Haute Pureté 24ml",
+        tag: "Isoamyle 24ml"
       },
       {
         url: "/brands/poppers/xtrm-sniffer-double-black-s.webp",
@@ -360,11 +390,10 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
                             return next;
                           });
                         }}
-                        className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                          dotIdx === currentImgIndex
-                            ? "w-5 bg-[#E5BAA3]"
-                            : "w-1.5 bg-white/40 hover:bg-white/70"
-                        }`}
+                        className={`h-1.5 rounded-full transition-all cursor-pointer ${dotIdx === currentImgIndex
+                          ? "w-5 bg-[#E5BAA3]"
+                          : "w-1.5 bg-white/40 hover:bg-white/70"
+                          }`}
                         title={`Image ${dotIdx + 1}`}
                       />
                     ))}
@@ -462,14 +491,14 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
               item.badge === "ARÔMES" || item.id === "gasmaster-aroma-kit"
                 ? "AROMES"
                 : item.badge === "PUPPY GEAR" || item.id === "sneakxx-puppy-hood"
-                ? "PUPPY PLAY GEAR"
-                : item.category === "Bondage & Restraints"
-                ? "BDSM"
-                : item.category === "Harnais & Cuir"
-                ? "CUIR"
-                : item.category === "Lubrifiants & Soins"
-                ? "LUBE & HYGIENE"
-                : "SEX TOYS";
+                  ? "PUPPY PLAY GEAR"
+                  : item.category === "Bondage & Restraints"
+                    ? "BDSM"
+                    : item.category === "Harnais & Cuir"
+                      ? "CUIR"
+                      : item.category === "Lubrifiants & Soins"
+                        ? "LUBE & HYGIENE"
+                        : "SEX TOYS";
 
             return (
               <div
@@ -878,7 +907,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
                 Import directeurs & distributeur officiel
               </span>
             </div>
-            
+
             <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
               Nous travaillons sans intermédiaire avec les ateliers et marques les plus respectés de la communauté internationale :
             </p>
