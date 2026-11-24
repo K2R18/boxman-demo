@@ -2123,9 +2123,6 @@
   .bg-emerald-400 {
     background-color: var(--color-emerald-400);
   }
-  .bg-emerald-500 {
-    background-color: var(--color-emerald-500);
-  }
   .bg-emerald-600 {
     background-color: var(--color-emerald-600);
   }
@@ -2825,9 +2822,6 @@
   }
   .text-\[\#666666\] {
     color: #666666;
-  }
-  .text-\[\#717887\] {
-    color: #717887;
   }
   .text-\[\#777777\] {
     color: #777777;

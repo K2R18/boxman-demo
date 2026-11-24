@@ -223,14 +223,8 @@ export default function UniversalDrawer({
               </nav>
             </div>
 
-            {/* Pied ERP : Sync & Reset démo */}
+            {/* Pied ERP : Reset démo */}
             <div className="pt-4 border-t border-[#1F242D] space-y-2 font-mono text-[11px]">
-              <div className="flex items-center justify-between text-emerald-400 bg-emerald-950/30 border border-emerald-900/40 px-3 py-1.5 rounded-lg">
-                <span className="flex items-center space-x-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Sync Multi-onglets Active</span>
-                </span>
-              </div>
               <button
                 type="button"
                 onClick={() => {

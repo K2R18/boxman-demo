@@ -52,12 +52,6 @@ export default function DemoBar() {
           </div>
         )}
 
-        {/* Real-time local sync indicator */}
-        <div className="hidden sm:flex items-center space-x-1.5 text-[11px] text-[#717887]">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-          <span className="font-mono">Sync Multi-Onglets</span>
-        </div>
-
         {/* Reset button */}
         <button
           type="button"

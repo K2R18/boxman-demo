@@ -95,14 +95,8 @@ export default function ERPApp() {
                 })}
               </div>
 
-              {/* DROITE : SYNC + BOUTONS D'ACTION */}
+              {/* DROITE : BOUTONS D'ACTION */}
               <div className="flex items-center space-x-2.5 shrink-0">
-                {/* Pilule Sync Multi-onglets */}
-                <div className="hidden lg:flex items-center space-x-2 px-3 py-1.5 rounded-full bg-[#131720] border border-[#232B3A] text-[11px] font-mono text-gray-300">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Sync Active</span>
-                </div>
-
                 {/* Bouton Réinitialiser la démo */}
                 <button
                   type="button"
