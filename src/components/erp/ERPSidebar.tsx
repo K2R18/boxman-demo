@@ -35,7 +35,7 @@ export const erpNavItems: {
   { id: "stocks", label: "Stocks & Réserves Multi-Sites", short: "Stocks", iconSymbol: "▦", desc: "Dark Ink, Boxxman, New Millenium" },
   { id: "cash", label: "Sécurité Caisse & Traçabilité", short: "Caisse", iconSymbol: "◈", badge: "Simu", desc: "Clôtures, écarts & fonds de caisse" },
   { id: "returns", label: "Retours & SAV Hygiène", short: "SAV", iconSymbol: "↺", desc: "Gestion des retours & mise au rebut" },
-  { id: "catalog", label: "Catalogue & Studio IA", short: "Studio", iconSymbol: "✧", desc: "Descriptions multilingues & argot gay" },
+  { id: "catalog", label: "Catalogue & Studio IA", short: "Studio", iconSymbol: "✧", desc: "Descriptions multilingues" },
   { id: "transfers", label: "Transferts & Flux Internes", short: "Transferts", iconSymbol: "⇄", desc: "Mouvements entre sites sans redondance" },
   { id: "accounting", label: "Comptabilité, Facturation & Paie", short: "Compta", iconSymbol: "€", desc: "Factures PDF, TVA & fiches de paie" },
   { id: "hr", label: "Gestion des salariés", short: "Salariés", iconSymbol: "⏱", desc: "Pointage PIN, plannings & équipes" },
