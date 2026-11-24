@@ -1368,7 +1368,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   // States
-  const [appMode, _setAppMode] = useState<AppMode>("erp");
+  const [appMode, _setAppMode] = useState<AppMode>("boutique");
   const [stocks, setStocks] = useState<Record<string, StockEntry>>({});
   const [cashLog, setCashLog] = useState<CashEvent[]>([]);
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -1400,7 +1400,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   // Mount effect
   useEffect(() => {
-    _setAppMode(readLS<AppMode>(KEYS.appMode, "erp"));
+    _setAppMode(readLS<AppMode>(KEYS.appMode, "boutique"));
     _setLanguage(readLS<Language>(KEYS.language, "fr"));
     _setAgeVerified(readLS<boolean>(KEYS.ageVerified, false));
     _setUser(readLS<AppUser | null>(KEYS.user, initialUser));
@@ -2386,7 +2386,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       }
     });
     const seeded = buildInitialStocks();
-    _setAppMode("erp");
+    _setAppMode("boutique");
     setStocks(seeded);
     setCashLog(initialCashLog);
     setCart([{ productId: "prod-001", qty: 1 }]);
