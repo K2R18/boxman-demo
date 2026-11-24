@@ -56,14 +56,6 @@ export default function BoutiqueProductDetail({ product }: { product: Product })
 
   return (
     <div className="min-h-screen bg-[#FAF9F6] text-[#111111] py-6 sm:py-10">
-      {/* Toast Feedback */}
-      {addedToast && (
-        <div className="fixed bottom-5 right-5 z-50 bg-[#111111] text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 border border-[#E5BAA3]/50 animate-bounce">
-          <span className="w-2 h-2 rounded-full bg-[#E5BAA3]"></span>
-          <span className="text-xs font-mono font-bold">{addedToast}</span>
-        </div>
-      )}
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Barre de Navigation Supérieure & Fil d'Ariane */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E5E2DC] pb-4">

@@ -415,14 +415,6 @@ export default function BoutiqueCatalog() {
 
   return (
     <div className="space-y-8 py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden w-full max-w-full">
-      {/* Toast Alert */}
-      {addedToast && (
-        <div className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-50 bg-[#111111] text-white px-5 py-3 rounded-lg shadow-xl text-xs font-mono border border-[#333333] flex items-center space-x-2">
-          <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-          <span>{addedToast}</span>
-        </div>
-      )}
-
       {/* BANDEAU CATÉGORIE PREMIUM CENTRÉ SUR UNE SEULE LIGNE (DESKTOP) */}
       <div className="border-b border-[#252C37] pb-4 px-2 sm:px-4">
         {/* VUE DESKTOP : TITRE ET DESCRIPTION CENTRÉS SUR UNE SEULE LIGNE SANS DOUBLON DU BOUTON FILTRES */}

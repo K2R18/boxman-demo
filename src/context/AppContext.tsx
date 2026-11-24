@@ -1721,8 +1721,16 @@ export function AppProvider({ children }: { children: ReactNode }) {
       return [...prev, { productId, qty }];
     });
     if (typeof window !== "undefined") {
+      const foundProduct = products.find((p) => p.id === productId);
       window.dispatchEvent(
-        new CustomEvent("darkink_cart_add", { detail: { productId, qty } }),
+        new CustomEvent("darkink_cart_add", {
+          detail: {
+            productId,
+            qty,
+            name: foundProduct?.name,
+            image: foundProduct?.images?.[0] || "/brands/hankeys/hankeys-1.png",
+          },
+        }),
       );
     }
   }, []);

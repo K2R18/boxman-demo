@@ -66,14 +66,6 @@ export default function BoutiqueStoreView({
 
   return (
     <div className="space-y-10 py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* Toast Alert */}
-      {addedToast && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#111111] text-white px-5 py-3 rounded-lg shadow-xl text-xs font-mono border border-[#333333] flex items-center space-x-2">
-          <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-          <span>{addedToast}</span>
-        </div>
-      )}
-
       {/* Store Header Banner */}
       <section className="bg-white border border-[#E5E2DC] rounded-2xl p-6 sm:p-10 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-[#F0EDE8] pb-6">

@@ -9,3 +9,38 @@
 body {
   font-family: var(--font-sans);
 }
+
+@keyframes throwToCart {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5));
+  }
+  25% {
+    transform: translate(calc(var(--target-x) * 0.25), calc(var(--target-y) * 0.15 - 45px)) scale(0.85) rotate(-10deg);
+    opacity: 0.95;
+  }
+  65% {
+    transform: translate(calc(var(--target-x) * 0.75), calc(var(--target-y) * 0.65 - 15px)) scale(0.35) rotate(15deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(var(--target-x), var(--target-y)) scale(0.08) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+.animate-throw-to-cart {
+  animation: throwToCart 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes puppyChomp {
+  0%, 100% { transform: scale(1.1) rotate(0deg); }
+  25% { transform: scale(1.22) rotate(-5deg); }
+  50% { transform: scale(1.18) rotate(5deg); }
+  75% { transform: scale(1.2) rotate(-3deg); }
+}
+
+.animate-puppy-chomp {
+  animation: puppyChomp 0.45s ease-in-out infinite;
+}

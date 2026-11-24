@@ -31,6 +31,72 @@ function PuppyAccountIcon({ className = "w-6 h-6" }: { className?: string }) {
   );
 }
 
+// Chien animé qui rattrape le produit entre ses dents au panier
+function PuppyCatchIcon({ phase, image }: { phase: "open" | "bite"; image?: string }) {
+  if (phase === "open") {
+    return (
+      <div className="relative flex items-center justify-center w-7 h-7 animate-bounce">
+        <svg viewBox="0 0 36 36" className="w-7 h-7 drop-shadow-md">
+          {/* Oreilles */}
+          <path d="M5 11 C2 4, 1 12, 4 18 C7 14, 8 12, 5 11 Z" fill="#3D2B1F" />
+          <path d="M31 11 C34 4, 35 12, 32 18 C29 14, 28 12, 31 11 Z" fill="#3D2B1F" />
+          {/* Tête */}
+          <ellipse cx="18" cy="18" rx="12" ry="11" fill="#7A4B23" />
+          {/* Yeux grands ouverts */}
+          <circle cx="13.5" cy="14.5" r="2" fill="#0F141C" />
+          <circle cx="22.5" cy="14.5" r="2" fill="#0F141C" />
+          <circle cx="14" cy="14" r="0.7" fill="#FFFFFF" />
+          <circle cx="23" cy="14" r="0.7" fill="#FFFFFF" />
+          {/* Museau */}
+          <ellipse cx="18" cy="22" rx="6" ry="5" fill="#D9A68B" />
+          <polygon points="17,20 19,20 18,21.5" fill="#0F141C" />
+          {/* Bouche grande ouverte prête à gober */}
+          <path d="M13.5 22.5 Q18 30 22.5 22.5 Z" fill="#6B1D1D" />
+          {/* Dents supérieures */}
+          <polygon points="15,22.5 16,24.5 17,22.5" fill="#FFFFFF" />
+          <polygon points="19,22.5 20,24.5 21,22.5" fill="#FFFFFF" />
+        </svg>
+      </div>
+    );
+  }
+
+  // phase === "bite": Chien serrant fermement la photo/os entre ses dents
+  return (
+    <div className="relative flex items-center justify-center w-7 h-7 animate-puppy-chomp">
+      <svg viewBox="0 0 36 36" className="w-7 h-7 drop-shadow-lg">
+        {/* Oreilles */}
+        <path d="M5 11 C2 4, 1 12, 4 18 C7 14, 8 12, 5 11 Z" fill="#3D2B1F" />
+        <path d="M31 11 C34 4, 35 12, 32 18 C29 14, 28 12, 31 11 Z" fill="#3D2B1F" />
+        {/* Tête */}
+        <ellipse cx="18" cy="18" rx="12" ry="11" fill="#7A4B23" />
+        {/* Yeux joyeux plissés ^ ^ */}
+        <path d="M12 15 Q14 12.5 16 15" stroke="#0F141C" strokeWidth="1.8" fill="none" strokeLinecap="round" />
+        <path d="M20 15 Q22 12.5 24 15" stroke="#0F141C" strokeWidth="1.8" fill="none" strokeLinecap="round" />
+        {/* Museau */}
+        <ellipse cx="18" cy="21.5" rx="6.5" ry="4.5" fill="#D9A68B" />
+        <polygon points="17,19.5 19,19.5 18,21" fill="#0F141C" />
+        {/* Dents blanches bien visibles qui enserrent l'objet */}
+        <rect x="13" y="21.5" width="10" height="3" rx="1" fill="#FFFFFF" stroke="#333333" strokeWidth="0.6" />
+        <line x1="15.5" y1="21.5" x2="15.5" y2="24.5" stroke="#A3A3A3" strokeWidth="0.6" />
+        <line x1="18" y1="21.5" x2="18" y2="24.5" stroke="#A3A3A3" strokeWidth="0.6" />
+        <line x1="20.5" y1="21.5" x2="20.5" y2="24.5" stroke="#A3A3A3" strokeWidth="0.6" />
+      </svg>
+      {/* Photo du produit entre ses dents */}
+      <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 z-10 flex items-center justify-center pointer-events-none">
+        {image ? (
+          <img
+            src={image}
+            alt=""
+            className="w-4 h-4 object-cover rounded-[3px] border border-white shadow-md rotate-12 bg-black"
+          />
+        ) : (
+          <span className="text-xs leading-none">🦴</span>
+        )}
+      </div>
+    </div>
+  );
+}
+
 // Vrais Drapeaux Vectoriels SVG (garantit l'affichage net des drapeaux sur tous les OS sans bug emoji Windows)
 export function FlagIcon({
   lang,
@@ -140,34 +206,95 @@ export default function BoutiqueNavbar({
 
   const totalCartCount = cart.reduce((acc, item) => acc + item.qty, 0);
 
-  // Animation panier & clignotement
+  // Animation panier & chien attrapeur
   const [isCartBlinking, setIsCartBlinking] = useState(false);
   const [cartFlyNotification, setCartFlyNotification] = useState<string | null>(null);
+  const [flyingPhoto, setFlyingPhoto] = useState<{
+    id: number;
+    image: string;
+    startX: number;
+    startY: number;
+    targetX: number;
+    targetY: number;
+  } | null>(null);
+  const [dogCartState, setDogCartState] = useState<"idle" | "open" | "bite">("idle");
+  const [lastCaughtImage, setLastCaughtImage] = useState<string | null>(null);
+  const lastClickRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const prevCartCountRef = useRef(totalCartCount);
 
+  // Capturer les coordonnées précises du dernier clic / tap tactile
   useEffect(() => {
-    if (totalCartCount > prevCartCountRef.current) {
-      setIsCartBlinking(true);
-      setCartFlyNotification("Produit ajouté au panier !");
-      const timer = setTimeout(() => {
-        setIsCartBlinking(false);
-        setCartFlyNotification(null);
-      }, 2500);
-      return () => clearTimeout(timer);
-    }
-    prevCartCountRef.current = totalCartCount;
-  }, [totalCartCount]);
+    const handlePointerDown = (e: MouseEvent | TouchEvent) => {
+      if ("clientX" in e) {
+        lastClickRef.current = { x: e.clientX, y: e.clientY };
+      } else if (e.touches && e.touches[0]) {
+        lastClickRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      }
+    };
+    window.addEventListener("pointerdown", handlePointerDown, { passive: true });
+    window.addEventListener("touchstart", handlePointerDown, { passive: true });
+    return () => {
+      window.removeEventListener("pointerdown", handlePointerDown);
+      window.removeEventListener("touchstart", handlePointerDown);
+    };
+  }, []);
 
+  // Déclenchement de l'animation quand un produit est ajouté au panier
   useEffect(() => {
     const handleCartAddEvent = (e: any) => {
-      setIsCartBlinking(true);
+      const img = e.detail?.image || "/brands/hankeys/hankeys-1.png";
       const name = e.detail?.name;
-      setCartFlyNotification(name ? `${name} ajouté !` : "Produit ajouté au panier !");
-      setTimeout(() => {
-        setIsCartBlinking(false);
-        setCartFlyNotification(null);
-      }, 2500);
+      setLastCaughtImage(img);
+
+      // Calcul des coordonnées cibles du panier selon l'écran (mobile vs desktop)
+      const isMobile = window.innerWidth < 1024;
+      const targetEl = document.getElementById(isMobile ? "mobile-cart-btn" : "desktop-cart-btn");
+      let targetX = isMobile ? window.innerWidth - 42 : window.innerWidth - 65;
+      let targetY = isMobile ? window.innerHeight - 30 : window.innerHeight - 50;
+
+      if (targetEl) {
+        const rect = targetEl.getBoundingClientRect();
+        targetX = rect.left + rect.width / 2;
+        targetY = rect.top + rect.height / 2;
+      }
+
+      // Point de départ (clic utilisateur ou centre de l'écran)
+      const startX = lastClickRef.current.x > 0 ? lastClickRef.current.x : window.innerWidth / 2;
+      const startY = lastClickRef.current.y > 0 ? lastClickRef.current.y : window.innerHeight / 2;
+
+      // 1. Photo qui rétrécit et file au panier (effet mise en corbeille)
+      setFlyingPhoto({
+        id: Date.now(),
+        image: img,
+        startX,
+        startY,
+        targetX,
+        targetY,
+      });
+
+      // 2. À mi-chemin (350ms) : Le panier se change en chien gueule ouverte prêt à gober
+      const timerOpen = setTimeout(() => {
+        setDogCartState("open");
+      }, 350);
+
+      // 3. À l'impact (700ms) : Le chien rattrape la photo et la serre entre ses dents !
+      const timerBite = setTimeout(() => {
+        setFlyingPhoto(null);
+        setDogCartState("bite");
+      }, 700);
+
+      // 4. Après la prise (1750ms) : L'icône redevient un panier avec compteur à jour
+      const timerIdle = setTimeout(() => {
+        setDogCartState("idle");
+      }, 1750);
+
+      return () => {
+        clearTimeout(timerOpen);
+        clearTimeout(timerBite);
+        clearTimeout(timerIdle);
+      };
     };
+
     window.addEventListener("darkink_cart_add", handleCartAddEvent);
     return () => window.removeEventListener("darkink_cart_add", handleCartAddEvent);
   }, []);
@@ -1261,18 +1388,23 @@ export default function BoutiqueNavbar({
           )}
         </button>
 
-        {/* 5. COMPLÈTEMENT À DROITE : PANIER AVEC BADGE & ANIMATION */}
+        {/* 5. COMPLÈTEMENT À DROITE : PANIER AVEC ANIMATION DU CHIEN ATTRAPEUR */}
         <button
+          id="mobile-cart-btn"
           type="button"
           onClick={() => onNavigate("cart")}
           className={`relative flex flex-col items-center py-1 px-1.5 rounded-lg transition-all min-w-[54px] cursor-pointer ${activeSection === "cart"
             ? "text-[#0F141C] font-extrabold scale-105"
             : "text-[#64748B] hover:text-[#0F172A] font-medium"
-            } ${isCartBlinking ? "ring-2 ring-[#B87333] animate-bounce bg-[#E5E2DC]" : ""}`}
+            }`}
           title="Panier"
         >
-          <div className="relative">
-            <span className="text-base leading-none">🛒</span>
+          <div className="relative w-7 h-7 flex items-center justify-center">
+            {dogCartState !== "idle" ? (
+              <PuppyCatchIcon phase={dogCartState} image={lastCaughtImage || undefined} />
+            ) : (
+              <span className="text-base leading-none">🛒</span>
+            )}
             {totalCartCount > 0 && (
               <span className="absolute -top-1.5 -right-2.5 font-mono text-[9px] font-black bg-[#0F141C] text-white px-1.5 py-0.2 rounded-full shadow-xs">
                 {totalCartCount}
@@ -1290,29 +1422,23 @@ export default function BoutiqueNavbar({
       {/* 6. BADGE PANIER STICKY / FLOTTANT DESKTOP (BAS À DROITE) */}
       {/* ========================================================================= */}
       <div className="hidden lg:block fixed bottom-8 right-8 z-50">
-        {/* Bulle / Animation moderne d'ajout vers le panier */}
-        {cartFlyNotification && (
-          <div className="absolute -top-16 right-0 bg-gradient-to-r from-[#E5BAA3] to-[#E5A879] text-black font-mono font-black text-xs px-4 py-2.5 rounded-2xl shadow-2xl flex items-center space-x-2 animate-bounce border border-black/20 whitespace-nowrap">
-            <span className="text-sm">✨</span>
-            <span>{cartFlyNotification}</span>
-            <span className="text-base font-black">↘</span>
-          </div>
-        )}
-
         {/* Badge Flottant Premium Sticky */}
         <button
+          id="desktop-cart-btn"
           type="button"
           onClick={() => onNavigate("cart")}
-          className={`flex items-center space-x-3.5 px-5 py-3.5 rounded-full border-2 transition-all duration-300 shadow-2xl cursor-pointer group select-none ${isCartBlinking
-            ? "bg-[#1C2230] border-[#E5BAA3] ring-4 ring-[#E5BAA3] ring-offset-2 ring-offset-[#0B0D10] scale-110 shadow-[0_0_35px_rgba(212,145,94,0.85)] animate-pulse"
-            : activeSection === "cart"
+          className={`flex items-center space-x-3.5 px-5 py-3.5 rounded-full border-2 transition-all duration-300 shadow-2xl cursor-pointer group select-none ${activeSection === "cart"
               ? "bg-[#E5BAA3] text-black border-[#E5BAA3] shadow-[0_8px_30px_rgba(212,145,94,0.5)] scale-105"
               : "bg-[#0B0D10]/95 hover:bg-[#161C26] text-white border-[#E5BAA3]/80 hover:border-[#E5BAA3] hover:scale-105 shadow-[0_10px_35px_rgba(0,0,0,0.8)]"
             }`}
           title="Accéder au Panier"
         >
-          <div className="relative flex items-center justify-center">
-            <span className="text-xl group-hover:scale-110 transition-transform">🛒</span>
+          <div className="relative flex items-center justify-center w-8 h-8">
+            {dogCartState !== "idle" ? (
+              <PuppyCatchIcon phase={dogCartState} image={lastCaughtImage || undefined} />
+            ) : (
+              <span className="text-xl group-hover:scale-110 transition-transform">🛒</span>
+            )}
             {totalCartCount > 0 && (
               <span
                 className={`absolute -top-2 -right-2 font-mono text-[10px] font-black px-1.5 py-0.5 rounded-full shadow-xs ${activeSection === "cart" ? "bg-black text-[#E5BAA3]" : "bg-[#E5BAA3] text-black"
@@ -1340,6 +1466,33 @@ export default function BoutiqueNavbar({
           </div>
         </button>
       </div>
+
+      {/* ANIMATION MISE EN CORBEILLE : PHOTO DU PRODUIT QUI RETRÉCIT ET VOLE VERS LE PANIER */}
+      {flyingPhoto && (
+        <div
+          key={flyingPhoto.id}
+          className="fixed z-[99999] pointer-events-none"
+          style={{
+            left: `${flyingPhoto.startX}px`,
+            top: `${flyingPhoto.startY}px`,
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          <div
+            className="w-20 h-20 rounded-2xl overflow-hidden shadow-2xl border-2 border-[#D4915E] bg-black/90 flex items-center justify-center animate-throw-to-cart p-1.5"
+            style={{
+              "--target-x": `${flyingPhoto.targetX - flyingPhoto.startX}px`,
+              "--target-y": `${flyingPhoto.targetY - flyingPhoto.startY}px`,
+            } as React.CSSProperties}
+          >
+            <img
+              src={flyingPhoto.image}
+              alt=""
+              className="w-full h-full object-contain rounded-xl"
+            />
+          </div>
+        </div>
+      )}
 
       {/* TIROIR MOBILE COMPLET (UNIVERSAL DRAWER EN 3 PARTIES DÉDIÉES) */}
       <UniversalDrawer
