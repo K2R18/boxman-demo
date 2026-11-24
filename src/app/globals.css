@@ -3643,6 +3643,9 @@
     .sm\:aspect-square {
       aspect-ratio: 1 / 1;
     }
+    .sm\:h-4 {
+      height: calc(var(--spacing) * 4);
+    }
     .sm\:h-11 {
       height: calc(var(--spacing) * 11);
     }
@@ -3657,6 +3660,9 @@
     }
     .sm\:h-\[320px\] {
       height: 320px;
+    }
+    .sm\:w-4 {
+      width: calc(var(--spacing) * 4);
     }
     .sm\:w-5 {
       width: calc(var(--spacing) * 5);
@@ -3717,6 +3723,11 @@
       margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
       margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
     }
+    :where(.sm\:space-x-2 > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
+    }
     :where(.sm\:space-x-3 > :not(:last-child)) {
       --tw-space-x-reverse: 0;
       margin-inline-start: calc(calc(var(--spacing) * 3) * var(--tw-space-x-reverse));
@@ -3732,6 +3743,9 @@
     }
     .sm\:rounded-2xl {
       border-radius: var(--radius-2xl);
+    }
+    .sm\:rounded-xl {
+      border-radius: var(--radius-xl);
     }
     .sm\:p-4 {
       padding: calc(var(--spacing) * 4);
@@ -3754,6 +3768,12 @@
     .sm\:px-2 {
       padding-inline: calc(var(--spacing) * 2);
     }
+    .sm\:px-3 {
+      padding-inline: calc(var(--spacing) * 3);
+    }
+    .sm\:px-3\.5 {
+      padding-inline: calc(var(--spacing) * 3.5);
+    }
     .sm\:px-4 {
       padding-inline: calc(var(--spacing) * 4);
     }
@@ -3762,6 +3782,12 @@
     }
     .sm\:px-7 {
       padding-inline: calc(var(--spacing) * 7);
+    }
+    .sm\:py-1\.5 {
+      padding-block: calc(var(--spacing) * 1.5);
+    }
+    .sm\:py-2 {
+      padding-block: calc(var(--spacing) * 2);
     }
     .sm\:py-10 {
       padding-block: calc(var(--spacing) * 10);
@@ -3804,8 +3830,20 @@
       font-size: var(--text-xl);
       line-height: var(--tw-leading, var(--text-xl--line-height));
     }
+    .sm\:text-xs {
+      font-size: var(--text-xs);
+      line-height: var(--tw-leading, var(--text-xs--line-height));
+    }
     .sm\:text-\[11px\] {
       font-size: 11px;
+    }
+    .sm\:font-extrabold {
+      --tw-font-weight: var(--font-weight-extrabold);
+      font-weight: var(--font-weight-extrabold);
+    }
+    .sm\:tracking-wider {
+      --tw-tracking: var(--tracking-wider);
+      letter-spacing: var(--tracking-wider);
     }
   }
   @media (width >= 48rem) {

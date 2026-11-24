@@ -43,17 +43,17 @@ export default function ERPApp() {
           <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-14 sm:h-16 gap-3">
               
-              {/* GAUCHE : BOUTON MENU ONGLETS + TITRE DE L'ONGLET + RÔLE */}
+              {/* GAUCHE : BOUTON MENU ONGLETS + RÔLE */}
               <div className="flex items-center space-x-3 shrink-0">
                 {/* Bouton Menu Onglets */}
                 <button
                   type="button"
                   onClick={() => setBurgerOpen(true)}
-                  className="flex items-center space-x-2 px-3 py-2 rounded-xl border border-[#2B3548] bg-[#141822] hover:bg-[#1C2330] hover:border-[#D4915E] text-white transition-all shadow-xs cursor-pointer group"
+                  className="flex items-center space-x-2 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl border border-[#2B3548] bg-[#141822] hover:bg-[#1C2330] hover:border-[#D4915E] text-white transition-all shadow-xs cursor-pointer group"
                   aria-label="Ouvrir le menu des onglets"
                   title="Ouvrir le menu des onglets"
                 >
-                  <span className="text-xl font-bold leading-none text-[#D4915E] group-hover:scale-110 transition-transform">
+                  <span className="text-lg sm:text-xl font-bold leading-none text-[#D4915E] group-hover:scale-110 transition-transform">
                     ☰
                   </span>
                   <span className="text-xs font-mono font-bold hidden sm:inline text-gray-200">
@@ -61,26 +61,10 @@ export default function ERPApp() {
                   </span>
                 </button>
 
-                {/* Titre Desktop avec icône & rôle */}
-                <div className="hidden md:block">
-                  <div className="flex items-center space-x-2.5">
-                    <h1 className="text-base font-extrabold text-white font-sans flex items-center space-x-2">
-                      <span className="text-[#D4915E] text-lg">{currentItem?.iconSymbol}</span>
-                      <span className="tracking-tight">{pageTitle}</span>
-                    </h1>
-                    <span className="font-mono text-[10px] font-bold text-[#D4915E] bg-[#D4915E]/10 border border-[#D4915E]/30 px-2 py-0.5 rounded-full">
-                      Rôle : {currentRole}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Titre Mobile */}
-                <div className="md:hidden">
-                  <span className="font-mono text-xs font-bold text-white block truncate">
-                    {currentItem?.iconSymbol} {pageTitle}
-                  </span>
-                  <span className="text-[9px] font-mono text-[#D4915E] block">
-                    {currentRole}
+                {/* Badge Rôle (Desktop & Tablette) */}
+                <div className="hidden sm:flex items-center">
+                  <span className="font-mono text-[10px] font-bold text-[#D4915E] bg-[#D4915E]/10 border border-[#D4915E]/30 px-2.5 py-1 rounded-full">
+                    Rôle : {currentRole}
                   </span>
                 </div>
               </div>
@@ -128,7 +112,7 @@ export default function ERPApp() {
                 <button
                   type="button"
                   onClick={() => setAppMode("boutique")}
-                  className="flex items-center space-x-2 px-3.5 py-1.5 rounded-xl bg-[#E5BAA3] hover:bg-[#EDC9B5] text-black font-extrabold text-xs font-mono uppercase tracking-wider shadow-md transition-all cursor-pointer select-none"
+                  className="flex items-center space-x-1.5 sm:space-x-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-lg sm:rounded-xl bg-[#E5BAA3] hover:bg-[#EDC9B5] text-black font-bold sm:font-extrabold text-[11px] sm:text-xs font-mono uppercase tracking-normal sm:tracking-wider shadow-sm transition-all cursor-pointer select-none shrink-0"
                   title="Accéder à la boutique grand public et espace cruising"
                 >
                   <svg
@@ -138,14 +122,14 @@ export default function ERPApp() {
                     strokeWidth="2.2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="w-4 h-4 shrink-0 text-black"
+                    className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-black"
                   >
                     <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
                     <line x1="3" y1="6" x2="21" y2="6" />
                     <path d="M16 10a4 4 0 0 1-8 0" />
                   </svg>
                   <span>Boutique en ligne</span>
-                  <span className="font-black text-sm">&rarr;</span>
+                  <span className="font-black text-xs sm:text-sm">&rarr;</span>
                 </button>
               </div>
             </div>
