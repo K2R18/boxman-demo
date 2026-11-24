@@ -318,7 +318,7 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
                 key={item.id}
                 className="group relative bg-[#12161D] rounded-2xl overflow-hidden border border-[#252C37] hover:border-[#E5BAA3]/60 transition-all duration-300 shadow-xl flex flex-col justify-between"
               >
-                {/* Zone Photo plein format garantie visible avec redirection au clic vers la catégorie */}
+                {/* Zone Photo plein format avec transition en ralenti au début et ralenti à la fin (apparition & disparition progressive) */}
                 <div
                   onClick={() => {
                     setCatalogCategory(item.linkCategory);
@@ -327,16 +327,29 @@ export default function BoutiqueHome({ onNavigate }: BoutiqueHomeProps) {
                   className="relative aspect-4/3 sm:aspect-square w-full overflow-hidden bg-[#161C26] cursor-pointer"
                   title={`Voir la catégorie ${item.linkCategory}`}
                 >
-                  {/* Photo active rendue directement avec clé d'animation pour fondu propre à chaque changement */}
-                  <img
-                    key={`${cardIdx}-${currentImgIndex}-${activeImg.url}`}
-                    src={activeImg.url}
-                    alt={activeImg.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out animate-fadeIn"
-                  />
+                  {/* Toutes les photos empilées : fondu enchaîné progressif ralenti au début et à la fin */}
+                  {item.images.map((img, imgIdx) => {
+                    const isCurrent = imgIdx === currentImgIndex;
+                    return (
+                      <div
+                        key={`${cardIdx}-${imgIdx}-${img.url}`}
+                        className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                          isCurrent
+                            ? "opacity-100 scale-100 z-1 pointer-events-auto"
+                            : "opacity-0 scale-105 z-0 pointer-events-none"
+                        }`}
+                      >
+                        <img
+                          src={img.url}
+                          alt={img.name}
+                          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-in-out"
+                        />
+                      </div>
+                    );
+                  })}
 
                   {/* Dégradé supérieur et inférieur discret pour la lisibilité des badges */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#12161D]/80 via-transparent to-black/50 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#12161D]/80 via-transparent to-black/50 pointer-events-none z-2" />
 
                   {/* Badge Marque / Statut en haut à gauche */}
                   <div className="absolute top-3.5 left-3.5 flex items-center gap-1.5 z-10">
